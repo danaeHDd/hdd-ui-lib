@@ -5,43 +5,51 @@
       <p>组件开发测试环境 - 设计令牌系统 (v2)</p>
     </header>
 
-    <main class="content">
-      <ColorSystem />
-      <ButtonTypes />
-      <ButtonSizes />
-      <ButtonStates />
-      <ButtonVariants />
-      <ButtonIcons />
-    </main>
+    <div class="main-layout">
+      <Sidebar :active-component="activeComponent" @select="handleSelect" />
+      
+      <main class="main-content">
+        <div v-if="activeComponent === 'color-system'" class="demo-container">
+          <ColorSystem />
+        </div>
+        
+        <div v-else-if="activeComponent === 'button'" class="demo-container">
+          <ButtonDemo />
+        </div>
+      </main>
+    </div>
   </div>
 </template>
 
 <script setup lang="ts">
+import { ref } from 'vue'
+import Sidebar from './components/Sidebar.vue'
 import ColorSystem from './components/color/ColorSystem.vue'
-import ButtonTypes from './components/button/ButtonTypes.vue'
-import ButtonSizes from './components/button/ButtonSizes.vue'
-import ButtonStates from './components/button/ButtonStates.vue'
-import ButtonVariants from './components/button/ButtonVariants.vue'
-import ButtonIcons from './components/button/ButtonIcons.vue'
+import ButtonDemo from './components/button/ButtonDemo.vue'
+
+const activeComponent = ref('color-system')
+
+const handleSelect = (name: string) => {
+  activeComponent.value = name
+}
 </script>
 
 <style scoped>
 .playground {
   min-height: 100vh;
   background: var(--hdd-color-neutral-05);
-  padding-bottom: var(--hdd-spacing-10);
 }
 
 .header {
   background: white;
-  padding: var(--hdd-spacing-8);
+  padding: var(--hdd-spacing-4);
   text-align: center;
   box-shadow: var(--hdd-shadow-sm);
 }
 
 .header h1 {
-  margin: 0 0 var(--hdd-spacing-2);
-  font-size: var(--hdd-font-size-3xl);
+  margin: 0 0 var(--hdd-spacing-1);
+  font-size: var(--hdd-font-size-xl);
   color: var(--hdd-color-neutral-06);
 }
 
@@ -51,21 +59,35 @@ import ButtonIcons from './components/button/ButtonIcons.vue'
   font-size: var(--hdd-font-size-sm);
 }
 
-.content {
-  max-width: 1400px;
-  margin: var(--hdd-spacing-8) auto;
-  padding: 0 var(--hdd-spacing-5);
+.main-layout {
+  display: flex;
+  min-height: calc(100vh - 80px);
 }
 
-.content > * {
+.main-content {
+  flex: 1;
+  padding: var(--hdd-spacing-6);
+  overflow-y: auto;
+}
+
+.demo-container {
   background: white;
   padding: var(--hdd-spacing-6);
   border-radius: var(--hdd-radius-lg);
-  margin-bottom: var(--hdd-spacing-6);
   box-shadow: var(--hdd-shadow-sm);
 }
 
-.content > *:last-child {
-  margin-bottom: 0;
+@media (max-width: 768px) {
+  .main-layout {
+    flex-direction: column;
+  }
+  
+  .sidebar {
+    width: 100% !important;
+    height: auto !important;
+    position: static !important;
+    border-right: none !important;
+    border-bottom: 1px solid var(--hdd-color-neutral-04);
+  }
 }
 </style>
