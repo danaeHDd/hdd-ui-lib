@@ -8,14 +8,19 @@
      1. 颜色系统 (Color System) - 简化版
      精确 RGB 线性插值计算
      ============================================ */
-  
+  /*  基础色  */
+  --hdd-color-dark: #333333;
+  --hdd-color-white: #ffffff;
+  --hdd-color-alpha: transparent;
+
   /* 主题色 (Primary) - 金色系 #9E8A57 */
-  --hdd-color-primary-01: #9E8A57;
-  --hdd-color-primary-02: #B19766;
-  --hdd-color-primary-03: #C7B48F;
-  --hdd-color-primary-04: #DDD1B9;
-  --hdd-color-primary-05: #F4EEE1;
-  --hdd-color-primary-06: #665A3A;
+  --hdd-color-primary: #9E8A57;
+  --hdd-color-primary-01: var(--hdd-color-primary);
+  --hdd-color-primary-02: color-mix(in srgb, var(--hdd-color-primary) 70%, var(--hdd-color-white));
+  --hdd-color-primary-03: color-mix(in srgb, var(--hdd-color-primary) 50%, var(--hdd-color-white));
+  --hdd-color-primary-04: color-mix(in srgb, var(--hdd-color-primary) 30%, var(--hdd-color-white));
+  --hdd-color-primary-05: color-mix(in srgb, var(--hdd-color-primary) 10%, var(--hdd-color-white));
+  --hdd-color-primary-06: color-mix(in srgb, var(--hdd-color-primary) 65%, var(--hdd-color-dark));
   
   /* 成功色 (Success) - 绿色系 #4CAF50 */
   --hdd-color-success-01: #4CAF50;

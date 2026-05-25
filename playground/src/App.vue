@@ -96,6 +96,13 @@
           </hdd-button>
         </div>
       </section>
+
+      <section class="demo-section">
+        <h2>主题颜色</h2>
+        <div class="demo-row">
+          <div v-for="color in colors" :key="color" :style="{backgroundColor: `var(${color})`, width: '100px', padding: '8px 12px'}"> {{ color }}</div>
+        </div>
+      </section>
     </main>
   </div>
 </template>
@@ -115,6 +122,17 @@ const primaryColors = reactive({
   'primary-800': '#5D4E37',
   'primary-900': '#4A3F2B'
 })
+
+const colors = [
+  '--hdd-color-primary-01',
+  '--hdd-color-primary-02',
+  '--hdd-color-primary-03',
+  '--hdd-color-primary-033',
+  '--hdd-color-primary-04',
+  '--hdd-color-primary-05',
+  '--hdd-color-primary-06',
+  '--hdd-color-primary-07'
+]
 </script>
 
 <style scoped>
