@@ -1,0 +1,244 @@
+/* ============================================
+   HDD UI 设计令牌系统 (Design Tokens)
+   基于主流组件库设计标准 (Tailwind CSS / Ant Design / Material Design)
+   ============================================ */
+
+:root {
+  /* ============================================
+     1. 颜色系统 (Color System)
+     ============================================ */
+  
+  /* 主题色 (Primary) - 金色系 */
+  --hdd-color-primary-50: #FDF8F0;
+  --hdd-color-primary-100: #FAF0DC;
+  --hdd-color-primary-200: #F3E1BC;
+  --hdd-color-primary-300: #E9CF99;
+  --hdd-color-primary-400: #DEB96E;
+  --hdd-color-primary-500: #9E8A57;
+  --hdd-color-primary-600: #8B7355;
+  --hdd-color-primary-700: #796C4A;
+  --hdd-color-primary-800: #5D4E37;
+  --hdd-color-primary-900: #4A3F2B;
+  
+  /* 成功色 (Success) */
+  --hdd-color-success-50: #F0FFF4;
+  --hdd-color-success-100: #D8FCE6;
+  --hdd-color-success-200: #B5F5CC;
+  --hdd-color-success-300: #81E8A8;
+  --hdd-color-success-400: #4DE08B;
+  --hdd-color-success-500: #4CAF50;
+  --hdd-color-success-600: #388E3C;
+  --hdd-color-success-700: #2E7D32;
+  --hdd-color-success-800: #1B5E20;
+  --hdd-color-success-900: #0D3F14;
+  
+  /* 警告色 (Warning) */
+  --hdd-color-warning-50: #FFFDF0;
+  --hdd-color-warning-100: #FFF8E1;
+  --hdd-color-warning-200: #FFECB3;
+  --hdd-color-warning-300: #FFE082;
+  --hdd-color-warning-400: #FFD54F;
+  --hdd-color-warning-500: #FFC107;
+  --hdd-color-warning-600: #FFA000;
+  --hdd-color-warning-700: #FF8F00;
+  --hdd-color-warning-800: #FF6F00;
+  --hdd-color-warning-900: #C45600;
+  
+  /* 危险色 (Danger) */
+  --hdd-color-danger-50: #FFEBEE;
+  --hdd-color-danger-100: #FFCDD2;
+  --hdd-color-danger-200: #EF9A9A;
+  --hdd-color-danger-300: #E57373;
+  --hdd-color-danger-400: #EF5350;
+  --hdd-color-danger-500: #F44336;
+  --hdd-color-danger-600: #E53935;
+  --hdd-color-danger-700: #D32F2F;
+  --hdd-color-danger-800: #C62828;
+  --hdd-color-danger-900: #B71C1C;
+  
+  /* 信息色 (Info) */
+  --hdd-color-info-50: #E3F2FD;
+  --hdd-color-info-100: #BBDEFB;
+  --hdd-color-info-200: #90CAF9;
+  --hdd-color-info-300: #64B5F6;
+  --hdd-color-info-400: #42A5F5;
+  --hdd-color-info-500: #2196F3;
+  --hdd-color-info-600: #1E88E5;
+  --hdd-color-info-700: #1976D2;
+  --hdd-color-info-800: #1565C0;
+  --hdd-color-info-900: #0D47A1;
+  
+  /* 中性色 (Neutral) */
+  --hdd-color-neutral-50: #FAFAFA;
+  --hdd-color-neutral-100: #F5F5F5;
+  --hdd-color-neutral-200: #EEEEEE;
+  --hdd-color-neutral-300: #E0E0E0;
+  --hdd-color-neutral-400: #BDBDBD;
+  --hdd-color-neutral-500: #9E9E9E;
+  --hdd-color-neutral-600: #757575;
+  --hdd-color-neutral-700: #616161;
+  --hdd-color-neutral-800: #424242;
+  --hdd-color-neutral-900: #212121;
+  
+  /* ============================================
+     2. 字体系统 (Typography)
+     ============================================ */
+  
+  /* 字体族 */
+  --hdd-font-family-sans: 'Noto Sans SC', 'Noto Sans TC', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --hdd-font-family-mono: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
+  --hdd-font-family-icon: 'Material Icons', 'iconfont', sans-serif;
+  
+  /* 字体大小 (单位: px) */
+  --hdd-font-size-xs: 12px;
+  --hdd-font-size-sm: 14px;
+  --hdd-font-size-base: 16px;
+  --hdd-font-size-lg: 18px;
+  --hdd-font-size-xl: 20px;
+  --hdd-font-size-2xl: 24px;
+  --hdd-font-size-3xl: 28px;
+  --hdd-font-size-4xl: 32px;
+  --hdd-font-size-5xl: 40px;
+  --hdd-font-size-6xl: 48px;
+  
+  /* 字体粗细 */
+  --hdd-font-weight-thin: 100;
+  --hdd-font-weight-extralight: 200;
+  --hdd-font-weight-light: 300;
+  --hdd-font-weight-normal: 400;
+  --hdd-font-weight-medium: 500;
+  --hdd-font-weight-semibold: 600;
+  --hdd-font-weight-bold: 700;
+  --hdd-font-weight-extrabold: 800;
+  --hdd-font-weight-black: 900;
+  
+  /* 行高 */
+  --hdd-line-height-tight: 1.25;
+  --hdd-line-height-normal: 1.5;
+  --hdd-line-height-relaxed: 1.75;
+  --hdd-line-height-loose: 2;
+  
+  /* 字母间距 */
+  --hdd-letter-spacing-tight: -0.025em;
+  --hdd-letter-spacing-normal: 0;
+  --hdd-letter-spacing-wide: 0.025em;
+  --hdd-letter-spacing-wider: 0.05em;
+  
+  /* ============================================
+     3. 间距系统 (Spacing)
+     ============================================ */
+  
+  /* 基础间距单位 */
+  --hdd-spacing-unit: 4px;
+  
+  /* 间距尺度 */
+  --hdd-spacing-0: 0;
+  --hdd-spacing-1: 4px;
+  --hdd-spacing-2: 8px;
+  --hdd-spacing-3: 12px;
+  --hdd-spacing-4: 16px;
+  --hdd-spacing-5: 20px;
+  --hdd-spacing-6: 24px;
+  --hdd-spacing-8: 32px;
+  --hdd-spacing-10: 40px;
+  --hdd-spacing-12: 48px;
+  --hdd-spacing-16: 64px;
+  --hdd-spacing-20: 80px;
+  --hdd-spacing-24: 96px;
+  
+  /* ============================================
+     4. 圆角系统 (Border Radius)
+     ============================================ */
+  
+  --hdd-radius-none: 0;
+  --hdd-radius-sm: 4px;
+  --hdd-radius-md: 8px;
+  --hdd-radius-lg: 12px;
+  --hdd-radius-xl: 16px;
+  --hdd-radius-2xl: 24px;
+  --hdd-radius-full: 9999px;
+  
+  /* ============================================
+     5. 边框系统 (Border)
+     ============================================ */
+  
+  /* 边框宽度 */
+  --hdd-border-width-0: 0;
+  --hdd-border-width-sm: 1px;
+  --hdd-border-width-md: 2px;
+  --hdd-border-width-lg: 3px;
+  
+  /* 边框颜色 */
+  --hdd-border-color-default: var(--hdd-color-neutral-300);
+  --hdd-border-color-hover: var(--hdd-color-neutral-400);
+  --hdd-border-color-active: var(--hdd-color-primary-500);
+  --hdd-border-color-disabled: var(--hdd-color-neutral-200);
+  
+  /* ============================================
+     6. 阴影系统 (Shadow)
+     ============================================ */
+  
+  --hdd-shadow-none: none;
+  --hdd-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --hdd-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --hdd-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --hdd-shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --hdd-shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  
+  /* ============================================
+     7. 过渡动画 (Transition)
+     ============================================ */
+  
+  /* 过渡时间 */
+  --hdd-transition-duration-fast: 100ms;
+  --hdd-transition-duration-normal: 200ms;
+  --hdd-transition-duration-slow: 300ms;
+  
+  /* 缓动函数 */
+  --hdd-transition-ease-linear: linear;
+  --hdd-transition-ease-ease: ease;
+  --hdd-transition-ease-ease-in: ease-in;
+  --hdd-transition-ease-ease-out: ease-out;
+  --hdd-transition-ease-ease-in-out: ease-in-out;
+  
+  /* ============================================
+     8. 组件专用令牌 (Component Tokens)
+     ============================================ */
+  
+  /* 按钮 (Button) */
+  --hdd-btn-height-xs: 28px;
+  --hdd-btn-height-sm: 36px;
+  --hdd-btn-height-md: 44px;
+  --hdd-btn-height-lg: 52px;
+  --hdd-btn-height-xl: 64px;
+  
+  --hdd-btn-padding-xs: 4px 8px;
+  --hdd-btn-padding-sm: 8px 12px;
+  --hdd-btn-padding-md: 8px 16px;
+  --hdd-btn-padding-lg: 12px 20px;
+  --hdd-btn-padding-xl: 16px 24px;
+  
+  /* 输入框 (Input) */
+  --hdd-input-height-sm: 36px;
+  --hdd-input-height-md: 44px;
+  --hdd-input-height-lg: 52px;
+  
+  --hdd-input-padding-sm: 0 12px;
+  --hdd-input-padding-md: 0 16px;
+  --hdd-input-padding-lg: 0 20px;
+  
+  /* 卡片 (Card) */
+  --hdd-card-padding-sm: 12px;
+  --hdd-card-padding-md: 16px;
+  --hdd-card-padding-lg: 24px;
+  
+  /* Z-Index */
+  --hdd-z-index-dropdown: 1000;
+  --hdd-z-index-sticky: 1020;
+  --hdd-z-index-fixed: 1030;
+  --hdd-z-index-modal-backdrop: 1040;
+  --hdd-z-index-modal: 1050;
+  --hdd-z-index-popover: 1060;
+  --hdd-z-index-tooltip: 1070;
+  --hdd-z-index-toast: 1080;
+}

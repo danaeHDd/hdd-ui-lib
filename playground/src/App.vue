@@ -2,134 +2,98 @@
   <div class="playground">
     <header class="header">
       <h1>🎨 HDD UI Playground</h1>
-      <p>组件开发测试环境</p>
+      <p>组件开发测试环境 - 设计令牌系统</p>
     </header>
 
     <main class="content">
       <section class="demo-section">
-        <h2>Button 按钮 - Small 尺寸</h2>
-        <p class="demo-desc">文本：14px, 20px行高 | 图标：20px</p>
-        <div class="demo-row">
-          <hdd-button type="primary" size="small" icon>
-            <template #icon>
-              <span class="icon-demo">🔧</span>
-            </template>
-            主要按钮
-          </hdd-button>
-          <hdd-button type="secondary" size="small" icon>
-            <template #icon>
-              <span class="icon-demo">🔧</span>
-            </template>
-            次要按钮
-          </hdd-button>
-          <hdd-button type="tertiary" size="small" icon>
-            <template #icon>
-              <span class="icon-demo">🔧</span>
-            </template>
-            文字按钮
-          </hdd-button>
+        <h2>设计令牌 - 颜色系统</h2>
+        <div class="color-grid">
+          <div class="color-group">
+            <h3>主题色 (Primary)</h3>
+            <div class="color-items">
+              <div v-for="(color, key) in primaryColors" :key="key" class="color-item" :style="{ background: color }">
+                <span class="color-label">{{ key }}</span>
+                <span class="color-value">{{ color }}</span>
+              </div>
+            </div>
+          </div>
+          <div class="color-group">
+            <h3>成功色 (Success)</h3>
+            <div class="color-items">
+              <div class="color-item" style="background: var(--hdd-color-success-500);">
+                <span class="color-label">success-500</span>
+                <span class="color-value">#4CAF50</span>
+              </div>
+            </div>
+          </div>
+          <div class="color-group">
+            <h3>危险色 (Danger)</h3>
+            <div class="color-items">
+              <div class="color-item" style="background: var(--hdd-color-danger-500);">
+                <span class="color-label">danger-500</span>
+                <span class="color-value">#F44336</span>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
       <section class="demo-section">
-        <h2>Button 按钮 - Default 尺寸</h2>
-        <p class="demo-desc">文本：20px, 30px行高 | 图标：26px</p>
+        <h2>按钮类型</h2>
         <div class="demo-row">
-          <hdd-button type="primary" size="default" icon>
-            <template #icon>
-              <span class="icon-demo">🔧</span>
-            </template>
-            主要按钮
-          </hdd-button>
-          <hdd-button type="secondary" size="default" icon>
-            <template #icon>
-              <span class="icon-demo">🔧</span>
-            </template>
-            次要按钮
-          </hdd-button>
-          <hdd-button type="tertiary" size="default" icon>
-            <template #icon>
-              <span class="icon-demo">🔧</span>
-            </template>
-            文字按钮
-          </hdd-button>
+          <hdd-button type="primary">Primary</hdd-button>
+          <hdd-button type="secondary">Secondary</hdd-button>
+          <hdd-button type="tertiary">Tertiary</hdd-button>
+          <hdd-button type="success">Success</hdd-button>
+          <hdd-button type="warning">Warning</hdd-button>
+          <hdd-button type="danger">Danger</hdd-button>
+          <hdd-button type="info">Info</hdd-button>
         </div>
       </section>
 
       <section class="demo-section">
-        <h2>Button 按钮 - Large 尺寸</h2>
-        <p class="demo-desc">文本：28px, 42px行高 | 图标：32px</p>
+        <h2>按钮尺寸</h2>
         <div class="demo-row">
-          <hdd-button type="primary" size="large" icon>
-            <template #icon>
-              <span class="icon-demo">🔧</span>
-            </template>
-            主要按钮
-          </hdd-button>
-          <hdd-button type="secondary" size="large" icon>
-            <template #icon>
-              <span class="icon-demo">🔧</span>
-            </template>
-            次要按钮
-          </hdd-button>
-          <hdd-button type="tertiary" size="large" icon>
-            <template #icon>
-              <span class="icon-demo">🔧</span>
-            </template>
-            文字按钮
-          </hdd-button>
-        </div>
-      </section>
-
-      <section class="demo-section">
-        <h2>Button 按钮 - 三种尺寸对比</h2>
-        <div class="demo-row">
-          <hdd-button type="primary" size="small" icon>
-            <template #icon>
-              <span class="icon-demo">🔧</span>
-            </template>
-            Small
-          </hdd-button>
-          <hdd-button type="primary" size="default" icon>
-            <template #icon>
-              <span class="icon-demo">🔧</span>
-            </template>
-            Default
-          </hdd-button>
-          <hdd-button type="primary" size="large" icon>
-            <template #icon>
-              <span class="icon-demo">🔧</span>
-            </template>
-            Large
-          </hdd-button>
-        </div>
-      </section>
-
-      <section class="demo-section">
-        <h2>Button 按钮 - 不带图标</h2>
-        <div class="demo-row">
+          <hdd-button type="primary" size="xs">XS</hdd-button>
           <hdd-button type="primary" size="small">Small</hdd-button>
           <hdd-button type="primary" size="default">Default</hdd-button>
           <hdd-button type="primary" size="large">Large</hdd-button>
-        </div>
-        <div class="demo-row">
-          <hdd-button type="secondary" size="small">Small</hdd-button>
-          <hdd-button type="secondary" size="default">Default</hdd-button>
-          <hdd-button type="secondary" size="large">Large</hdd-button>
-        </div>
-        <div class="demo-row">
-          <hdd-button type="tertiary" size="small">Small</hdd-button>
-          <hdd-button type="tertiary" size="default">Default</hdd-button>
-          <hdd-button type="tertiary" size="large">Large</hdd-button>
+          <hdd-button type="primary" size="xl">XL</hdd-button>
         </div>
       </section>
 
       <section class="demo-section">
-        <h2>Button 按钮 - 禁用状态</h2>
+        <h2>按钮状态</h2>
         <div class="demo-row">
-          <hdd-button type="primary" size="small" disabled>Small</hdd-button>
-          <hdd-button type="primary" size="default" disabled>Default</hdd-button>
-          <hdd-button type="primary" size="large" disabled>Large</hdd-button>
+          <hdd-button type="primary">正常</hdd-button>
+          <hdd-button type="primary" disabled>禁用</hdd-button>
+          <hdd-button type="primary" loading>加载中</hdd-button>
+        </div>
+      </section>
+
+      <section class="demo-section">
+        <h2>按钮变体</h2>
+        <div class="demo-row">
+          <hdd-button type="primary" block>块级按钮</hdd-button>
+        </div>
+        <div class="demo-row">
+          <hdd-button type="primary" round>圆角按钮</hdd-button>
+          <hdd-button type="secondary" dashed>虚线按钮</hdd-button>
+        </div>
+      </section>
+
+      <section class="demo-section">
+        <h2>图标按钮</h2>
+        <div class="demo-row">
+          <hdd-button type="primary" icon>
+            <template #icon>🔧</template>
+            设置
+          </hdd-button>
+          <hdd-button type="secondary" icon>
+            <template #icon>📧</template>
+            发送
+          </hdd-button>
         </div>
       </section>
     </main>
@@ -137,12 +101,26 @@
 </template>
 
 <script setup lang="ts">
+import { reactive } from 'vue'
+
+const primaryColors = reactive({
+  'primary-50': '#FDF8F0',
+  'primary-100': '#FAF0DC',
+  'primary-200': '#F3E1BC',
+  'primary-300': '#E9CF99',
+  'primary-400': '#DEB96E',
+  'primary-500': '#9E8A57',
+  'primary-600': '#8B7355',
+  'primary-700': '#796C4A',
+  'primary-800': '#5D4E37',
+  'primary-900': '#4A3F2B'
+})
 </script>
 
 <style scoped>
 .playground {
   min-height: 100vh;
-  background: #f5f7fa;
+  background: var(--hdd-color-neutral-50);
   padding-bottom: 40px;
 }
 
@@ -150,56 +128,85 @@
   background: white;
   padding: 32px;
   text-align: center;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  box-shadow: var(--hdd-shadow-sm);
 }
 
 .header h1 {
   margin: 0 0 8px;
   font-size: 28px;
-  color: #333;
+  color: var(--hdd-color-neutral-900);
 }
 
 .header p {
   margin: 0;
-  color: #666;
+  color: var(--hdd-color-neutral-600);
   font-size: 14px;
 }
 
 .content {
-  max-width: 1000px;
+  max-width: 1200px;
   margin: 32px auto;
   padding: 0 20px;
 }
 
 .demo-section {
   background: white;
-  padding: 32px;
-  border-radius: 12px;
-  margin-bottom: 24px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  padding: var(--hdd-spacing-6);
+  border-radius: var(--hdd-radius-lg);
+  margin-bottom: var(--hdd-spacing-6);
+  box-shadow: var(--hdd-shadow-sm);
 }
 
 .demo-section h2 {
-  margin: 0 0 8px;
-  font-size: 18px;
-  color: #333;
-}
-
-.demo-desc {
-  margin: 0 0 16px;
-  font-size: 13px;
-  color: #999;
+  margin: 0 0 var(--hdd-spacing-4);
+  font-size: var(--hdd-font-size-lg);
+  color: var(--hdd-color-neutral-900);
 }
 
 .demo-row {
   display: flex;
-  gap: 16px;
-  margin-bottom: 16px;
+  gap: var(--hdd-spacing-4);
+  margin-bottom: var(--hdd-spacing-4);
   align-items: center;
   flex-wrap: wrap;
 }
 
-.icon-demo {
-  font-size: inherit;
+.color-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--hdd-spacing-6);
+}
+
+.color-group h3 {
+  margin: 0 0 var(--hdd-spacing-3);
+  font-size: var(--hdd-font-size-sm);
+  color: var(--hdd-color-neutral-700);
+}
+
+.color-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--hdd-spacing-2);
+}
+
+.color-item {
+  width: 80px;
+  height: 80px;
+  border-radius: var(--hdd-radius-md);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: var(--hdd-spacing-2);
+  box-shadow: var(--hdd-shadow-sm);
+}
+
+.color-label {
+  font-size: 10px;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.color-value {
+  font-size: 9px;
+  color: rgba(0, 0, 0, 0.4);
 }
 </style>

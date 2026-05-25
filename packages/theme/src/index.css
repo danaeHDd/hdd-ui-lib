@@ -1,51 +1,27 @@
-/* 全局样式 - 使用CSS变量 */
+/* ============================================
+   HDD UI 按钮组件样式
+   使用设计令牌系统
+   ============================================ */
 
-:root {
-  /* 金色主题 - 默认 */
-  --hdd-btn-primary-bg: #9E8A57;
-  --hdd-btn-primary-hover: #BBAD89;
-  --hdd-btn-primary-active: #796C4A;
-  --hdd-btn-primary-color: #FFFFFF;
-  --hdd-btn-primary-icon-bg: rgba(255, 255, 255, 0.15);
-  --hdd-btn-primary-border: transparent;
-
-  --hdd-btn-secondary-bg: #FFFFFF;
-  --hdd-btn-secondary-hover: #F5F2EC;
-  --hdd-btn-secondary-active: #EBE5DA;
-  --hdd-btn-secondary-color: #9E8A57;
-  --hdd-btn-secondary-icon-bg: rgba(158, 138, 87, 0.08);
-  --hdd-btn-secondary-border: #9E8A57;
-
-  --hdd-btn-tertiary-bg: transparent;
-  --hdd-btn-tertiary-hover: #F5F2EC;
-  --hdd-btn-tertiary-active: #EBE5DA;
-  --hdd-btn-tertiary-color: #9E8A57;
-  --hdd-btn-tertiary-icon-bg: rgba(158, 138, 87, 0.08);
-  --hdd-btn-tertiary-border: transparent;
-
-  --hdd-btn-disabled-bg: #F5F5F5;
-  --hdd-btn-disabled-color: #CCCCCC;
-  --hdd-btn-disabled-icon-bg: rgba(204, 204, 204, 0.2);
-  --hdd-btn-disabled-border: #E0E0E0;
-}
+@import './design-tokens.css';
 
 /* 基础按钮样式 */
 .hdd-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 4px;
-  padding: 8px 12px;
-  font-family: 'Noto Sans TC', sans-serif;
-  font-weight: 500;
+  gap: var(--hdd-spacing-1);
+  padding: var(--hdd-btn-padding-sm);
+  font-family: var(--hdd-font-family-sans);
+  font-weight: var(--hdd-font-weight-medium);
   font-style: normal;
-  font-size: 20px;
-  line-height: 30px;
-  letter-spacing: 0%;
-  border: 1px solid transparent;
-  border-radius: 4px;
+  font-size: var(--hdd-font-size-sm);
+  line-height: var(--hdd-line-height-normal);
+  letter-spacing: var(--hdd-letter-spacing-normal);
+  border: var(--hdd-border-width-sm) solid transparent;
+  border-radius: var(--hdd-radius-sm);
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all var(--hdd-transition-duration-normal) var(--hdd-transition-ease-ease);
   outline: none;
   white-space: nowrap;
   user-select: none;
@@ -53,127 +29,181 @@
 }
 
 .hdd-btn:hover {
-  transition: all 0.2s ease;
+  transition: all var(--hdd-transition-duration-normal) var(--hdd-transition-ease-ease);
 }
 
 .hdd-btn:active {
-  transition: all 0.1s ease;
+  transition: all var(--hdd-transition-duration-fast) var(--hdd-transition-ease-ease);
 }
 
 /* 主要按钮 - PRIMARY */
 .hdd-btn-primary {
-  background: var(--hdd-btn-primary-bg);
-  color: var(--hdd-btn-primary-color);
-  border-color: var(--hdd-btn-primary-border);
+  background: var(--hdd-color-primary-500);
+  color: var(--hdd-color-neutral-50);
+  border-color: var(--hdd-color-primary-500);
 }
 
 .hdd-btn-primary:hover {
-  background: var(--hdd-btn-primary-hover);
+  background: var(--hdd-color-primary-400);
+  border-color: var(--hdd-color-primary-400);
 }
 
 .hdd-btn-primary:active {
-  background: var(--hdd-btn-primary-active);
-}
-
-.hdd-btn-primary .hdd-btn-icon-wrapper {
-  /* background: var(--hdd-btn-primary-icon-bg); */
+  background: var(--hdd-color-primary-700);
+  border-color: var(--hdd-color-primary-700);
 }
 
 /* 次要按钮 - SECONDARY */
 .hdd-btn-secondary {
-  background: var(--hdd-btn-secondary-bg);
-  color: var(--hdd-btn-secondary-color);
-  border-color: var(--hdd-btn-secondary-border);
+  background: var(--hdd-color-neutral-50);
+  color: var(--hdd-color-primary-500);
+  border-color: var(--hdd-color-primary-500);
 }
 
 .hdd-btn-secondary:hover {
-  background: var(--hdd-btn-secondary-hover);
+  background: var(--hdd-color-primary-50);
 }
 
 .hdd-btn-secondary:active {
-  background: var(--hdd-btn-secondary-active);
-}
-
-.hdd-btn-secondary .hdd-btn-icon-wrapper {
-  /* background: var(--hdd-btn-secondary-icon-bg); */
+  background: var(--hdd-color-primary-100);
 }
 
 /* 第三按钮 - TERTIARY */
 .hdd-btn-tertiary {
-  background: var(--hdd-btn-tertiary-bg);
-  color: var(--hdd-btn-tertiary-color);
-  border-color: var(--hdd-btn-tertiary-border);
+  background: transparent;
+  color: var(--hdd-color-primary-500);
+  border-color: transparent;
 }
 
 .hdd-btn-tertiary:hover {
-  background: var(--hdd-btn-tertiary-hover);
+  background: var(--hdd-color-primary-50);
 }
 
 .hdd-btn-tertiary:active {
-  background: var(--hdd-btn-tertiary-active);
+  background: var(--hdd-color-primary-100);
 }
 
-.hdd-btn-tertiary .hdd-btn-icon-wrapper {
-  /* background: var(--hdd-btn-tertiary-icon-bg); */
+/* 成功按钮 - SUCCESS */
+.hdd-btn-success {
+  background: var(--hdd-color-success-500);
+  color: var(--hdd-color-neutral-50);
+  border-color: var(--hdd-color-success-500);
+}
+
+.hdd-btn-success:hover {
+  background: var(--hdd-color-success-400);
+  border-color: var(--hdd-color-success-400);
+}
+
+.hdd-btn-success:active {
+  background: var(--hdd-color-success-600);
+  border-color: var(--hdd-color-success-600);
+}
+
+/* 警告按钮 - WARNING */
+.hdd-btn-warning {
+  background: var(--hdd-color-warning-500);
+  color: var(--hdd-color-neutral-900);
+  border-color: var(--hdd-color-warning-500);
+}
+
+.hdd-btn-warning:hover {
+  background: var(--hdd-color-warning-400);
+  border-color: var(--hdd-color-warning-400);
+}
+
+.hdd-btn-warning:active {
+  background: var(--hdd-color-warning-600);
+  border-color: var(--hdd-color-warning-600);
+}
+
+/* 危险按钮 - DANGER */
+.hdd-btn-danger {
+  background: var(--hdd-color-danger-500);
+  color: var(--hdd-color-neutral-50);
+  border-color: var(--hdd-color-danger-500);
+}
+
+.hdd-btn-danger:hover {
+  background: var(--hdd-color-danger-400);
+  border-color: var(--hdd-color-danger-400);
+}
+
+.hdd-btn-danger:active {
+  background: var(--hdd-color-danger-600);
+  border-color: var(--hdd-color-danger-600);
+}
+
+/* 信息按钮 - INFO */
+.hdd-btn-info {
+  background: var(--hdd-color-info-500);
+  color: var(--hdd-color-neutral-50);
+  border-color: var(--hdd-color-info-500);
+}
+
+.hdd-btn-info:hover {
+  background: var(--hdd-color-info-400);
+  border-color: var(--hdd-color-info-400);
+}
+
+.hdd-btn-info:active {
+  background: var(--hdd-color-info-600);
+  border-color: var(--hdd-color-info-600);
+}
+
+/* 按钮尺寸 - EXTRA SMALL */
+.hdd-btn-xs {
+  height: var(--hdd-btn-height-xs);
+  padding: var(--hdd-btn-padding-xs);
+  font-size: var(--hdd-font-size-xs);
+  line-height: 1.4;
 }
 
 /* 按钮尺寸 - SMALL */
 .hdd-btn-small {
-  padding: 8px 12px;
-  font-size: 14px;
-  line-height: 20px;
-  gap: 4px;
-}
-
-.hdd-btn-small .hdd-btn-icon-wrapper {
-  font-size: 20px;
-  line-height: 20px;
+  height: var(--hdd-btn-height-sm);
+  padding: var(--hdd-btn-padding-sm);
+  font-size: var(--hdd-font-size-sm);
+  line-height: var(--hdd-line-height-normal);
 }
 
 /* 按钮尺寸 - DEFAULT */
 .hdd-btn-default {
-  padding: 8px 12px;
-  font-size: 20px;
-  line-height: 30px;
-  gap: 4px;
-}
-
-.hdd-btn-default .hdd-btn-icon-wrapper {
-  font-size: 26px;
-  line-height: 30px;
+  height: var(--hdd-btn-height-md);
+  padding: var(--hdd-btn-padding-md);
+  font-size: var(--hdd-font-size-base);
+  line-height: var(--hdd-line-height-normal);
 }
 
 /* 按钮尺寸 - LARGE */
 .hdd-btn-large {
-  padding: 8px 12px;
-  font-size: 28px;
-  line-height: 42px;
-  gap: 4px;
+  height: var(--hdd-btn-height-lg);
+  padding: var(--hdd-btn-padding-lg);
+  font-size: var(--hdd-font-size-lg);
+  line-height: var(--hdd-line-height-normal);
 }
 
-.hdd-btn-large .hdd-btn-icon-wrapper {
-  font-size: 32px;
-  line-height: 42px;
+/* 按钮尺寸 - EXTRA LARGE */
+.hdd-btn-xl {
+  height: var(--hdd-btn-height-xl);
+  padding: var(--hdd-btn-padding-xl);
+  font-size: var(--hdd-font-size-xl);
+  line-height: var(--hdd-line-height-normal);
 }
 
 /* 禁用状态 */
 .hdd-btn.is-disabled,
 .hdd-btn[disabled] {
-  background: var(--hdd-btn-disabled-bg) !important;
-  color: var(--hdd-btn-disabled-color) !important;
-  border-color: var(--hdd-btn-disabled-border) !important;
+  background: var(--hdd-color-neutral-100) !important;
+  color: var(--hdd-color-neutral-400) !important;
+  border-color: var(--hdd-color-neutral-200) !important;
   cursor: not-allowed;
   opacity: 1;
 }
 
 .hdd-btn.is-disabled:hover,
 .hdd-btn[disabled]:hover {
-  background: var(--hdd-btn-disabled-bg) !important;
-}
-
-.hdd-btn.is-disabled .hdd-btn-icon-wrapper,
-.hdd-btn[disabled] .hdd-btn-icon-wrapper {
-  background: var(--hdd-btn-disabled-icon-bg) !important;
+  background: var(--hdd-color-neutral-100) !important;
 }
 
 /* 图标包裹层 */
@@ -181,12 +211,32 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-family: 'Material Icons', sans-serif;
-  font-weight: 400;
+  font-family: var(--hdd-font-family-icon);
+  font-weight: var(--hdd-font-weight-normal);
   font-style: normal;
-  letter-spacing: 0%;
+  letter-spacing: var(--hdd-letter-spacing-normal);
   vertical-align: middle;
   flex-shrink: 0;
+}
+
+.hdd-btn-xs .hdd-btn-icon-wrapper {
+  font-size: var(--hdd-font-size-sm);
+}
+
+.hdd-btn-small .hdd-btn-icon-wrapper {
+  font-size: var(--hdd-font-size-base);
+}
+
+.hdd-btn-default .hdd-btn-icon-wrapper {
+  font-size: var(--hdd-font-size-lg);
+}
+
+.hdd-btn-large .hdd-btn-icon-wrapper {
+  font-size: var(--hdd-font-size-xl);
+}
+
+.hdd-btn-xl .hdd-btn-icon-wrapper {
+  font-size: var(--hdd-font-size-2xl);
 }
 
 /* 按钮文字 */
@@ -194,4 +244,30 @@
   display: inline-flex;
   align-items: center;
   vertical-align: middle;
+}
+
+/* 加载状态 */
+.hdd-btn.is-loading {
+  position: relative;
+  pointer-events: none;
+}
+
+.hdd-btn.is-loading .hdd-btn-text {
+  opacity: 0.7;
+}
+
+/* 块级按钮 */
+.hdd-btn-block {
+  display: flex;
+  width: 100%;
+}
+
+/* 圆角按钮 */
+.hdd-btn-round {
+  border-radius: var(--hdd-radius-full);
+}
+
+/* 虚线边框按钮 */
+.hdd-btn-dashed {
+  border-style: dashed;
 }

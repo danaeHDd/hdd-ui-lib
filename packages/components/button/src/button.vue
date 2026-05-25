@@ -1,7 +1,18 @@
 <template>
   <button
-    :class="['hdd-btn', typeClass, sizeClass, { 'is-disabled': disabled }]"
-    :disabled="disabled"
+    :class="[
+      'hdd-btn',
+      typeClass,
+      sizeClass,
+      {
+        'is-disabled': disabled,
+        'is-loading': loading,
+        'hdd-btn-block': block,
+        'hdd-btn-round': round,
+        'hdd-btn-dashed': dashed
+      }
+    ]"
+    :disabled="disabled || loading"
     @click="handleClick"
   >
     <span v-if="icon" class="hdd-btn-icon-wrapper">
@@ -17,17 +28,25 @@
 import { computed } from 'vue'
 
 interface ButtonProps {
-  type?: 'primary' | 'secondary' | 'tertiary'
-  size?: 'small' | 'default' | 'large'
+  type?: 'primary' | 'secondary' | 'tertiary' | 'success' | 'warning' | 'danger' | 'info'
+  size?: 'xs' | 'small' | 'default' | 'large' | 'xl'
   disabled?: boolean
   icon?: boolean
+  loading?: boolean
+  block?: boolean
+  round?: boolean
+  dashed?: boolean
 }
 
 const props = withDefaults(defineProps<ButtonProps>(), {
   type: 'primary',
   size: 'default',
   disabled: false,
-  icon: false
+  icon: false,
+  loading: false,
+  block: false,
+  round: false,
+  dashed: false
 })
 
 const emit = defineEmits<{
@@ -43,7 +62,7 @@ const sizeClass = computed(() => {
 })
 
 const handleClick = (event: MouseEvent) => {
-  if (!props.disabled) {
+  if (!props.disabled && !props.loading) {
     emit('click', event)
   }
 }
