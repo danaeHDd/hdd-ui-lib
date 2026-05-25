@@ -23,44 +23,49 @@
   --hdd-color-primary-06: color-mix(in srgb, var(--hdd-color-primary) 65%, var(--hdd-color-dark));
   
   /* 成功色 (Success) - 绿色系 #4CAF50 */
-  --hdd-color-success-01: #4CAF50;
-  --hdd-color-success-02: #66BD6A;
-  --hdd-color-success-03: #91D194;
-  --hdd-color-success-04: #BDE4BE;
-  --hdd-color-success-05: #E9F8E9;
-  --hdd-color-success-06: #317234;
+  --hdd-color-success: #4CAF50;
+  --hdd-color-success-01: var(--hdd-color-success);
+  --hdd-color-success-02: color-mix(in srgb, var(--hdd-color-success) 70%, var(--hdd-color-white));
+  --hdd-color-success-03: color-mix(in srgb, var(--hdd-color-success) 50%, var(--hdd-color-white));
+  --hdd-color-success-04: color-mix(in srgb, var(--hdd-color-success) 30%, var(--hdd-color-white));
+  --hdd-color-success-05: color-mix(in srgb, var(--hdd-color-success) 10%, var(--hdd-color-white));
+  --hdd-color-success-06: color-mix(in srgb, var(--hdd-color-success) 65%, var(--hdd-color-dark));
   
   /* 警告色 (Warning) - 橙色系 #FFA826 */
-  --hdd-color-warning-01: #FFA826;
-  --hdd-color-warning-02: #FFA826;
-  --hdd-color-warning-03: #FFB33C;
-  --hdd-color-warning-04: #FFD189;
-  --hdd-color-warning-05: #FFF0D6;
-  --hdd-color-warning-06: #A66D19;
+  --hdd-color-warning: #FFA826;
+  --hdd-color-warning-01: var(--hdd-color-warning);
+  --hdd-color-warning-02: color-mix(in srgb, var(--hdd-color-warning) 70%, var(--hdd-color-white));
+  --hdd-color-warning-03: color-mix(in srgb, var(--hdd-color-warning) 50%, var(--hdd-color-white));
+  --hdd-color-warning-04: color-mix(in srgb, var(--hdd-color-warning) 30%, var(--hdd-color-white));
+  --hdd-color-warning-05: color-mix(in srgb, var(--hdd-color-warning) 10%, var(--hdd-color-white));
+  --hdd-color-warning-06: color-mix(in srgb, var(--hdd-color-warning) 65%, var(--hdd-color-dark));
   
   /* 危险色 (Danger) - 红色系 #FF0000 */
-  --hdd-color-danger-01: #FF0000;
-  --hdd-color-danger-02: #FF0000;
-  --hdd-color-danger-03: #FF4D4D;
-  --hdd-color-danger-04: #FF9999;
-  --hdd-color-danger-05: #FFE6E6;
-  --hdd-color-danger-06: #A60000;
+  --hdd-color-danger: #FF0000;
+  --hdd-color-danger-01: var(--hdd-color-danger);
+  --hdd-color-danger-02: color-mix(in srgb, var(--hdd-color-danger) 70%, var(--hdd-color-white));
+  --hdd-color-danger-03: color-mix(in srgb, var(--hdd-color-danger) 50%, var(--hdd-color-white));
+  --hdd-color-danger-04: color-mix(in srgb, var(--hdd-color-danger) 30%, var(--hdd-color-white));
+  --hdd-color-danger-05: color-mix(in srgb, var(--hdd-color-danger) 10%, var(--hdd-color-white));
+  --hdd-color-danger-06: color-mix(in srgb, var(--hdd-color-danger) 65%, var(--hdd-color-dark));
   
   /* 信息色 (Info) - 蓝色系 #2196F3 */
-  --hdd-color-info-01: #2196F3;
-  --hdd-color-info-02: #328CC7;
-  --hdd-color-info-03: #6CADD8;
-  --hdd-color-info-04: #A7CEE9;
-  --hdd-color-info-05: #E2EFFA;
-  --hdd-color-info-06: #15639E;
+  --hdd-color-info: #2196F3;
+  --hdd-color-info-01: var(--hdd-color-info);
+  --hdd-color-info-02: color-mix(in srgb, var(--hdd-color-info) 70%, var(--hdd-color-white));
+  --hdd-color-info-03: color-mix(in srgb, var(--hdd-color-info) 50%, var(--hdd-color-white));
+  --hdd-color-info-04: color-mix(in srgb, var(--hdd-color-info) 30%, var(--hdd-color-white));
+  --hdd-color-info-05: color-mix(in srgb, var(--hdd-color-info) 10%, var(--hdd-color-white));
+  --hdd-color-info-06: color-mix(in srgb, var(--hdd-color-info) 65%, var(--hdd-color-dark));
   
-  /* 中性色 (Neutral) - 灰色系 */
-  --hdd-color-neutral-01: #9E9E9E;
-  --hdd-color-neutral-02: #666666;
-  --hdd-color-neutral-03: #999999;
-  --hdd-color-neutral-04: #CCCCCC;
-  --hdd-color-neutral-05: #F0F0F0;
-  --hdd-color-neutral-06: #666666;
+  /* 中性色 (Neutral) - 灰色系 #9E9E9E */
+  --hdd-color-neutral: #9E9E9E;
+  --hdd-color-neutral-01: var(--hdd-color-neutral);
+  --hdd-color-neutral-02: color-mix(in srgb, var(--hdd-color-neutral) 70%, var(--hdd-color-white));
+  --hdd-color-neutral-03: color-mix(in srgb, var(--hdd-color-neutral) 50%, var(--hdd-color-white));
+  --hdd-color-neutral-04: color-mix(in srgb, var(--hdd-color-neutral) 30%, var(--hdd-color-white));
+  --hdd-color-neutral-05: color-mix(in srgb, var(--hdd-color-neutral) 10%, var(--hdd-color-white));
+  --hdd-color-neutral-06: color-mix(in srgb, var(--hdd-color-neutral) 65%, var(--hdd-color-dark));
   
   /* ============================================
      色阶混合比例说明

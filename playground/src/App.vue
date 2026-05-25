@@ -2,7 +2,7 @@
   <div class="playground">
     <header class="header">
       <h1>🎨 HDD UI Playground</h1>
-      <p>组件开发测试环境 - 设计令牌系统</p>
+      <p>组件开发测试环境 - 设计令牌系统 (v2)</p>
     </header>
 
     <main class="content">
@@ -12,27 +12,179 @@
           <div class="color-group">
             <h3>主题色 (Primary)</h3>
             <div class="color-items">
-              <div v-for="(color, key) in primaryColors" :key="key" class="color-item" :style="{ background: color }">
-                <span class="color-label">{{ key }}</span>
-                <span class="color-value">{{ color }}</span>
+              <div class="color-item" style="background: var(--hdd-color-primary-01);">
+                <span class="color-label">primary-01</span>
+                <span class="color-value">100%</span>
+              </div>
+              <div class="color-item" style="background: var(--hdd-color-primary-02);">
+                <span class="color-label">primary-02</span>
+                <span class="color-value">70%+白</span>
+              </div>
+              <div class="color-item" style="background: var(--hdd-color-primary-03);">
+                <span class="color-label">primary-03</span>
+                <span class="color-value">50%+白</span>
+              </div>
+              <div class="color-item" style="background: var(--hdd-color-primary-04);">
+                <span class="color-label">primary-04</span>
+                <span class="color-value">30%+白</span>
+              </div>
+              <div class="color-item" style="background: var(--hdd-color-primary-05);">
+                <span class="color-label">primary-05</span>
+                <span class="color-value">10%+白</span>
+              </div>
+              <div class="color-item" style="background: var(--hdd-color-primary-06);">
+                <span class="color-label">primary-06</span>
+                <span class="color-value">65%+黑</span>
               </div>
             </div>
           </div>
+
           <div class="color-group">
             <h3>成功色 (Success)</h3>
             <div class="color-items">
-              <div class="color-item" style="background: var(--hdd-color-success-500);">
-                <span class="color-label">success-500</span>
-                <span class="color-value">#4CAF50</span>
+              <div class="color-item" style="background: var(--hdd-color-success-01);">
+                <span class="color-label">success-01</span>
+                <span class="color-value">100%</span>
+              </div>
+              <div class="color-item" style="background: var(--hdd-color-success-02);">
+                <span class="color-label">success-02</span>
+                <span class="color-value">70%+白</span>
+              </div>
+              <div class="color-item" style="background: var(--hdd-color-success-03);">
+                <span class="color-label">success-03</span>
+                <span class="color-value">50%+白</span>
+              </div>
+              <div class="color-item" style="background: var(--hdd-color-success-04);">
+                <span class="color-label">success-04</span>
+                <span class="color-value">30%+白</span>
+              </div>
+              <div class="color-item" style="background: var(--hdd-color-success-05);">
+                <span class="color-label">success-05</span>
+                <span class="color-value">10%+白</span>
+              </div>
+              <div class="color-item" style="background: var(--hdd-color-success-06);">
+                <span class="color-label">success-06</span>
+                <span class="color-value">65%+黑</span>
               </div>
             </div>
           </div>
+
+          <div class="color-group">
+            <h3>警告色 (Warning)</h3>
+            <div class="color-items">
+              <div class="color-item" style="background: var(--hdd-color-warning-01);">
+                <span class="color-label">warning-01</span>
+                <span class="color-value">100%</span>
+              </div>
+              <div class="color-item" style="background: var(--hdd-color-warning-02);">
+                <span class="color-label">warning-02</span>
+                <span class="color-value">70%+白</span>
+              </div>
+              <div class="color-item" style="background: var(--hdd-color-warning-03);">
+                <span class="color-label">warning-03</span>
+                <span class="color-value">50%+白</span>
+              </div>
+              <div class="color-item" style="background: var(--hdd-color-warning-04);">
+                <span class="color-label">warning-04</span>
+                <span class="color-value">30%+白</span>
+              </div>
+              <div class="color-item" style="background: var(--hdd-color-warning-05);">
+                <span class="color-label">warning-05</span>
+                <span class="color-value">10%+白</span>
+              </div>
+              <div class="color-item" style="background: var(--hdd-color-warning-06);">
+                <span class="color-label">warning-06</span>
+                <span class="color-value">65%+黑</span>
+              </div>
+            </div>
+          </div>
+
           <div class="color-group">
             <h3>危险色 (Danger)</h3>
             <div class="color-items">
-              <div class="color-item" style="background: var(--hdd-color-danger-500);">
-                <span class="color-label">danger-500</span>
-                <span class="color-value">#F44336</span>
+              <div class="color-item" style="background: var(--hdd-color-danger-01);">
+                <span class="color-label">danger-01</span>
+                <span class="color-value">100%</span>
+              </div>
+              <div class="color-item" style="background: var(--hdd-color-danger-02);">
+                <span class="color-label">danger-02</span>
+                <span class="color-value">70%+白</span>
+              </div>
+              <div class="color-item" style="background: var(--hdd-color-danger-03);">
+                <span class="color-label">danger-03</span>
+                <span class="color-value">50%+白</span>
+              </div>
+              <div class="color-item" style="background: var(--hdd-color-danger-04);">
+                <span class="color-label">danger-04</span>
+                <span class="color-value">30%+白</span>
+              </div>
+              <div class="color-item" style="background: var(--hdd-color-danger-05);">
+                <span class="color-label">danger-05</span>
+                <span class="color-value">10%+白</span>
+              </div>
+              <div class="color-item" style="background: var(--hdd-color-danger-06);">
+                <span class="color-label">danger-06</span>
+                <span class="color-value">65%+黑</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="color-group">
+            <h3>信息色 (Info)</h3>
+            <div class="color-items">
+              <div class="color-item" style="background: var(--hdd-color-info-01);">
+                <span class="color-label">info-01</span>
+                <span class="color-value">100%</span>
+              </div>
+              <div class="color-item" style="background: var(--hdd-color-info-02);">
+                <span class="color-label">info-02</span>
+                <span class="color-value">70%+白</span>
+              </div>
+              <div class="color-item" style="background: var(--hdd-color-info-03);">
+                <span class="color-label">info-03</span>
+                <span class="color-value">50%+白</span>
+              </div>
+              <div class="color-item" style="background: var(--hdd-color-info-04);">
+                <span class="color-label">info-04</span>
+                <span class="color-value">30%+白</span>
+              </div>
+              <div class="color-item" style="background: var(--hdd-color-info-05);">
+                <span class="color-label">info-05</span>
+                <span class="color-value">10%+白</span>
+              </div>
+              <div class="color-item" style="background: var(--hdd-color-info-06);">
+                <span class="color-label">info-06</span>
+                <span class="color-value">65%+黑</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="color-group">
+            <h3>中性色 (Neutral)</h3>
+            <div class="color-items">
+              <div class="color-item" style="background: var(--hdd-color-neutral-01);">
+                <span class="color-label">neutral-01</span>
+                <span class="color-value">100%</span>
+              </div>
+              <div class="color-item" style="background: var(--hdd-color-neutral-02);">
+                <span class="color-label">neutral-02</span>
+                <span class="color-value">70%+白</span>
+              </div>
+              <div class="color-item" style="background: var(--hdd-color-neutral-03);">
+                <span class="color-label">neutral-03</span>
+                <span class="color-value">50%+白</span>
+              </div>
+              <div class="color-item" style="background: var(--hdd-color-neutral-04);">
+                <span class="color-label">neutral-04</span>
+                <span class="color-value">30%+白</span>
+              </div>
+              <div class="color-item" style="background: var(--hdd-color-neutral-05);">
+                <span class="color-label">neutral-05</span>
+                <span class="color-value">10%+白</span>
+              </div>
+              <div class="color-item" style="background: var(--hdd-color-neutral-06);">
+                <span class="color-label">neutral-06</span>
+                <span class="color-value">65%+黑</span>
               </div>
             </div>
           </div>
@@ -97,74 +249,43 @@
         </div>
       </section>
 
-      <section class="demo-section">
-        <h2>主题颜色</h2>
-        <div class="demo-row">
-          <div v-for="color in colors" :key="color" :style="{backgroundColor: `var(${color})`, width: '100px', padding: '8px 12px'}"> {{ color }}</div>
-        </div>
-      </section>
     </main>
   </div>
 </template>
 
 <script setup lang="ts">
-import { reactive } from 'vue'
-
-const primaryColors = reactive({
-  'primary-50': '#FDF8F0',
-  'primary-100': '#FAF0DC',
-  'primary-200': '#F3E1BC',
-  'primary-300': '#E9CF99',
-  'primary-400': '#DEB96E',
-  'primary-500': '#9E8A57',
-  'primary-600': '#8B7355',
-  'primary-700': '#796C4A',
-  'primary-800': '#5D4E37',
-  'primary-900': '#4A3F2B'
-})
-
-const colors = [
-  '--hdd-color-primary-01',
-  '--hdd-color-primary-02',
-  '--hdd-color-primary-03',
-  '--hdd-color-primary-033',
-  '--hdd-color-primary-04',
-  '--hdd-color-primary-05',
-  '--hdd-color-primary-06',
-  '--hdd-color-primary-07'
-]
 </script>
 
 <style scoped>
 .playground {
   min-height: 100vh;
-  background: var(--hdd-color-neutral-50);
-  padding-bottom: 40px;
+  background: var(--hdd-color-neutral-05);
+  padding-bottom: var(--hdd-spacing-10);
 }
 
 .header {
   background: white;
-  padding: 32px;
+  padding: var(--hdd-spacing-8);
   text-align: center;
   box-shadow: var(--hdd-shadow-sm);
 }
 
 .header h1 {
-  margin: 0 0 8px;
-  font-size: 28px;
-  color: var(--hdd-color-neutral-900);
+  margin: 0 0 var(--hdd-spacing-2);
+  font-size: var(--hdd-font-size-3xl);
+  color: var(--hdd-color-neutral-06);
 }
 
 .header p {
   margin: 0;
-  color: var(--hdd-color-neutral-600);
-  font-size: 14px;
+  color: var(--hdd-color-neutral-03);
+  font-size: var(--hdd-font-size-sm);
 }
 
 .content {
-  max-width: 1200px;
-  margin: 32px auto;
-  padding: 0 20px;
+  max-width: 1400px;
+  margin: var(--hdd-spacing-8) auto;
+  padding: 0 var(--hdd-spacing-5);
 }
 
 .demo-section {
@@ -178,7 +299,7 @@ const colors = [
 .demo-section h2 {
   margin: 0 0 var(--hdd-spacing-4);
   font-size: var(--hdd-font-size-lg);
-  color: var(--hdd-color-neutral-900);
+  color: var(--hdd-color-neutral-06);
 }
 
 .demo-row {
@@ -191,14 +312,14 @@ const colors = [
 
 .color-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: var(--hdd-spacing-6);
 }
 
 .color-group h3 {
   margin: 0 0 var(--hdd-spacing-3);
   font-size: var(--hdd-font-size-sm);
-  color: var(--hdd-color-neutral-700);
+  color: var(--hdd-color-neutral-04);
 }
 
 .color-items {
@@ -220,11 +341,12 @@ const colors = [
 
 .color-label {
   font-size: 10px;
-  color: rgba(0, 0, 0, 0.6);
+  color: rgba(0, 0, 0, 0.7);
+  font-weight: 500;
 }
 
 .color-value {
   font-size: 9px;
-  color: rgba(0, 0, 0, 0.4);
+  color: rgba(0, 0, 0, 0.5);
 }
 </style>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HDD UI 色阶生成器 (v2)</title>
+    <title>HDD UI 色阶生成器 V2 - CSS color-mix 版本</title>
     <style>
         * {
             margin: 0;
@@ -108,7 +108,7 @@
         
         .color-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
             gap: 16px;
         }
         
@@ -151,9 +151,15 @@
             margin-bottom: 4px;
         }
         
-        .color-ratio {
-            font-size: 11px;
+        .color-formula {
+            font-family: 'Courier New', monospace;
+            font-size: 10px;
             color: #999;
+            background: #fafafa;
+            padding: 4px 6px;
+            border-radius: 4px;
+            display: inline-block;
+            line-height: 1.4;
         }
         
         .output-section {
@@ -177,7 +183,7 @@
             border-radius: 8px;
             font-family: 'Courier New', monospace;
             font-size: 13px;
-            line-height: 1.6;
+            line-height: 1.8;
             overflow-x: auto;
             white-space: pre-wrap;
         }
@@ -224,22 +230,33 @@
             font-weight: 600;
             font-size: 12px;
         }
+        
+        .version-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #9E8A57 0%, #BBAD89 100%);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-left: 12px;
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>🎨 HDD UI 色阶生成器</h1>
-        <p class="subtitle">基于当前设计令牌规则 (01-06)</p>
+        <h1>🎨 HDD UI 色阶生成器 <span class="version-badge">V2</span></h1>
+        <p class="subtitle">基于 CSS color-mix() 实现</p>
         
         <div class="rules-section">
             <div class="rules-title">色阶混合规则</div>
             <div class="rules-list">
                 <div class="rule-item"><span class="rule-number">01</span><span>100% 基准色</span></div>
-                <div class="rule-item"><span class="rule-number">02</span><span>30% 白色 + 70% 基准色</span></div>
-                <div class="rule-item"><span class="rule-number">03</span><span>50% 白色 + 50% 基准色</span></div>
-                <div class="rule-item"><span class="rule-number">04</span><span>70% 白色 + 30% 基准色</span></div>
-                <div class="rule-item"><span class="rule-number">05</span><span>90% 白色 + 10% 基准色</span></div>
-                <div class="rule-item"><span class="rule-number">06</span><span>35% 黑色 + 65% 基准色</span></div>
+                <div class="rule-item"><span class="rule-number">02</span><span>70% 基准色 + 30% 白色</span></div>
+                <div class="rule-item"><span class="rule-number">03</span><span>50% 基准色 + 50% 白色</span></div>
+                <div class="rule-item"><span class="rule-number">04</span><span>30% 基准色 + 70% 白色</span></div>
+                <div class="rule-item"><span class="rule-number">05</span><span>10% 基准色 + 90% 白色</span></div>
+                <div class="rule-item"><span class="rule-number">06</span><span>65% 基准色 + 35% 深色</span></div>
             </div>
         </div>
         
@@ -262,7 +279,7 @@
         </div>
         
         <div class="output-section">
-            <div class="output-title">CSS 变量代码</div>
+            <div class="output-title">CSS 变量代码（使用 color-mix）</div>
             <pre class="output-code" id="outputCode"></pre>
             <button class="copy-btn" onclick="copyCode()">复制代码</button>
         </div>
@@ -298,16 +315,36 @@
             if (!baseColor) return null;
             
             const white = { r: 255, g: 255, b: 255 };
-            const black = { r: 0, g: 0, b: 0 };
+            const dark = { r: 51, g: 51, b: 51 };
             
             const palette = {};
             
-            palette['01'] = baseColor;
-            palette['02'] = blendColors(white, baseColor, 0.7);
-            palette['03'] = blendColors(white, baseColor, 0.5);
-            palette['04'] = blendColors(white, baseColor, 0.3);
-            palette['05'] = blendColors(white, baseColor, 0.1);
-            palette['06'] = blendColors(baseColor, black, 0.35);
+            palette['01'] = rgbToHex(baseColor.r, baseColor.g, baseColor.b);
+            palette['02'] = rgbToHex(
+                baseColor.r * 0.7 + white.r * 0.3,
+                baseColor.g * 0.7 + white.g * 0.3,
+                baseColor.b * 0.7 + white.b * 0.3
+            );
+            palette['03'] = rgbToHex(
+                baseColor.r * 0.5 + white.r * 0.5,
+                baseColor.g * 0.5 + white.g * 0.5,
+                baseColor.b * 0.5 + white.b * 0.5
+            );
+            palette['04'] = rgbToHex(
+                baseColor.r * 0.3 + white.r * 0.7,
+                baseColor.g * 0.3 + white.g * 0.7,
+                baseColor.b * 0.3 + white.b * 0.7
+            );
+            palette['05'] = rgbToHex(
+                baseColor.r * 0.1 + white.r * 0.9,
+                baseColor.g * 0.1 + white.g * 0.9,
+                baseColor.b * 0.1 + white.b * 0.9
+            );
+            palette['06'] = rgbToHex(
+                baseColor.r * 0.65 + dark.r * 0.35,
+                baseColor.g * 0.65 + dark.g * 0.35,
+                baseColor.b * 0.65 + dark.b * 0.35
+            );
             
             return palette;
         }
@@ -317,20 +354,28 @@
             grid.innerHTML = '';
             
             const order = ['01', '02', '03', '04', '05', '06'];
-            const ratios = [
+            const formulas = [
                 '100% 基准色',
-                '30% 白 + 70% 基准',
-                '50% 白 + 50% 基准',
-                '70% 白 + 30% 基准',
-                '90% 白 + 10% 基准',
-                '35% 黑 + 65% 基准'
+                '70% 基准 + 30% 白色',
+                '50% 基准 + 50% 白色',
+                '30% 基准 + 70% 白色',
+                '10% 基准 + 90% 白色',
+                '65% 基准 + 35% 深色'
             ];
             
             let output = '';
             
+            output += `/* ${colorName} 色系 */\n`;
+            output += `--hdd-color-${colorName}: ${palette['01']};\n`;
+            output += `--hdd-color-${colorName}-01: var(--hdd-color-${colorName});\n`;
+            output += `--hdd-color-${colorName}-02: color-mix(in srgb, var(--hdd-color-${colorName}) 70%, var(--hdd-color-white));\n`;
+            output += `--hdd-color-${colorName}-03: color-mix(in srgb, var(--hdd-color-${colorName}) 50%, var(--hdd-color-white));\n`;
+            output += `--hdd-color-${colorName}-04: color-mix(in srgb, var(--hdd-color-${colorName}) 30%, var(--hdd-color-white));\n`;
+            output += `--hdd-color-${colorName}-05: color-mix(in srgb, var(--hdd-color-${colorName}) 10%, var(--hdd-color-white));\n`;
+            output += `--hdd-color-${colorName}-06: color-mix(in srgb, var(--hdd-color-${colorName}) 65%, var(--hdd-color-dark));\n`;
+            
             order.forEach((key, index) => {
-                const color = palette[key];
-                const hex = rgbToHex(color.r, color.g, color.b);
+                const hex = palette[key];
                 
                 const item = document.createElement('div');
                 item.className = 'color-item';
@@ -338,12 +383,10 @@
                     <div class="color-swatch" style="background: ${hex}"></div>
                     <div class="color-name">${colorName}-${key}</div>
                     <div class="color-value">${hex}</div>
-                    <div class="color-ratio">${ratios[index]}</div>
+                    <div class="color-formula">${formulas[index]}</div>
                 `;
                 item.onclick = () => copyToClipboard(hex);
                 grid.appendChild(item);
-                
-                output += `  --hdd-color-${colorName}-${key}: ${hex};\n`;
             });
             
             document.getElementById('outputCode').textContent = output;
