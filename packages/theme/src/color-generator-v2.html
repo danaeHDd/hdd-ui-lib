@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HDD UI 色阶生成器 (v2)</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 40px 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            color: white;
+            text-align: center;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .subtitle {
+            color: rgba(255,255,255,0.8);
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .input-section {
+            background: white;
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            margin-bottom: 30px;
+        }
+        
+        .input-group {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .input-group label {
+            font-weight: 600;
+            color: #333;
+            min-width: 120px;
+        }
+        
+        input[type="color"] {
+            width: 80px;
+            height: 40px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        
+        input[type="text"] {
+            padding: 10px 16px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 16px;
+            flex: 1;
+            max-width: 200px;
+        }
+        
+        button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 12px 32px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+        }
+        
+        .palette-section {
+            background: white;
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            margin-bottom: 30px;
+        }
+        
+        .palette-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        
+        .color-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            gap: 16px;
+        }
+        
+        .color-item {
+            text-align: center;
+            padding: 16px;
+            border-radius: 12px;
+            background: #f5f5f5;
+            transition: transform 0.2s;
+            cursor: pointer;
+        }
+        
+        .color-item:hover {
+            transform: scale(1.05);
+        }
+        
+        .color-swatch {
+            width: 100%;
+            height: 80px;
+            border-radius: 8px;
+            margin-bottom: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .color-name {
+            font-weight: 600;
+            color: #333;
+            font-size: 14px;
+            margin-bottom: 4px;
+        }
+        
+        .color-value {
+            font-family: 'Courier New', monospace;
+            font-size: 12px;
+            color: #666;
+            background: #f0f0f0;
+            padding: 4px 8px;
+            border-radius: 4px;
+            display: inline-block;
+            margin-bottom: 4px;
+        }
+        
+        .color-ratio {
+            font-size: 11px;
+            color: #999;
+        }
+        
+        .output-section {
+            background: white;
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        }
+        
+        .output-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        
+        .output-code {
+            background: #1e1e1e;
+            color: #d4d4d4;
+            padding: 20px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            font-size: 13px;
+            line-height: 1.6;
+            overflow-x: auto;
+            white-space: pre-wrap;
+        }
+        
+        .copy-btn {
+            margin-top: 16px;
+        }
+        
+        .rules-section {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+        }
+        
+        .rules-title {
+            color: white;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        
+        .rules-list {
+            color: rgba(255,255,255,0.9);
+            font-size: 14px;
+            line-height: 1.8;
+        }
+        
+        .rule-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 8px;
+        }
+        
+        .rule-number {
+            background: rgba(255,255,255,0.2);
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎨 HDD UI 色阶生成器</h1>
+        <p class="subtitle">基于当前设计令牌规则 (01-06)</p>
+        
+        <div class="rules-section">
+            <div class="rules-title">色阶混合规则</div>
+            <div class="rules-list">
+                <div class="rule-item"><span class="rule-number">01</span><span>100% 基准色</span></div>
+                <div class="rule-item"><span class="rule-number">02</span><span>90% 白色 + 10% 基准色</span></div>
+                <div class="rule-item"><span class="rule-number">03</span><span>70% 白色 + 30% 基准色</span></div>
+                <div class="rule-item"><span class="rule-number">04</span><span>50% 白色 + 50% 基准色</span></div>
+                <div class="rule-item"><span class="rule-number">05</span><span>30% 白色 + 70% 基准色</span></div>
+                <div class="rule-item"><span class="rule-number">06</span><span>65% 基准色 + 35% 黑色</span></div>
+            </div>
+        </div>
+        
+        <div class="input-section">
+            <div class="input-group">
+                <label>基准色</label>
+                <input type="color" id="colorPicker" value="#9E8A57">
+                <input type="text" id="colorInput" value="#9E8A57" placeholder="#9E8A57">
+            </div>
+            <div class="input-group">
+                <label>颜色名称</label>
+                <input type="text" id="colorName" value="primary" placeholder="primary">
+            </div>
+            <button onclick="generatePalette()">生成色阶</button>
+        </div>
+        
+        <div class="palette-section">
+            <div class="palette-title">色阶预览</div>
+            <div class="color-grid" id="colorGrid"></div>
+        </div>
+        
+        <div class="output-section">
+            <div class="output-title">CSS 变量代码</div>
+            <pre class="output-code" id="outputCode"></pre>
+            <button class="copy-btn" onclick="copyCode()">复制代码</button>
+        </div>
+    </div>
+
+    <script>
+        function hexToRgb(hex) {
+            const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+            return result ? {
+                r: parseInt(result[1], 16),
+                g: parseInt(result[2], 16),
+                b: parseInt(result[3], 16)
+            } : null;
+        }
+        
+        function rgbToHex(r, g, b) {
+            return '#' + [r, g, b].map(x => {
+                const hex = Math.round(Math.max(0, Math.min(255, x))).toString(16);
+                return hex.length === 1 ? '0' + hex : hex;
+            }).join('').toUpperCase();
+        }
+        
+        function blendColors(color1, color2, ratio) {
+            return {
+                r: color1.r + (color2.r - color1.r) * ratio,
+                g: color1.g + (color2.g - color1.g) * ratio,
+                b: color1.b + (color2.b - color1.b) * ratio
+            };
+        }
+        
+        function generateColorPalette(baseHex) {
+            const baseColor = hexToRgb(baseHex);
+            if (!baseColor) return null;
+            
+            const white = { r: 255, g: 255, b: 255 };
+            const black = { r: 0, g: 0, b: 0 };
+            
+            const palette = {};
+            
+            palette['01'] = baseColor;
+            palette['02'] = blendColors(white, baseColor, 0.1);
+            palette['03'] = blendColors(white, baseColor, 0.3);
+            palette['04'] = blendColors(white, baseColor, 0.5);
+            palette['05'] = blendColors(white, baseColor, 0.7);
+            palette['06'] = blendColors(baseColor, black, 0.35);
+            
+            return palette;
+        }
+        
+        function displayPalette(palette, colorName) {
+            const grid = document.getElementById('colorGrid');
+            grid.innerHTML = '';
+            
+            const order = ['01', '02', '03', '04', '05', '06'];
+            const ratios = [
+                '100% 基准色',
+                '90% 白 + 10% 基准',
+                '70% 白 + 30% 基准',
+                '50% 白 + 50% 基准',
+                '30% 白 + 70% 基准',
+                '65% 基准 + 35% 黑'
+            ];
+            
+            let output = '';
+            
+            order.forEach((key, index) => {
+                const color = palette[key];
+                const hex = rgbToHex(color.r, color.g, color.b);
+                
+                const item = document.createElement('div');
+                item.className = 'color-item';
+                item.innerHTML = `
+                    <div class="color-swatch" style="background: ${hex}"></div>
+                    <div class="color-name">${colorName}-${key}</div>
+                    <div class="color-value">${hex}</div>
+                    <div class="color-ratio">${ratios[index]}</div>
+                `;
+                item.onclick = () => copyToClipboard(hex);
+                grid.appendChild(item);
+                
+                output += `  --hdd-color-${colorName}-${key}: ${hex};\n`;
+            });
+            
+            document.getElementById('outputCode').textContent = output;
+        }
+        
+        function generatePalette() {
+            const colorInput = document.getElementById('colorInput').value;
+            const colorName = document.getElementById('colorName').value || 'primary';
+            
+            let hex = colorInput;
+            if (!hex.startsWith('#')) {
+                hex = '#' + hex;
+            }
+            
+            const palette = generateColorPalette(hex);
+            if (palette) {
+                displayPalette(palette, colorName);
+            }
+        }
+        
+        document.getElementById('colorPicker').onchange = function(e) {
+            document.getElementById('colorInput').value = e.target.value;
+        };
+        
+        document.getElementById('colorInput').onchange = function(e) {
+            let hex = e.target.value;
+            if (!hex.startsWith('#')) {
+                hex = '#' + hex;
+            }
+            if (/^#[0-9A-Fa-f]{6}$/.test(hex)) {
+                document.getElementById('colorPicker').value = hex;
+            }
+        };
+        
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text).then(() => {
+                alert(`已复制: ${text}`);
+            });
+        }
+        
+        function copyCode() {
+            const code = document.getElementById('outputCode').textContent;
+            copyToClipboard(code);
+        }
+        
+        generatePalette();
+    </script>
+</body>
+</html>

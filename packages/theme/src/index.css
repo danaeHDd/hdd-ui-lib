@@ -1,6 +1,6 @@
 /* ============================================
    HDD UI 按钮组件样式
-   使用设计令牌系统
+   使用简化版设计令牌系统 - 数字编号
    ============================================ */
 
 @import './design-tokens.css';
@@ -38,117 +38,117 @@
 
 /* 主要按钮 - PRIMARY */
 .hdd-btn-primary {
-  background: var(--hdd-color-primary-500);
-  color: var(--hdd-color-neutral-50);
-  border-color: var(--hdd-color-primary-500);
+  background: var(--hdd-color-primary-01);
+  color: #ffffff;
+  border-color: var(--hdd-color-primary-01);
 }
 
 .hdd-btn-primary:hover {
-  background: var(--hdd-color-primary-400);
-  border-color: var(--hdd-color-primary-400);
+  background: var(--hdd-color-primary-05);
+  border-color: var(--hdd-color-primary-05);
 }
 
 .hdd-btn-primary:active {
-  background: var(--hdd-color-primary-700);
-  border-color: var(--hdd-color-primary-700);
+  background: var(--hdd-color-primary-06);
+  border-color: var(--hdd-color-primary-06);
 }
 
 /* 次要按钮 - SECONDARY */
 .hdd-btn-secondary {
-  background: var(--hdd-color-neutral-50);
-  color: var(--hdd-color-primary-500);
-  border-color: var(--hdd-color-primary-500);
+  background: #ffffff;
+  color: var(--hdd-color-primary-01);
+  border-color: var(--hdd-color-primary-01);
 }
 
 .hdd-btn-secondary:hover {
-  background: var(--hdd-color-primary-50);
+  background: var(--hdd-color-primary-02);
 }
 
 .hdd-btn-secondary:active {
-  background: var(--hdd-color-primary-100);
+  background: var(--hdd-color-primary-03);
 }
 
 /* 第三按钮 - TERTIARY */
 .hdd-btn-tertiary {
   background: transparent;
-  color: var(--hdd-color-primary-500);
+  color: var(--hdd-color-primary-01);
   border-color: transparent;
 }
 
 .hdd-btn-tertiary:hover {
-  background: var(--hdd-color-primary-50);
+  background: var(--hdd-color-primary-02);
 }
 
 .hdd-btn-tertiary:active {
-  background: var(--hdd-color-primary-100);
+  background: var(--hdd-color-primary-03);
 }
 
 /* 成功按钮 - SUCCESS */
 .hdd-btn-success {
-  background: var(--hdd-color-success-500);
-  color: var(--hdd-color-neutral-50);
-  border-color: var(--hdd-color-success-500);
+  background: var(--hdd-color-success-01);
+  color: #ffffff;
+  border-color: var(--hdd-color-success-01);
 }
 
 .hdd-btn-success:hover {
-  background: var(--hdd-color-success-400);
-  border-color: var(--hdd-color-success-400);
+  background: var(--hdd-color-success-05);
+  border-color: var(--hdd-color-success-05);
 }
 
 .hdd-btn-success:active {
-  background: var(--hdd-color-success-600);
-  border-color: var(--hdd-color-success-600);
+  background: var(--hdd-color-success-06);
+  border-color: var(--hdd-color-success-06);
 }
 
 /* 警告按钮 - WARNING */
 .hdd-btn-warning {
-  background: var(--hdd-color-warning-500);
-  color: var(--hdd-color-neutral-900);
-  border-color: var(--hdd-color-warning-500);
+  background: var(--hdd-color-warning-01);
+  color: #000000;
+  border-color: var(--hdd-color-warning-01);
 }
 
 .hdd-btn-warning:hover {
-  background: var(--hdd-color-warning-400);
-  border-color: var(--hdd-color-warning-400);
+  background: var(--hdd-color-warning-05);
+  border-color: var(--hdd-color-warning-05);
 }
 
 .hdd-btn-warning:active {
-  background: var(--hdd-color-warning-600);
-  border-color: var(--hdd-color-warning-600);
+  background: var(--hdd-color-warning-06);
+  border-color: var(--hdd-color-warning-06);
 }
 
 /* 危险按钮 - DANGER */
 .hdd-btn-danger {
-  background: var(--hdd-color-danger-500);
-  color: var(--hdd-color-neutral-50);
-  border-color: var(--hdd-color-danger-500);
+  background: var(--hdd-color-danger-01);
+  color: #ffffff;
+  border-color: var(--hdd-color-danger-01);
 }
 
 .hdd-btn-danger:hover {
-  background: var(--hdd-color-danger-400);
-  border-color: var(--hdd-color-danger-400);
+  background: var(--hdd-color-danger-05);
+  border-color: var(--hdd-color-danger-05);
 }
 
 .hdd-btn-danger:active {
-  background: var(--hdd-color-danger-600);
-  border-color: var(--hdd-color-danger-600);
+  background: var(--hdd-color-danger-06);
+  border-color: var(--hdd-color-danger-06);
 }
 
 /* 信息按钮 - INFO */
 .hdd-btn-info {
-  background: var(--hdd-color-info-500);
-  color: var(--hdd-color-neutral-50);
-  border-color: var(--hdd-color-info-500);
+  background: var(--hdd-color-info-01);
+  color: #ffffff;
+  border-color: var(--hdd-color-info-01);
 }
 
 .hdd-btn-info:hover {
-  background: var(--hdd-color-info-400);
-  border-color: var(--hdd-color-info-400);
+  background: var(--hdd-color-info-05);
+  border-color: var(--hdd-color-info-05);
 }
 
 .hdd-btn-info:active {
-  background: var(--hdd-color-info-600);
-  border-color: var(--hdd-color-info-600);
+  background: var(--hdd-color-info-06);
+  border-color: var(--hdd-color-info-06);
 }
 
 /* 按钮尺寸 - EXTRA SMALL */
@@ -194,16 +194,16 @@
 /* 禁用状态 */
 .hdd-btn.is-disabled,
 .hdd-btn[disabled] {
-  background: var(--hdd-color-neutral-100) !important;
-  color: var(--hdd-color-neutral-400) !important;
-  border-color: var(--hdd-color-neutral-200) !important;
+  background: var(--hdd-color-neutral-02) !important;
+  color: var(--hdd-color-neutral-04) !important;
+  border-color: var(--hdd-color-neutral-03) !important;
   cursor: not-allowed;
   opacity: 1;
 }
 
 .hdd-btn.is-disabled:hover,
 .hdd-btn[disabled]:hover {
-  background: var(--hdd-color-neutral-100) !important;
+  background: var(--hdd-color-neutral-02) !important;
 }
 
 /* 图标包裹层 */
