@@ -1,84 +1,168 @@
 /* ============================================
    HDD UI 设计令牌系统 (Design Tokens)
-   基于主流组件库设计标准 (Tailwind CSS / Ant Design / Material Design)
+   基于 RGB 线性插值精确计算
    ============================================ */
 
 :root {
   /* ============================================
-     1. 颜色系统 (Color System)
+     1. 颜色系统 (Color System) - 19个色阶
+     精确 RGB 线性插值计算
      ============================================ */
   
-  /* 主题色 (Primary) - 金色系 */
+  /* 主题色 (Primary) - 金色系 #9E8A57 */
   --hdd-color-primary-50: #FDF8F0;
+  --hdd-color-primary-75: #FCF4E6;
   --hdd-color-primary-100: #FAF0DC;
+  --hdd-color-primary-150: #F6E7C9;
   --hdd-color-primary-200: #F3E1BC;
+  --hdd-color-primary-250: #EDD49F;
   --hdd-color-primary-300: #E9CF99;
+  --hdd-color-primary-350: #E2C37B;
   --hdd-color-primary-400: #DEB96E;
+  --hdd-color-primary-450: #D4A752;
   --hdd-color-primary-500: #9E8A57;
-  --hdd-color-primary-600: #8B7355;
-  --hdd-color-primary-700: #796C4A;
-  --hdd-color-primary-800: #5D4E37;
-  --hdd-color-primary-900: #4A3F2B;
+  --hdd-color-primary-550: #8E7C4E;
+  --hdd-color-primary-600: #87764A;
+  --hdd-color-primary-650: #776741;
+  --hdd-color-primary-700: #675838;
+  --hdd-color-primary-750: #57492F;
+  --hdd-color-primary-800: #473A25;
+  --hdd-color-primary-850: #30261A;
+  --hdd-color-primary-900: #201A11;
   
-  /* 成功色 (Success) */
+  /* 成功色 (Success) - 绿色系 #4CAF50 */
   --hdd-color-success-50: #F0FFF4;
-  --hdd-color-success-100: #D8FCE6;
-  --hdd-color-success-200: #B5F5CC;
-  --hdd-color-success-300: #81E8A8;
-  --hdd-color-success-400: #4DE08B;
+  --hdd-color-success-75: #E8FFEE;
+  --hdd-color-success-100: #E0FFE8;
+  --hdd-color-success-150: #CFFFD7;
+  --hdd-color-success-200: #BDFFC6;
+  --hdd-color-success-250: #ACFEB5;
+  --hdd-color-success-300: #88F595;
+  --hdd-color-success-350: #77EF86;
+  --hdd-color-success-400: #55EA68;
+  --hdd-color-success-450: #40D553;
   --hdd-color-success-500: #4CAF50;
-  --hdd-color-success-600: #388E3C;
-  --hdd-color-success-700: #2E7D32;
-  --hdd-color-success-800: #1B5E20;
-  --hdd-color-success-900: #0D3F14;
+  --hdd-color-success-550: #449E48;
+  --hdd-color-success-600: #419645;
+  --hdd-color-success-650: #3A833E;
+  --hdd-color-success-700: #337036;
+  --hdd-color-success-750: #2C5D2E;
+  --hdd-color-success-800: #264A26;
+  --hdd-color-success-850: #183119;
+  --hdd-color-success-900: #0F2210;
   
-  /* 警告色 (Warning) */
-  --hdd-color-warning-50: #FFFDF0;
-  --hdd-color-warning-100: #FFF8E1;
-  --hdd-color-warning-200: #FFECB3;
-  --hdd-color-warning-300: #FFE082;
-  --hdd-color-warning-400: #FFD54F;
-  --hdd-color-warning-500: #FFC107;
-  --hdd-color-warning-600: #FFA000;
-  --hdd-color-warning-700: #FF8F00;
-  --hdd-color-warning-800: #FF6F00;
-  --hdd-color-warning-900: #C45600;
+  /* 警告色 (Warning) - 橙色系 #FFA826 */
+  --hdd-color-warning-50: #FFF5E6;
+  --hdd-color-warning-75: #FFF2DC;
+  --hdd-color-warning-100: #FFEFD1;
+  --hdd-color-warning-150: #FFE7BC;
+  --hdd-color-warning-200: #FFDFA8;
+  --hdd-color-warning-250: #FFD793;
+  --hdd-color-warning-300: #FFC766;
+  --hdd-color-warning-350: #FFBF50;
+  --hdd-color-warning-400: #FFB73B;
+  --hdd-color-warning-450: #FFAF25;
+  --hdd-color-warning-500: #FFA826;
+  --hdd-color-warning-550: #E69722;
+  --hdd-color-warning-600: #D98F20;
+  --hdd-color-warning-650: #BF7F1C;
+  --hdd-color-warning-700: #A66F18;
+  --hdd-color-warning-750: #8C5F14;
+  --hdd-color-warning-800: #734F10;
+  --hdd-color-warning-850: #4D350B;
+  --hdd-color-warning-900: #332307;
   
-  /* 危险色 (Danger) */
-  --hdd-color-danger-50: #FFEBEE;
-  --hdd-color-danger-100: #FFCDD2;
-  --hdd-color-danger-200: #EF9A9A;
-  --hdd-color-danger-300: #E57373;
-  --hdd-color-danger-400: #EF5350;
-  --hdd-color-danger-500: #F44336;
-  --hdd-color-danger-600: #E53935;
-  --hdd-color-danger-700: #D32F2F;
-  --hdd-color-danger-800: #C62828;
-  --hdd-color-danger-900: #B71C1C;
+  /* 危险色 (Danger) - 红色系 #FF0000 */
+  --hdd-color-danger-50: #FFE6E6;
+  --hdd-color-danger-75: #FFD9D9;
+  --hdd-color-danger-100: #FFCCCC;
+  --hdd-color-danger-150: #FFB3B3;
+  --hdd-color-danger-200: #FF9999;
+  --hdd-color-danger-250: #FF8080;
+  --hdd-color-danger-300: #FF6666;
+  --hdd-color-danger-350: #FF4D4D;
+  --hdd-color-danger-400: #FF3333;
+  --hdd-color-danger-450: #FF1A1A;
+  --hdd-color-danger-500: #FF0000;
+  --hdd-color-danger-550: #E60000;
+  --hdd-color-danger-600: #CC0000;
+  --hdd-color-danger-650: #B30000;
+  --hdd-color-danger-700: #990000;
+  --hdd-color-danger-750: #800000;
+  --hdd-color-danger-800: #660000;
+  --hdd-color-danger-850: #4D0000;
+  --hdd-color-danger-900: #330000;
   
-  /* 信息色 (Info) */
+  /* 信息色 (Info) - 蓝色系 #2196F3 */
   --hdd-color-info-50: #E3F2FD;
-  --hdd-color-info-100: #BBDEFB;
-  --hdd-color-info-200: #90CAF9;
-  --hdd-color-info-300: #64B5F6;
-  --hdd-color-info-400: #42A5F5;
+  --hdd-color-info-75: #D8EDFC;
+  --hdd-color-info-100: #CCE8FB;
+  --hdd-color-info-150: #B3DDF9;
+  --hdd-color-info-200: #99D3F7;
+  --hdd-color-info-250: #80C8F5;
+  --hdd-color-info-300: #66BEF3;
+  --hdd-color-info-350: #4DB3F1;
+  --hdd-color-info-400: #33A9EF;
+  --hdd-color-info-450: #1A9EED;
   --hdd-color-info-500: #2196F3;
-  --hdd-color-info-600: #1E88E5;
-  --hdd-color-info-700: #1976D2;
-  --hdd-color-info-800: #1565C0;
-  --hdd-color-info-900: #0D47A1;
+  --hdd-color-info-550: #1E87DB;
+  --hdd-color-info-600: #1C80D0;
+  --hdd-color-info-650: #1971B6;
+  --hdd-color-info-700: #16629C;
+  --hdd-color-info-750: #135382;
+  --hdd-color-info-800: #104468;
+  --hdd-color-info-850: #0B3049;
+  --hdd-color-info-900: #071C2B;
   
-  /* 中性色 (Neutral) */
+  /* 中性色 (Neutral) - 灰色系 */
   --hdd-color-neutral-50: #FAFAFA;
-  --hdd-color-neutral-100: #F5F5F5;
-  --hdd-color-neutral-200: #EEEEEE;
-  --hdd-color-neutral-300: #E0E0E0;
-  --hdd-color-neutral-400: #BDBDBD;
+  --hdd-color-neutral-75: #F5F5F5;
+  --hdd-color-neutral-100: #F0F0F0;
+  --hdd-color-neutral-150: #E5E5E5;
+  --hdd-color-neutral-200: #DBDBDB;
+  --hdd-color-neutral-250: #D1D1D1;
+  --hdd-color-neutral-300: #C4C4C4;
+  --hdd-color-neutral-350: #B8B8B8;
+  --hdd-color-neutral-400: #ADADAD;
+  --hdd-color-neutral-450: #A0A0A0;
   --hdd-color-neutral-500: #9E9E9E;
-  --hdd-color-neutral-600: #757575;
-  --hdd-color-neutral-700: #616161;
-  --hdd-color-neutral-800: #424242;
-  --hdd-color-neutral-900: #212121;
+  --hdd-color-neutral-550: #8E8E8E;
+  --hdd-color-neutral-600: #868686;
+  --hdd-color-neutral-650: #767676;
+  --hdd-color-neutral-700: #666666;
+  --hdd-color-neutral-750: #565656;
+  --hdd-color-neutral-800: #464646;
+  --hdd-color-neutral-850: #303030;
+  --hdd-color-neutral-900: #202020;
+  
+  /* ============================================
+     精确 RGB 线性插值混合比例
+     ============================================ */
+  /*
+     浅色方向（50-500）- 与白色混合：
+     - 50:  95% 白色 + 5% 基准色
+     - 75:  92.5% 白色 + 7.5% 基准色
+     - 100: 90% 白色 + 10% 基准色
+     - 150: 85% 白色 + 15% 基准色
+     - 200: 80% 白色 + 20% 基准色
+     - 250: 75% 白色 + 25% 基准色
+     - 300: 60% 白色 + 40% 基准色
+     - 350: 55% 白色 + 45% 基准色
+     - 400: 40% 白色 + 60% 基准色
+     - 450: 30% 白色 + 70% 基准色
+     - 500: 基准色（100%）
+     
+     深色方向（550-900）- 与黑色混合：
+     - 500: 基准色（100%）
+     - 550: 90% 基准色 + 10% 黑色
+     - 600: 85% 基准色 + 15% 黑色
+     - 650: 75% 基准色 + 25% 黑色
+     - 700: 65% 基准色 + 35% 黑色
+     - 750: 55% 基准色 + 45% 黑色
+     - 800: 45% 基准色 + 55% 黑色
+     - 850: 30% 基准色 + 70% 黑色
+     - 900: 20% 基准色 + 80% 黑色
+  */
   
   /* ============================================
      2. 字体系统 (Typography)
@@ -169,8 +253,8 @@
   --hdd-border-width-lg: 3px;
   
   /* 边框颜色 */
-  --hdd-border-color-default: var(--hdd-color-neutral-300);
-  --hdd-border-color-hover: var(--hdd-color-neutral-400);
+  --hdd-border-color-default: var(--hdd-color-neutral-250);
+  --hdd-border-color-hover: var(--hdd-color-neutral-350);
   --hdd-border-color-active: var(--hdd-color-primary-500);
   --hdd-border-color-disabled: var(--hdd-color-neutral-200);
   
