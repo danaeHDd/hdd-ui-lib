@@ -44,8 +44,8 @@
 }
 
 .hdd-btn-primary:hover {
-  background: var(--hdd-color-primary-05);
-  border-color: var(--hdd-color-primary-05);
+  background: var(--hdd-color-primary-02);
+  border-color: var(--hdd-color-primary-02);
 }
 
 .hdd-btn-primary:active {
@@ -61,11 +61,11 @@
 }
 
 .hdd-btn-secondary:hover {
-  background: var(--hdd-color-primary-02);
+  background: var(--hdd-color-primary-05);
 }
 
 .hdd-btn-secondary:active {
-  background: var(--hdd-color-primary-03);
+  background: var(--hdd-color-primary-04);
 }
 
 /* 第三按钮 - TERTIARY */
@@ -76,11 +76,11 @@
 }
 
 .hdd-btn-tertiary:hover {
-  background: var(--hdd-color-primary-02);
+  background: var(--hdd-color-primary-05);
 }
 
 .hdd-btn-tertiary:active {
-  background: var(--hdd-color-primary-03);
+  background: var(--hdd-color-primary-04);
 }
 
 /* 成功按钮 - SUCCESS */
@@ -91,8 +91,8 @@
 }
 
 .hdd-btn-success:hover {
-  background: var(--hdd-color-success-05);
-  border-color: var(--hdd-color-success-05);
+  background: var(--hdd-color-success-02);
+  border-color: var(--hdd-color-success-02);
 }
 
 .hdd-btn-success:active {
@@ -108,8 +108,8 @@
 }
 
 .hdd-btn-warning:hover {
-  background: var(--hdd-color-warning-05);
-  border-color: var(--hdd-color-warning-05);
+  background: var(--hdd-color-warning-02);
+  border-color: var(--hdd-color-warning-02);
 }
 
 .hdd-btn-warning:active {
@@ -125,8 +125,8 @@
 }
 
 .hdd-btn-danger:hover {
-  background: var(--hdd-color-danger-05);
-  border-color: var(--hdd-color-danger-05);
+  background: var(--hdd-color-danger-02);
+  border-color: var(--hdd-color-danger-02);
 }
 
 .hdd-btn-danger:active {
@@ -142,8 +142,8 @@
 }
 
 .hdd-btn-info:hover {
-  background: var(--hdd-color-info-05);
-  border-color: var(--hdd-color-info-05);
+  background: var(--hdd-color-info-02);
+  border-color: var(--hdd-color-info-02);
 }
 
 .hdd-btn-info:active {
@@ -194,16 +194,16 @@
 /* 禁用状态 */
 .hdd-btn.is-disabled,
 .hdd-btn[disabled] {
-  background: var(--hdd-color-neutral-02) !important;
-  color: var(--hdd-color-neutral-04) !important;
-  border-color: var(--hdd-color-neutral-03) !important;
+  background: var(--hdd-color-neutral-05) !important;
+  color: var(--hdd-color-neutral-03) !important;
+  border-color: var(--hdd-color-neutral-04) !important;
   cursor: not-allowed;
   opacity: 1;
 }
 
 .hdd-btn.is-disabled:hover,
 .hdd-btn[disabled]:hover {
-  background: var(--hdd-color-neutral-02) !important;
+  background: var(--hdd-color-neutral-05) !important;
 }
 
 /* 图标包裹层 */

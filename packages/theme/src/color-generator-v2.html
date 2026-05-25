@@ -235,11 +235,11 @@
             <div class="rules-title">色阶混合规则</div>
             <div class="rules-list">
                 <div class="rule-item"><span class="rule-number">01</span><span>100% 基准色</span></div>
-                <div class="rule-item"><span class="rule-number">02</span><span>90% 白色 + 10% 基准色</span></div>
-                <div class="rule-item"><span class="rule-number">03</span><span>70% 白色 + 30% 基准色</span></div>
-                <div class="rule-item"><span class="rule-number">04</span><span>50% 白色 + 50% 基准色</span></div>
-                <div class="rule-item"><span class="rule-number">05</span><span>30% 白色 + 70% 基准色</span></div>
-                <div class="rule-item"><span class="rule-number">06</span><span>65% 基准色 + 35% 黑色</span></div>
+                <div class="rule-item"><span class="rule-number">02</span><span>30% 白色 + 70% 基准色</span></div>
+                <div class="rule-item"><span class="rule-number">03</span><span>50% 白色 + 50% 基准色</span></div>
+                <div class="rule-item"><span class="rule-number">04</span><span>70% 白色 + 30% 基准色</span></div>
+                <div class="rule-item"><span class="rule-number">05</span><span>90% 白色 + 10% 基准色</span></div>
+                <div class="rule-item"><span class="rule-number">06</span><span>35% 黑色 + 65% 基准色</span></div>
             </div>
         </div>
         
@@ -303,10 +303,10 @@
             const palette = {};
             
             palette['01'] = baseColor;
-            palette['02'] = blendColors(white, baseColor, 0.1);
-            palette['03'] = blendColors(white, baseColor, 0.3);
-            palette['04'] = blendColors(white, baseColor, 0.5);
-            palette['05'] = blendColors(white, baseColor, 0.7);
+            palette['02'] = blendColors(white, baseColor, 0.7);
+            palette['03'] = blendColors(white, baseColor, 0.5);
+            palette['04'] = blendColors(white, baseColor, 0.3);
+            palette['05'] = blendColors(white, baseColor, 0.1);
             palette['06'] = blendColors(baseColor, black, 0.35);
             
             return palette;
@@ -319,11 +319,11 @@
             const order = ['01', '02', '03', '04', '05', '06'];
             const ratios = [
                 '100% 基准色',
-                '90% 白 + 10% 基准',
-                '70% 白 + 30% 基准',
-                '50% 白 + 50% 基准',
                 '30% 白 + 70% 基准',
-                '65% 基准 + 35% 黑'
+                '50% 白 + 50% 基准',
+                '70% 白 + 30% 基准',
+                '90% 白 + 10% 基准',
+                '35% 黑 + 65% 基准'
             ];
             
             let output = '';

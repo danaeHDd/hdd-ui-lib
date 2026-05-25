@@ -11,50 +11,50 @@
   
   /* 主题色 (Primary) - 金色系 #9E8A57 */
   --hdd-color-primary-01: #9E8A57;
-  --hdd-color-primary-02: #F4EEE1;
-  --hdd-color-primary-03: #DDD1B9;
-  --hdd-color-primary-04: #C7B48F;
-  --hdd-color-primary-05: #B19766;
+  --hdd-color-primary-02: #B19766;
+  --hdd-color-primary-03: #C7B48F;
+  --hdd-color-primary-04: #DDD1B9;
+  --hdd-color-primary-05: #F4EEE1;
   --hdd-color-primary-06: #665A3A;
   
   /* 成功色 (Success) - 绿色系 #4CAF50 */
   --hdd-color-success-01: #4CAF50;
-  --hdd-color-success-02: #E9F8E9;
-  --hdd-color-success-03: #BDE4BE;
-  --hdd-color-success-04: #91D194;
-  --hdd-color-success-05: #66BD6A;
+  --hdd-color-success-02: #66BD6A;
+  --hdd-color-success-03: #91D194;
+  --hdd-color-success-04: #BDE4BE;
+  --hdd-color-success-05: #E9F8E9;
   --hdd-color-success-06: #317234;
   
   /* 警告色 (Warning) - 橙色系 #FFA826 */
   --hdd-color-warning-01: #FFA826;
-  --hdd-color-warning-02: #FFF0D6;
-  --hdd-color-warning-03: #FFD189;
-  --hdd-color-warning-04: #FFB33C;
-  --hdd-color-warning-05: #FFA826;
+  --hdd-color-warning-02: #FFA826;
+  --hdd-color-warning-03: #FFB33C;
+  --hdd-color-warning-04: #FFD189;
+  --hdd-color-warning-05: #FFF0D6;
   --hdd-color-warning-06: #A66D19;
   
   /* 危险色 (Danger) - 红色系 #FF0000 */
   --hdd-color-danger-01: #FF0000;
-  --hdd-color-danger-02: #FFE6E6;
-  --hdd-color-danger-03: #FF9999;
-  --hdd-color-danger-04: #FF4D4D;
-  --hdd-color-danger-05: #FF0000;
+  --hdd-color-danger-02: #FF0000;
+  --hdd-color-danger-03: #FF4D4D;
+  --hdd-color-danger-04: #FF9999;
+  --hdd-color-danger-05: #FFE6E6;
   --hdd-color-danger-06: #A60000;
   
   /* 信息色 (Info) - 蓝色系 #2196F3 */
   --hdd-color-info-01: #2196F3;
-  --hdd-color-info-02: #E2EFFA;
-  --hdd-color-info-03: #A7CEE9;
-  --hdd-color-info-04: #6CADD8;
-  --hdd-color-info-05: #328CC7;
+  --hdd-color-info-02: #328CC7;
+  --hdd-color-info-03: #6CADD8;
+  --hdd-color-info-04: #A7CEE9;
+  --hdd-color-info-05: #E2EFFA;
   --hdd-color-info-06: #15639E;
   
   /* 中性色 (Neutral) - 灰色系 */
   --hdd-color-neutral-01: #9E9E9E;
-  --hdd-color-neutral-02: #F0F0F0;
-  --hdd-color-neutral-03: #CCCCCC;
-  --hdd-color-neutral-04: #999999;
-  --hdd-color-neutral-05: #666666;
+  --hdd-color-neutral-02: #666666;
+  --hdd-color-neutral-03: #999999;
+  --hdd-color-neutral-04: #CCCCCC;
+  --hdd-color-neutral-05: #F0F0F0;
   --hdd-color-neutral-06: #666666;
   
   /* ============================================
@@ -62,11 +62,11 @@
      ============================================ */
   /*
      01: 100% 基准色
-     02: 90% 白色 + 10% 基准色
-     03: 70% 白色 + 30% 基准色
-     04: 50% 白色 + 50% 基准色
-     05: 30% 白色 + 70% 基准色
-     06: 65% 基准色 + 35% 黑色
+     02: 30% 白色 + 70% 基准色
+     03: 50% 白色 + 50% 基准色
+     04: 70% 白色 + 30% 基准色
+     05: 90% 白色 + 10% 基准色
+     06: 35% 黑色 + 65% 基准色
   */
   
   /* ============================================
@@ -158,10 +158,10 @@
   --hdd-border-width-lg: 3px;
   
   /* 边框颜色 */
-  --hdd-border-color-default: var(--hdd-color-neutral-03);
-  --hdd-border-color-hover: var(--hdd-color-neutral-04);
+  --hdd-border-color-default: var(--hdd-color-neutral-04);
+  --hdd-border-color-hover: var(--hdd-color-neutral-03);
   --hdd-border-color-active: var(--hdd-color-primary-01);
-  --hdd-border-color-disabled: var(--hdd-color-neutral-02);
+  --hdd-border-color-disabled: var(--hdd-color-neutral-05);
   
   /* ============================================
      6. 阴影系统 (Shadow)
