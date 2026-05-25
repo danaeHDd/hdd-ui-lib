@@ -76,7 +76,7 @@
 }
 
 .hdd-btn-primary .hdd-btn-icon-wrapper {
-  background: var(--hdd-btn-primary-icon-bg);
+  /* background: var(--hdd-btn-primary-icon-bg); */
 }
 
 /* 次要按钮 - SECONDARY */
@@ -95,7 +95,7 @@
 }
 
 .hdd-btn-secondary .hdd-btn-icon-wrapper {
-  background: var(--hdd-btn-secondary-icon-bg);
+  /* background: var(--hdd-btn-secondary-icon-bg); */
 }
 
 /* 第三按钮 - TERTIARY */
@@ -114,7 +114,7 @@
 }
 
 .hdd-btn-tertiary .hdd-btn-icon-wrapper {
-  background: var(--hdd-btn-tertiary-icon-bg);
+  /* background: var(--hdd-btn-tertiary-icon-bg); */
 }
 
 /* 按钮尺寸 - SMALL */
