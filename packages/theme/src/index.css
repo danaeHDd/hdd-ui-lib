@@ -1,0 +1,117 @@
+/* 全局样式 - 使用CSS变量 */
+
+:root {
+  /* 金色主题 - 默认 */
+  --hdd-btn-primary: #9E8A57;
+  --hdd-btn-primary-hover: #BBAD89;
+  --hdd-btn-primary-active: #796C4A;
+  --hdd-btn-success: #4caf50;
+  --hdd-btn-success-hover: #66bb6a;
+  --hdd-btn-success-active: #388e3c;
+  --hdd-btn-warning: #FFA826;
+  --hdd-btn-warning-hover: #FFB84D;
+  --hdd-btn-warning-active: #CC861E;
+  --hdd-btn-danger: #FF0000;
+  --hdd-btn-danger-hover: #FF3333;
+  --hdd-btn-danger-active: #CC0000;
+  --hdd-btn-disabled: #C2C2C2;
+  --hdd-btn-disabled-text: #EBEBEB;
+  --hdd-btn-text: #FFFFFF;
+}
+
+/* 默认按钮 */
+.hdd-btn {
+  padding: 8px 16px;
+  background: var(--hdd-btn-primary);
+  color: var(--hdd-btn-text);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-weight: 500;
+}
+
+.hdd-btn:hover {
+  background: var(--hdd-btn-primary-hover);
+}
+
+.hdd-btn:active {
+  background: var(--hdd-btn-primary-active);
+}
+
+/* 主要按钮 - 使用主题主色 */
+.hdd-btn-primary {
+  background: var(--hdd-btn-primary);
+}
+
+.hdd-btn-primary:hover {
+  background: var(--hdd-btn-primary-hover);
+}
+
+.hdd-btn-primary:active {
+  background: var(--hdd-btn-primary-active);
+}
+
+/* 成功按钮 */
+.hdd-btn-success {
+  background: var(--hdd-btn-success);
+}
+
+.hdd-btn-success:hover {
+  background: var(--hdd-btn-success-hover);
+}
+
+.hdd-btn-success:active {
+  background: var(--hdd-btn-success-active);
+}
+
+/* 警告按钮 */
+.hdd-btn-warning {
+  background: var(--hdd-btn-warning);
+}
+
+.hdd-btn-warning:hover {
+  background: var(--hdd-btn-warning-hover);
+}
+
+.hdd-btn-warning:active {
+  background: var(--hdd-btn-warning-active);
+}
+
+/* 危险按钮 */
+.hdd-btn-danger {
+  background: var(--hdd-btn-danger);
+}
+
+.hdd-btn-danger:hover {
+  background: var(--hdd-btn-danger-hover);
+}
+
+.hdd-btn-danger:active {
+  background: var(--hdd-btn-danger-active);
+}
+
+/* 按钮尺寸 */
+.hdd-btn-small {
+  padding: 4px 12px;
+  font-size: 12px;
+}
+
+.hdd-btn-large {
+  padding: 12px 24px;
+  font-size: 16px;
+}
+
+/* 禁用状态 */
+.hdd-btn.is-disabled,
+.hdd-btn[disabled] {
+  background: var(--hdd-btn-disabled) !important;
+  color: var(--hdd-btn-disabled-text) !important;
+  cursor: not-allowed;
+  opacity: 1;
+}
+
+.hdd-btn.is-disabled:hover,
+.hdd-btn[disabled]:hover {
+  background: var(--hdd-btn-disabled) !important;
+}
