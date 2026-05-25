@@ -29,7 +29,7 @@ import { computed } from 'vue'
 
 interface ButtonProps {
   type?: 'primary' | 'secondary' | 'tertiary' | 'success' | 'warning' | 'danger' | 'info'
-  size?: 'xs' | 'small' | 'default' | 'large' | 'xl'
+  size?: 'sm' | 'md' | 'lg'
   disabled?: boolean
   icon?: boolean
   loading?: boolean
@@ -40,7 +40,7 @@ interface ButtonProps {
 
 const props = withDefaults(defineProps<ButtonProps>(), {
   type: 'primary',
-  size: 'default',
+  size: 'sm',
   disabled: false,
   icon: false,
   loading: false,

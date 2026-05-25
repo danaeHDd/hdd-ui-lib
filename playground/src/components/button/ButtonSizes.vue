@@ -2,11 +2,9 @@
   <div class="demo-card">
     <h3>按钮尺寸</h3>
     <div class="demo-content">
-      <hdd-button type="primary" size="xs">XS</hdd-button>
-      <hdd-button type="primary" size="small">Small</hdd-button>
-      <hdd-button type="primary" size="default">Default</hdd-button>
-      <hdd-button type="primary" size="large">Large</hdd-button>
-      <hdd-button type="primary" size="xl">XL</hdd-button>
+      <hdd-button type="primary" size="sm">Small</hdd-button>
+      <hdd-button type="primary" size="md">Medium</hdd-button>
+      <hdd-button type="primary" size="lg">Large</hdd-button>
     </div>
   </div>
 </template>

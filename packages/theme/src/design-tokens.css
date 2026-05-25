@@ -205,17 +205,13 @@
      ============================================ */
   
   /* 按钮 (Button) */
-  --hdd-btn-height-xs: 28px;
   --hdd-btn-height-sm: 36px;
-  --hdd-btn-height-md: 44px;
-  --hdd-btn-height-lg: 52px;
-  --hdd-btn-height-xl: 64px;
+  --hdd-btn-height-md: 46px;
+  --hdd-btn-height-lg: 58px;
   
-  --hdd-btn-padding-xs: 4px 8px;
   --hdd-btn-padding-sm: 8px 12px;
   --hdd-btn-padding-md: 8px 16px;
   --hdd-btn-padding-lg: 12px 20px;
-  --hdd-btn-padding-xl: 16px 24px;
   
   /* 输入框 (Input) */
   --hdd-input-height-sm: 36px;

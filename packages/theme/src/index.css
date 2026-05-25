@@ -151,43 +151,27 @@
   border-color: var(--hdd-color-info-06);
 }
 
-/* 按钮尺寸 - EXTRA SMALL */
-.hdd-btn-xs {
-  height: var(--hdd-btn-height-xs);
-  padding: var(--hdd-btn-padding-xs);
-  font-size: var(--hdd-font-size-xs);
-  line-height: 1.4;
-}
-
-/* 按钮尺寸 - SMALL */
-.hdd-btn-small {
+/* 按钮尺寸 - SMALL (默认) */
+.hdd-btn-sm {
   height: var(--hdd-btn-height-sm);
   padding: var(--hdd-btn-padding-sm);
   font-size: var(--hdd-font-size-sm);
   line-height: var(--hdd-line-height-normal);
 }
 
-/* 按钮尺寸 - DEFAULT */
-.hdd-btn-default {
+/* 按钮尺寸 - MEDIUM */
+.hdd-btn-md {
   height: var(--hdd-btn-height-md);
-  padding: var(--hdd-btn-padding-md);
-  font-size: var(--hdd-font-size-base);
+  /* padding: var(--hdd-btn-padding-md); */
+  font-size: var(--hdd-font-size-xl);
   line-height: var(--hdd-line-height-normal);
 }
 
 /* 按钮尺寸 - LARGE */
-.hdd-btn-large {
+.hdd-btn-lg {
   height: var(--hdd-btn-height-lg);
-  padding: var(--hdd-btn-padding-lg);
-  font-size: var(--hdd-font-size-lg);
-  line-height: var(--hdd-line-height-normal);
-}
-
-/* 按钮尺寸 - EXTRA LARGE */
-.hdd-btn-xl {
-  height: var(--hdd-btn-height-xl);
-  padding: var(--hdd-btn-padding-xl);
-  font-size: var(--hdd-font-size-xl);
+  /* padding: var(--hdd-btn-padding-lg); */
+  font-size: var(--hdd-font-size-3xl);
   line-height: var(--hdd-line-height-normal);
 }
 
@@ -219,24 +203,16 @@
   flex-shrink: 0;
 }
 
-.hdd-btn-xs .hdd-btn-icon-wrapper {
-  font-size: var(--hdd-font-size-sm);
-}
-
-.hdd-btn-small .hdd-btn-icon-wrapper {
+.hdd-btn-sm .hdd-btn-icon-wrapper {
   font-size: var(--hdd-font-size-base);
 }
 
-.hdd-btn-default .hdd-btn-icon-wrapper {
+.hdd-btn-md .hdd-btn-icon-wrapper {
   font-size: var(--hdd-font-size-lg);
 }
 
-.hdd-btn-large .hdd-btn-icon-wrapper {
+.hdd-btn-lg .hdd-btn-icon-wrapper {
   font-size: var(--hdd-font-size-xl);
-}
-
-.hdd-btn-xl .hdd-btn-icon-wrapper {
-  font-size: var(--hdd-font-size-2xl);
 }
 
 /* 按钮文字 */
