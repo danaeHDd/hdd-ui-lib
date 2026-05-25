@@ -4,7 +4,12 @@
     :disabled="disabled"
     @click="handleClick"
   >
-    <slot />
+    <span v-if="icon" class="hdd-btn-icon-wrapper">
+      <slot name="icon" />
+    </span>
+    <span class="hdd-btn-text">
+      <slot />
+    </span>
   </button>
 </template>
 
@@ -12,15 +17,17 @@
 import { computed } from 'vue'
 
 interface ButtonProps {
-  type?: 'default' | 'primary' | 'success' | 'warning' | 'danger'
+  type?: 'primary' | 'secondary' | 'tertiary'
   size?: 'small' | 'default' | 'large'
   disabled?: boolean
+  icon?: boolean
 }
 
 const props = withDefaults(defineProps<ButtonProps>(), {
-  type: 'default',
+  type: 'primary',
   size: 'default',
-  disabled: false
+  disabled: false,
+  icon: false
 })
 
 const emit = defineEmits<{
@@ -28,11 +35,11 @@ const emit = defineEmits<{
 }>()
 
 const typeClass = computed(() => {
-  return props.type !== 'default' ? `hdd-btn-${props.type}` : ''
+  return `hdd-btn-${props.type}`
 })
 
 const sizeClass = computed(() => {
-  return props.size !== 'default' ? `hdd-btn-${props.size}` : ''
+  return `hdd-btn-${props.size}`
 })
 
 const handleClick = (event: MouseEvent) => {
@@ -50,7 +57,6 @@ export default {
 
 <style scoped>
 .is-disabled {
-  opacity: 0.5;
   cursor: not-allowed;
 }
 </style>
