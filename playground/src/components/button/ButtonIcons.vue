@@ -6,7 +6,7 @@
         <template #icon>🔧</template>
         设置
       </hdd-button>
-      <hdd-button type="secondary" icon>
+      <hdd-button type="primary" plain icon>
         <template #icon>📧</template>
         发送
       </hdd-button>

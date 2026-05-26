@@ -6,6 +6,16 @@
       <hdd-button type="primary" disabled>禁用</hdd-button>
       <hdd-button type="primary" loading>加载中</hdd-button>
     </div>
+    <div class="demo-content">
+      <hdd-button type="primary" plain>正常</hdd-button>
+      <hdd-button type="primary" plain disabled>禁用</hdd-button>
+      <hdd-button type="primary" plain loading>加载中</hdd-button>
+    </div>
+    <div class="demo-content">
+      <hdd-button type="primary" text>正常</hdd-button>
+      <hdd-button type="primary" text disabled>禁用</hdd-button>
+      <hdd-button type="primary" text loading>加载中</hdd-button>
+    </div>
   </div>
 </template>
 
@@ -30,5 +40,6 @@
   display: flex;
   flex-wrap: wrap;
   gap: var(--hdd-spacing-3);
+  margin-top: var(--hdd-spacing-3);
 }
 </style>

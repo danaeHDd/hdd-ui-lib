@@ -6,7 +6,7 @@
     </div>
     <div class="demo-content">
       <hdd-button type="primary" round>圆角按钮</hdd-button>
-      <hdd-button type="secondary" dashed>虚线按钮</hdd-button>
+      <hdd-button type="primary" plain dashed>虚线按钮</hdd-button>
     </div>
   </div>
 </template>

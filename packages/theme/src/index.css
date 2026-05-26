@@ -53,36 +53,6 @@
   border-color: var(--hdd-color-primary-06);
 }
 
-/* 次要按钮 - SECONDARY */
-.hdd-btn-secondary {
-  background: #ffffff;
-  color: var(--hdd-color-primary-01);
-  border-color: var(--hdd-color-primary-01);
-}
-
-.hdd-btn-secondary:hover {
-  background: var(--hdd-color-primary-05);
-}
-
-.hdd-btn-secondary:active {
-  background: var(--hdd-color-primary-04);
-}
-
-/* 第三按钮 - TERTIARY */
-.hdd-btn-tertiary {
-  background: transparent;
-  color: var(--hdd-color-primary-01);
-  border-color: transparent;
-}
-
-.hdd-btn-tertiary:hover {
-  background: var(--hdd-color-primary-05);
-}
-
-.hdd-btn-tertiary:active {
-  background: var(--hdd-color-primary-04);
-}
-
 /* 成功按钮 - SUCCESS */
 .hdd-btn-success {
   background: var(--hdd-color-success-01);
@@ -103,7 +73,7 @@
 /* 警告按钮 - WARNING */
 .hdd-btn-warning {
   background: var(--hdd-color-warning-01);
-  color: #000000;
+  color: #ffffff;
   border-color: var(--hdd-color-warning-01);
 }
 
@@ -151,6 +121,156 @@
   border-color: var(--hdd-color-info-06);
 }
 
+/* PLAIN 按钮变体（幽灵按钮 - 带边框） */
+.hdd-btn-plain {
+  background: #ffffff;
+}
+
+/* PLAIN - PRIMARY */
+.hdd-btn-plain.hdd-btn-primary {
+  color: var(--hdd-color-primary-01);
+  border-color: var(--hdd-color-primary-01);
+}
+
+.hdd-btn-plain.hdd-btn-primary:hover {
+  background: var(--hdd-color-primary-05);
+}
+
+.hdd-btn-plain.hdd-btn-primary:active {
+  background: var(--hdd-color-primary-04);
+}
+
+/* PLAIN - SUCCESS */
+.hdd-btn-plain.hdd-btn-success {
+  color: var(--hdd-color-success-01);
+  border-color: var(--hdd-color-success-01);
+}
+
+.hdd-btn-plain.hdd-btn-success:hover {
+  background: var(--hdd-color-success-05);
+}
+
+.hdd-btn-plain.hdd-btn-success:active {
+  background: var(--hdd-color-success-04);
+}
+
+/* PLAIN - WARNING */
+.hdd-btn-plain.hdd-btn-warning {
+  color: var(--hdd-color-warning-01);
+  border-color: var(--hdd-color-warning-01);
+}
+
+.hdd-btn-plain.hdd-btn-warning:hover {
+  background: var(--hdd-color-warning-05);
+}
+
+.hdd-btn-plain.hdd-btn-warning:active {
+  background: var(--hdd-color-warning-04);
+}
+
+/* PLAIN - DANGER */
+.hdd-btn-plain.hdd-btn-danger {
+  color: var(--hdd-color-danger-01);
+  border-color: var(--hdd-color-danger-01);
+}
+
+.hdd-btn-plain.hdd-btn-danger:hover {
+  background: var(--hdd-color-danger-05);
+}
+
+.hdd-btn-plain.hdd-btn-danger:active {
+  background: var(--hdd-color-danger-04);
+}
+
+/* PLAIN - INFO */
+.hdd-btn-plain.hdd-btn-info {
+  color: var(--hdd-color-info-01);
+  border-color: var(--hdd-color-info-01);
+}
+
+.hdd-btn-plain.hdd-btn-info:hover {
+  background: var(--hdd-color-info-05);
+}
+
+.hdd-btn-plain.hdd-btn-info:active {
+  background: var(--hdd-color-info-04);
+}
+
+/* TEXT 按钮变体（文字按钮 - 无边框） */
+.hdd-btn-text {
+  background: transparent;
+}
+
+/* TEXT - PRIMARY */
+.hdd-btn-text.hdd-btn-primary {
+  color: var(--hdd-color-primary-01);
+  border-color: transparent;
+}
+
+.hdd-btn-text.hdd-btn-primary:hover {
+  background: var(--hdd-color-primary-05);
+}
+
+.hdd-btn-text.hdd-btn-primary:active {
+  background: var(--hdd-color-primary-04);
+}
+
+/* TEXT - SUCCESS */
+.hdd-btn-text.hdd-btn-success {
+  color: var(--hdd-color-success-01);
+  border-color: transparent;
+}
+
+.hdd-btn-text.hdd-btn-success:hover {
+  background: var(--hdd-color-success-05);
+}
+
+.hdd-btn-text.hdd-btn-success:active {
+  background: var(--hdd-color-success-04);
+}
+
+/* TEXT - WARNING */
+.hdd-btn-text.hdd-btn-warning {
+  color: var(--hdd-color-warning-01);
+  border-color: transparent;
+}
+
+.hdd-btn-text.hdd-btn-warning:hover {
+  background: var(--hdd-color-warning-05);
+}
+
+.hdd-btn-text.hdd-btn-warning:active {
+  background: var(--hdd-color-warning-04);
+}
+
+/* TEXT - DANGER */
+.hdd-btn-text.hdd-btn-danger {
+  color: var(--hdd-color-danger-01);
+  border-color: transparent;
+}
+
+.hdd-btn-text.hdd-btn-danger:hover {
+  background: var(--hdd-color-danger-05);
+}
+
+.hdd-btn-text.hdd-btn-danger:active {
+  background: var(--hdd-color-danger-04);
+}
+
+/* TEXT - INFO */
+.hdd-btn-text.hdd-btn-info {
+  color: var(--hdd-color-info-01);
+  border-color: transparent;
+}
+
+.hdd-btn-text.hdd-btn-info:hover {
+  background: var(--hdd-color-info-05);
+}
+
+.hdd-btn-text.hdd-btn-info:active {
+  background: var(--hdd-color-info-04);
+}
+
 /* 按钮尺寸 - SMALL (默认) */
 .hdd-btn-sm {
   height: var(--hdd-btn-height-sm);
@@ -162,16 +282,16 @@
 /* 按钮尺寸 - MEDIUM */
 .hdd-btn-md {
   height: var(--hdd-btn-height-md);
-  /* padding: var(--hdd-btn-padding-md); */
-  font-size: var(--hdd-font-size-xl);
+  padding: var(--hdd-btn-padding-md);
+  font-size: var(--hdd-font-size-base);
   line-height: var(--hdd-line-height-normal);
 }
 
 /* 按钮尺寸 - LARGE */
 .hdd-btn-lg {
   height: var(--hdd-btn-height-lg);
-  /* padding: var(--hdd-btn-padding-lg); */
-  font-size: var(--hdd-font-size-3xl);
+  padding: var(--hdd-btn-padding-lg);
+  font-size: var(--hdd-font-size-lg);
   line-height: var(--hdd-line-height-normal);
 }
 
