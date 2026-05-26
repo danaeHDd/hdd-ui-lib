@@ -76,7 +76,7 @@ const collapsed = ref(false)
   border: var(--hdd-border-width-sm) solid var(--hdd-border-color-default);
   border-radius: var(--hdd-radius-md);
   overflow: hidden;
-  min-height: 320px;
+  height: 320px;
   display: flex;
   flex-direction: column;
 }

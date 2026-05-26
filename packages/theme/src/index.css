@@ -7,8 +7,8 @@
 .hdd-layout {
   display: flex;
   flex-direction: column;
+  flex: 1;
   min-height: 100%;
-  height: 100%;
 }
 
 .hdd-layout-sider {
@@ -37,7 +37,7 @@
 }
 
 .hdd-layout-content {
-  flex: 1 1 auto;
+  flex: 1;
   padding: var(--hdd-spacing-4);
   background: var(--hdd-color-neutral-05);
   overflow: auto;
