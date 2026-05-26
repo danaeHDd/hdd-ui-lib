@@ -275,7 +275,7 @@
 .hdd-btn-sm {
   height: var(--hdd-btn-height-sm);
   padding: var(--hdd-btn-padding-sm);
-  font-size: var(--hdd-font-size-sm);
+  font-size: var(--hdd-btn-font-size-sm);
   line-height: var(--hdd-line-height-normal);
 }
 
@@ -283,7 +283,7 @@
 .hdd-btn-md {
   height: var(--hdd-btn-height-md);
   padding: var(--hdd-btn-padding-md);
-  font-size: var(--hdd-font-size-base);
+  font-size: var(--hdd-btn-font-size-md);
   line-height: var(--hdd-line-height-normal);
 }
 
@@ -291,7 +291,7 @@
 .hdd-btn-lg {
   height: var(--hdd-btn-height-lg);
   padding: var(--hdd-btn-padding-lg);
-  font-size: var(--hdd-font-size-lg);
+  font-size: var(--hdd-btn-font-size-lg);
   line-height: var(--hdd-line-height-normal);
 }
 

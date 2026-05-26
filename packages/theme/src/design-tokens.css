@@ -212,9 +212,13 @@
   --hdd-btn-height-md: 2.875rem;  /* 46px */
   --hdd-btn-height-lg: 3.625rem;  /* 58px */
   
-  --hdd-btn-padding-sm: 0.5rem 0.75rem;   /* 8px 12px */
-  --hdd-btn-padding-md: 0.5rem 1rem;      /* 8px 16px */
-  --hdd-btn-padding-lg: 0.75rem 1.25rem;   /* 12px 20px */
+  --hdd-btn-font-size-sm: 0.875rem;   /* 14px */
+  --hdd-btn-font-size-md: 1.25rem;    /* 20px */
+  --hdd-btn-font-size-lg: 1.75rem;    /* 28px */
+  
+  --hdd-btn-padding-sm: 0.5rem 0.75rem;  /* 8px 12px */
+  --hdd-btn-padding-md: 0.5rem 0.75rem;  /* 8px 12px */
+  --hdd-btn-padding-lg: 0.5rem 0.75rem;  /* 8px 12px */
   
   /* 输入框 (Input) */
   --hdd-input-height-sm: 2.25rem;   /* 36px */
