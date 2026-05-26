@@ -6,12 +6,9 @@
 
 <script setup lang="ts">
 interface HeaderProps {
-  height?: string
 }
 
-withDefaults(defineProps<HeaderProps>(), {
-  height: '60px'
-})
+defineProps<HeaderProps>()
 </script>
 
 <script lang="ts">

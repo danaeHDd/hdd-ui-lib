@@ -1,5 +1,5 @@
 <template>
-  <div class="hdd-layout" :class="{ 'hdd-layout-horizontal': hasSider }">
+  <div class="hdd-layout" :class="{ 'hdd-layout-has-sider': hasSider }">
     <slot />
   </div>
 </template>
@@ -15,10 +15,6 @@ const props = withDefaults(defineProps<LayoutProps>(), {
   hasSider: false
 })
 
-const emit = defineEmits<{
-  (e: 'resize', width: number): void
-}>()
-
 const hasSider = computed(() => props.hasSider)
 </script>
 
@@ -29,19 +25,4 @@ export default {
 </script>
 
 <style scoped>
-.hdd-layout {
-  display: flex;
-  flex-direction: column;
-  min-height: 100%;
-}
-
-.hdd-layout-horizontal {
-  flex-direction: row;
-}
-
-.hdd-layout-horizontal > .hdd-layout {
-  flex: 1;
-  flex-direction: column;
-  min-height: 100%;
-}
 </style>

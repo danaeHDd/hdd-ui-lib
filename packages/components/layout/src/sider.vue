@@ -8,13 +8,11 @@
 interface SiderProps {
   width?: string
   collapsed?: boolean
-  collapsible?: boolean
 }
 
 withDefaults(defineProps<SiderProps>(), {
   width: '200px',
-  collapsed: false,
-  collapsible: false
+  collapsed: false
 })
 
 const emit = defineEmits<{
@@ -30,7 +28,7 @@ export default {
 
 <style scoped>
 .hdd-layout-sider {
-  flex: 0 0 auto;
+  flex: 0 0 200px;
   width: 200px;
   background: var(--hdd-color-white);
   border-right: var(--hdd-border-width-sm) solid var(--hdd-border-color-default);
@@ -38,6 +36,7 @@ export default {
 }
 
 .hdd-layout-sider-collapsed {
+  flex: 0 0 64px;
   width: 64px;
 }
 </style>

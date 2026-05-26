@@ -15,11 +15,11 @@
     <div class="layout-preview">
       <Layout has-sider>
         <Sider class="demo-sider">Sider</Sider>
-        <div class="demo-inner-layout">
+        <Layout>
           <Header class="demo-header">Header</Header>
           <Content class="demo-content">Content</Content>
           <Footer class="demo-footer">Footer</Footer>
-        </div>
+        </Layout>
       </Layout>
     </div>
   </div>
@@ -32,7 +32,7 @@
           <div v-if="!collapsed">展开状态</div>
           <div v-else>折叠</div>
         </Sider>
-        <div class="demo-inner-layout">
+        <Layout>
           <Header class="demo-header">
             <button @click="collapsed = !collapsed" class="toggle-btn">
               {{ collapsed ? '展开侧边栏' : '折叠侧边栏' }}
@@ -40,7 +40,7 @@
           </Header>
           <Content class="demo-content">Content</Content>
           <Footer class="demo-footer">Footer</Footer>
-        </div>
+        </Layout>
       </Layout>
     </div>
   </div>
@@ -77,12 +77,8 @@ const collapsed = ref(false)
   border-radius: var(--hdd-radius-md);
   overflow: hidden;
   min-height: 320px;
-}
-
-.demo-inner-layout {
   display: flex;
   flex-direction: column;
-  min-height: 320px;
 }
 
 .demo-header {
@@ -113,18 +109,12 @@ const collapsed = ref(false)
 }
 
 .demo-sider {
-  width: 200px;
+  min-height: 320px;
   display: flex;
   align-items: center;
   justify-content: center;
   background: var(--hdd-color-primary-05);
   color: var(--hdd-color-primary-01);
-  border-right: var(--hdd-border-width-sm) solid var(--hdd-border-color-default);
-  transition: width var(--hdd-transition-duration-normal);
-}
-
-.demo-sider.collapsed {
-  width: 64px;
 }
 
 .toggle-btn {
