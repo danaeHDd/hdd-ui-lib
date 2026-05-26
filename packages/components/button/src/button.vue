@@ -7,7 +7,7 @@
     <span v-if="icon" class="hdd-btn-icon-wrapper">
       <slot name="icon" />
     </span>
-    <span class="hdd-btn-text">
+    <span class="hdd-btn-text-inner">
       <slot />
     </span>
   </button>
