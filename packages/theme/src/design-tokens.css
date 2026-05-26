@@ -1,6 +1,9 @@
 /* ============================================
    HDD UI 设计令牌系统 (Design Tokens)
    简化版色阶系统 - 数字编号命名
+   单位策略：
+   - rem: 间距、字体大小、组件尺寸、圆角
+   - px: 边框宽度、阴影值
    ============================================ */
 
 :root {
@@ -88,17 +91,17 @@
   --hdd-font-family-mono: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
   --hdd-font-family-icon: 'Material Icons', 'iconfont', sans-serif;
   
-  /* 字体大小 (单位: px) */
-  --hdd-font-size-xs: 12px;
-  --hdd-font-size-sm: 14px;
-  --hdd-font-size-base: 16px;
-  --hdd-font-size-lg: 18px;
-  --hdd-font-size-xl: 20px;
-  --hdd-font-size-2xl: 24px;
-  --hdd-font-size-3xl: 28px;
-  --hdd-font-size-4xl: 32px;
-  --hdd-font-size-5xl: 40px;
-  --hdd-font-size-6xl: 48px;
+  /* 字体大小 (单位: rem，支持用户缩放) */
+  --hdd-font-size-xs: 0.75rem;    /* 12px */
+  --hdd-font-size-sm: 0.875rem;   /* 14px */
+  --hdd-font-size-base: 1rem;     /* 16px */
+  --hdd-font-size-lg: 1.125rem;   /* 18px */
+  --hdd-font-size-xl: 1.25rem;    /* 20px */
+  --hdd-font-size-2xl: 1.5rem;    /* 24px */
+  --hdd-font-size-3xl: 1.75rem;   /* 28px */
+  --hdd-font-size-4xl: 2rem;      /* 32px */
+  --hdd-font-size-5xl: 2.5rem;    /* 40px */
+  --hdd-font-size-6xl: 3rem;       /* 48px */
   
   /* 字体粗细 */
   --hdd-font-weight-thin: 100;
@@ -124,44 +127,44 @@
   --hdd-letter-spacing-wider: 0.05em;
   
   /* ============================================
-     3. 间距系统 (Spacing)
+     3. 间距系统 (Spacing) - 单位: rem
      ============================================ */
   
-  /* 基础间距单位 */
-  --hdd-spacing-unit: 4px;
+  /* 基础间距单位: 4px = 0.25rem */
+  --hdd-spacing-unit: 0.25rem;
   
   /* 间距尺度 */
   --hdd-spacing-0: 0;
-  --hdd-spacing-1: 4px;
-  --hdd-spacing-2: 8px;
-  --hdd-spacing-3: 12px;
-  --hdd-spacing-4: 16px;
-  --hdd-spacing-5: 20px;
-  --hdd-spacing-6: 24px;
-  --hdd-spacing-8: 32px;
-  --hdd-spacing-10: 40px;
-  --hdd-spacing-12: 48px;
-  --hdd-spacing-16: 64px;
-  --hdd-spacing-20: 80px;
-  --hdd-spacing-24: 96px;
+  --hdd-spacing-1: 0.25rem;   /* 4px */
+  --hdd-spacing-2: 0.5rem;    /* 8px */
+  --hdd-spacing-3: 0.75rem;   /* 12px */
+  --hdd-spacing-4: 1rem;      /* 16px */
+  --hdd-spacing-5: 1.25rem;   /* 20px */
+  --hdd-spacing-6: 1.5rem;    /* 24px */
+  --hdd-spacing-8: 2rem;      /* 32px */
+  --hdd-spacing-10: 2.5rem;   /* 40px */
+  --hdd-spacing-12: 3rem;     /* 48px */
+  --hdd-spacing-16: 4rem;     /* 64px */
+  --hdd-spacing-20: 5rem;     /* 80px */
+  --hdd-spacing-24: 6rem;     /* 96px */
   
   /* ============================================
-     4. 圆角系统 (Border Radius)
+     4. 圆角系统 (Border Radius) - 单位: rem
      ============================================ */
   
   --hdd-radius-none: 0;
-  --hdd-radius-sm: 4px;
-  --hdd-radius-md: 8px;
-  --hdd-radius-lg: 12px;
-  --hdd-radius-xl: 16px;
-  --hdd-radius-2xl: 24px;
+  --hdd-radius-sm: 0.25rem;   /* 4px */
+  --hdd-radius-md: 0.5rem;    /* 8px */
+  --hdd-radius-lg: 0.75rem;    /* 12px */
+  --hdd-radius-xl: 1rem;      /* 16px */
+  --hdd-radius-2xl: 1.5rem;   /* 24px */
   --hdd-radius-full: 9999px;
   
   /* ============================================
-     5. 边框系统 (Border)
+     5. 边框系统 (Border) - 单位: px
      ============================================ */
   
-  /* 边框宽度 */
+  /* 边框宽度 (使用 px，保持固定粗细) */
   --hdd-border-width-0: 0;
   --hdd-border-width-sm: 1px;
   --hdd-border-width-md: 2px;
@@ -174,7 +177,7 @@
   --hdd-border-color-disabled: var(--hdd-color-neutral-05);
   
   /* ============================================
-     6. 阴影系统 (Shadow)
+     6. 阴影系统 (Shadow) - 单位: px
      ============================================ */
   
   --hdd-shadow-none: none;
@@ -185,7 +188,7 @@
   --hdd-shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
   
   /* ============================================
-     7. 过渡动画 (Transition)
+     7. 过渡动画 (Transition) - 单位: ms
      ============================================ */
   
   /* 过渡时间 */
@@ -201,33 +204,33 @@
   --hdd-transition-ease-ease-in-out: ease-in-out;
   
   /* ============================================
-     8. 组件专用令牌 (Component Tokens)
+     8. 组件专用令牌 (Component Tokens) - 单位: rem
      ============================================ */
   
   /* 按钮 (Button) */
-  --hdd-btn-height-sm: 36px;
-  --hdd-btn-height-md: 46px;
-  --hdd-btn-height-lg: 58px;
+  --hdd-btn-height-sm: 2.25rem;   /* 36px */
+  --hdd-btn-height-md: 2.875rem;  /* 46px */
+  --hdd-btn-height-lg: 3.625rem;  /* 58px */
   
-  --hdd-btn-padding-sm: 8px 12px;
-  --hdd-btn-padding-md: 8px 16px;
-  --hdd-btn-padding-lg: 12px 20px;
+  --hdd-btn-padding-sm: 0.5rem 0.75rem;   /* 8px 12px */
+  --hdd-btn-padding-md: 0.5rem 1rem;      /* 8px 16px */
+  --hdd-btn-padding-lg: 0.75rem 1.25rem;   /* 12px 20px */
   
   /* 输入框 (Input) */
-  --hdd-input-height-sm: 36px;
-  --hdd-input-height-md: 44px;
-  --hdd-input-height-lg: 52px;
+  --hdd-input-height-sm: 2.25rem;   /* 36px */
+  --hdd-input-height-md: 2.75rem;   /* 44px */
+  --hdd-input-height-lg: 3.25rem;   /* 52px */
   
-  --hdd-input-padding-sm: 0 12px;
-  --hdd-input-padding-md: 0 16px;
-  --hdd-input-padding-lg: 0 20px;
+  --hdd-input-padding-sm: 0 0.75rem;   /* 0 12px */
+  --hdd-input-padding-md: 0 1rem;       /* 0 16px */
+  --hdd-input-padding-lg: 0 1.25rem;    /* 0 20px */
   
   /* 卡片 (Card) */
-  --hdd-card-padding-sm: 12px;
-  --hdd-card-padding-md: 16px;
-  --hdd-card-padding-lg: 24px;
+  --hdd-card-padding-sm: 0.75rem;  /* 12px */
+  --hdd-card-padding-md: 1rem;     /* 16px */
+  --hdd-card-padding-lg: 1.5rem;   /* 24px */
   
-  /* Z-Index */
+  /* Z-Index (无单位) */
   --hdd-z-index-dropdown: 1000;
   --hdd-z-index-sticky: 1020;
   --hdd-z-index-fixed: 1030;
