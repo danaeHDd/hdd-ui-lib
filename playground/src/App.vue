@@ -16,6 +16,10 @@
         <div v-else-if="activeComponent === 'button'" class="demo-container">
           <ButtonDemo />
         </div>
+        
+        <div v-else-if="activeComponent === 'layout'" class="demo-container">
+          <LayoutDemo />
+        </div>
       </main>
     </div>
   </div>
@@ -26,6 +30,7 @@ import { ref } from 'vue'
 import Sidebar from './components/Sidebar.vue'
 import ColorSystem from './components/color/ColorSystem.vue'
 import ButtonDemo from './components/button/ButtonDemo.vue'
+import LayoutDemo from './components/layout/LayoutDemo.vue'
 
 const activeComponent = ref('color-system')
 

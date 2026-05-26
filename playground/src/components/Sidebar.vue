@@ -43,7 +43,8 @@ const navGroups = [
     name: 'components',
     label: 'UI组件',
     items: [
-      { name: 'button', label: '按钮' }
+      { name: 'button', label: '按钮' },
+      { name: 'layout', label: '布局' }
     ]
   }
 ]
