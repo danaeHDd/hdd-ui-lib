@@ -1,4 +1,5 @@
 import { defineConfig } from 'vitepress'
+import { resolve } from 'path'
 
 export default defineConfig({
   title: 'HDD UI',
@@ -9,6 +10,7 @@ export default defineConfig({
     nav: [
       { text: '指南', link: '/guide/installation' },
       { text: '组件', link: '/components/button' },
+      { text: '设计规范', link: '/guide/design-tokens' },
     ],
 
     sidebar: {
@@ -24,6 +26,8 @@ export default defineConfig({
           text: '进阶',
           items: [
             { text: '主题定制', link: '/guide/theme' },
+            { text: '设计令牌', link: '/guide/design-tokens' },
+            { text: '开发规范', link: '/guide/dev-guide' },
           ],
         },
       ],
@@ -32,6 +36,16 @@ export default defineConfig({
           text: '通用',
           items: [
             { text: 'Button 按钮', link: '/components/button' },
+            { text: 'Divider 分割线', link: '/components/divider' },
+            { text: 'Icon 图标', link: '/components/icon' },
+          ],
+        },
+        {
+          text: '布局',
+          items: [
+            { text: 'Layout 布局', link: '/components/layout' },
+            { text: 'Grid 网格', link: '/components/grid' },
+            { text: 'Flex 弹性布局', link: '/components/flex' },
           ],
         },
       ],
@@ -43,7 +57,7 @@ export default defineConfig({
   vite: {
     resolve: {
       alias: {
-        'hdd-ui-lib': '../packages/index.ts',
+        'hdd-ui-lib': resolve(__dirname, '../../packages/index.ts'),
       },
     },
   },

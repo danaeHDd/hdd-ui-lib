@@ -44,6 +44,10 @@ const navGroups = [
     label: 'UI组件',
     items: [
       { name: 'button', label: '按钮' },
+      { name: 'icon', label: '图标' },
+      { name: 'grid', label: '网格' },
+      { name: 'flex', label: '弹性布局' },
+      { name: 'divider', label: '分割线' },
       { name: 'layout', label: '布局' }
     ]
   }

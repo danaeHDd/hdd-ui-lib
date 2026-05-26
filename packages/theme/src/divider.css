@@ -1,0 +1,73 @@
+/* ============================================
+   HDD UI 分割线组件样式 (BEM 命名)
+   ============================================ */
+
+@import './design-tokens.css';
+
+.hdd-divider {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  color: var(--hdd-color-dark-03);
+  font-size: var(--hdd-font-size-sm);
+  margin: var(--hdd-spacing-4) 0;
+}
+
+.hdd-divider::before,
+.hdd-divider::after {
+  content: '';
+  flex: 1;
+  border-top: 1px solid var(--hdd-divider-color, var(--hdd-border-color-divider));
+}
+
+.hdd-divider--vertical {
+  display: inline-flex;
+  width: auto;
+  height: 1em;
+  margin: 0 var(--hdd-spacing-2);
+  padding: 0;
+}
+
+.hdd-divider--vertical::before {
+  flex: none;
+  height: 100%;
+  border-top: none;
+  border-left: 1px solid var(--hdd-divider-color, var(--hdd-border-color-divider));
+}
+
+.hdd-divider--vertical::after {
+  display: none;
+}
+
+.hdd-divider--dashed::before,
+.hdd-divider--dashed::after {
+  border-top: 1px dashed var(--hdd-divider-color, var(--hdd-border-color-divider));
+}
+
+.hdd-divider--vertical.hdd-divider--dashed::before {
+  border-left: 1px dashed var(--hdd-divider-color, var(--hdd-border-color-divider));
+}
+
+.hdd-divider--vertical.hdd-divider--dashed::after {
+  display: none;
+}
+
+.hdd-divider__text {
+  display: inline-flex;
+  padding: 0 var(--hdd-spacing-4);
+  color: inherit;
+  white-space: nowrap;
+}
+
+.hdd-divider--left::before {
+  max-width: 10%;
+}
+
+.hdd-divider--right::after {
+  max-width: 10%;
+}
+
+.hdd-divider--vertical .hdd-divider__text {
+  padding: var(--hdd-spacing-2) 0;
+}

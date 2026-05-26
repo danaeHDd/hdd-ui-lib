@@ -17,6 +17,22 @@
           <ButtonDemo />
         </div>
         
+        <div v-else-if="activeComponent === 'icon'" class="demo-container">
+          <IconDemo />
+        </div>
+        
+        <div v-else-if="activeComponent === 'grid'" class="demo-container">
+          <GridDemo />
+        </div>
+        
+        <div v-else-if="activeComponent === 'flex'" class="demo-container">
+          <FlexDemo />
+        </div>
+        
+        <div v-else-if="activeComponent === 'divider'" class="demo-container">
+          <DividerDemo />
+        </div>
+        
         <div v-else-if="activeComponent === 'layout'" class="demo-container">
           <LayoutDemo />
         </div>
@@ -30,6 +46,10 @@ import { ref } from 'vue'
 import Sidebar from './components/Sidebar.vue'
 import ColorSystem from './components/color/ColorSystem.vue'
 import ButtonDemo from './components/button/ButtonDemo.vue'
+import IconDemo from './components/icon/IconDemo.vue'
+import GridDemo from './components/grid/GridDemo.vue'
+import FlexDemo from './components/flex/FlexDemo.vue'
+import DividerDemo from './components/divider/DividerDemo.vue'
 import LayoutDemo from './components/layout/LayoutDemo.vue'
 
 const activeComponent = ref('color-system')
