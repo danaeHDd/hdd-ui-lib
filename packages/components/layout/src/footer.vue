@@ -1,5 +1,5 @@
 <template>
-  <footer class="hdd-layout-footer" :style="{ height }">
+  <footer class="hdd-layout__footer" :style="{ height }">
     <slot />
   </footer>
 </template>
@@ -21,9 +21,4 @@ export default {
 </script>
 
 <style scoped>
-.hdd-layout-footer {
-  flex: 0 0 auto;
-  background: var(--hdd-color-white);
-  border-top: var(--hdd-border-width-sm) solid var(--hdd-border-color-default);
-}
 </style>

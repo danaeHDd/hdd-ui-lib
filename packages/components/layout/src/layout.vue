@@ -1,5 +1,5 @@
 <template>
-  <div class="hdd-layout" :class="{ 'hdd-layout-has-sider': hasSider }">
+  <div class="hdd-layout" :class="{ 'hdd-layout--has-sider': hasSider }">
     <slot />
   </div>
 </template>

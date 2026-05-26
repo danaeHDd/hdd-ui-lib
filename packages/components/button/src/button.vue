@@ -4,10 +4,10 @@
     :disabled="disabled || loading"
     @click="handleClick"
   >
-    <span v-if="icon" class="hdd-btn-icon-wrapper">
+    <span v-if="icon" class="hdd-btn__icon-wrapper">
       <slot name="icon" />
     </span>
-    <span class="hdd-btn-text-inner">
+    <span class="hdd-btn__text">
       <slot />
     </span>
   </button>
@@ -49,16 +49,16 @@ const emit = defineEmits<{
 const buttonClasses = computed(() => {
   return [
     'hdd-btn',
-    `hdd-btn-${props.type}`,
-    `hdd-btn-${props.size}`,
+    `hdd-btn--${props.type}`,
+    `hdd-btn--${props.size}`,
     {
-      'is-disabled': props.disabled,
-      'is-loading': props.loading,
-      'hdd-btn-block': props.block,
-      'hdd-btn-round': props.round,
-      'hdd-btn-dashed': props.dashed,
-      'hdd-btn-plain': props.plain,
-      'hdd-btn-text': props.text
+      'hdd-btn--disabled': props.disabled,
+      'hdd-btn--loading': props.loading,
+      'hdd-btn--block': props.block,
+      'hdd-btn--round': props.round,
+      'hdd-btn--dashed': props.dashed,
+      'hdd-btn--plain': props.plain,
+      'hdd-btn--text': props.text
     }
   ]
 })
@@ -77,7 +77,4 @@ export default {
 </script>
 
 <style scoped>
-.is-disabled {
-  cursor: not-allowed;
-}
 </style>
