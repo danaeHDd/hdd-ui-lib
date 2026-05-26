@@ -1,0 +1,48 @@
+/* ============================================
+   HDD UI 布局组件样式
+   ============================================ */
+
+@import './design-tokens.css';
+
+.hdd-layout {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 100%;
+}
+
+.hdd-layout-sider {
+  flex-shrink: 0;
+  background: var(--hdd-color-white);
+  border-right: var(--hdd-border-width-sm) solid var(--hdd-border-color-default);
+  transition: width var(--hdd-transition-duration-normal);
+}
+
+.hdd-layout-header {
+  flex: 0 0 auto;
+  background: var(--hdd-color-white);
+  border-bottom: var(--hdd-border-width-sm) solid var(--hdd-border-color-default);
+}
+
+.hdd-layout-footer {
+  flex: 0 0 auto;
+  background: var(--hdd-color-white);
+  border-top: var(--hdd-border-width-sm) solid var(--hdd-border-color-default);
+}
+
+.hdd-layout-content {
+  flex: 1;
+  padding: var(--hdd-spacing-4);
+  background: var(--hdd-color-neutral-05);
+  overflow: auto;
+}
+
+.hdd-layout-has-sider {
+  flex-direction: row;
+}
+
+.hdd-layout-has-sider > .hdd-layout {
+  flex: 1;
+  flex-direction: column;
+  min-height: 100%;
+}

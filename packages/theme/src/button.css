@@ -1,0 +1,399 @@
+/* ============================================
+   HDD UI 按钮组件样式
+   使用简化版设计令牌系统 - 数字编号
+   ============================================ */
+
+@import './design-tokens.css';
+
+/* 基础按钮样式 */
+.hdd-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--hdd-spacing-1);
+  padding: var(--hdd-btn-padding-sm);
+  font-family: var(--hdd-font-family-sans);
+  font-weight: var(--hdd-font-weight-medium);
+  font-style: normal;
+  font-size: var(--hdd-font-size-sm);
+  line-height: var(--hdd-line-height-normal);
+  letter-spacing: var(--hdd-letter-spacing-normal);
+  border: var(--hdd-border-width-sm) solid transparent;
+  border-radius: var(--hdd-radius-sm);
+  cursor: pointer;
+  transition: all var(--hdd-transition-duration-normal) var(--hdd-transition-ease-ease);
+  outline: none;
+  white-space: nowrap;
+  user-select: none;
+  vertical-align: middle;
+}
+
+.hdd-btn:hover {
+  transition: all var(--hdd-transition-duration-normal) var(--hdd-transition-ease-ease);
+}
+
+.hdd-btn:active {
+  transition: all var(--hdd-transition-duration-fast) var(--hdd-transition-ease-ease);
+}
+
+/* 主要按钮 - PRIMARY */
+.hdd-btn-primary {
+  background: var(--hdd-color-primary-01);
+  color: #ffffff;
+  border-color: var(--hdd-color-primary-01);
+}
+
+.hdd-btn-primary:hover {
+  background: var(--hdd-color-primary-02);
+  border-color: var(--hdd-color-primary-02);
+}
+
+.hdd-btn-primary:active {
+  background: var(--hdd-color-primary-06);
+  border-color: var(--hdd-color-primary-06);
+}
+
+/* 成功按钮 - SUCCESS */
+.hdd-btn-success {
+  background: var(--hdd-color-success-01);
+  color: #ffffff;
+  border-color: var(--hdd-color-success-01);
+}
+
+.hdd-btn-success:hover {
+  background: var(--hdd-color-success-02);
+  border-color: var(--hdd-color-success-02);
+}
+
+.hdd-btn-success:active {
+  background: var(--hdd-color-success-06);
+  border-color: var(--hdd-color-success-06);
+}
+
+/* 警告按钮 - WARNING */
+.hdd-btn-warning {
+  background: var(--hdd-color-warning-01);
+  color: #000000;
+  border-color: var(--hdd-color-warning-01);
+}
+
+.hdd-btn-warning:hover {
+  background: var(--hdd-color-warning-02);
+  border-color: var(--hdd-color-warning-02);
+}
+
+.hdd-btn-warning:active {
+  background: var(--hdd-color-warning-06);
+  border-color: var(--hdd-color-warning-06);
+}
+
+/* 危险按钮 - DANGER */
+.hdd-btn-danger {
+  background: var(--hdd-color-danger-01);
+  color: #ffffff;
+  border-color: var(--hdd-color-danger-01);
+}
+
+.hdd-btn-danger:hover {
+  background: var(--hdd-color-danger-02);
+  border-color: var(--hdd-color-danger-02);
+}
+
+.hdd-btn-danger:active {
+  background: var(--hdd-color-danger-06);
+  border-color: var(--hdd-color-danger-06);
+}
+
+/* 信息按钮 - INFO */
+.hdd-btn-info {
+  background: var(--hdd-color-info-01);
+  color: #ffffff;
+  border-color: var(--hdd-color-info-01);
+}
+
+.hdd-btn-info:hover {
+  background: var(--hdd-color-info-02);
+  border-color: var(--hdd-color-info-02);
+}
+
+.hdd-btn-info:active {
+  background: var(--hdd-color-info-06);
+  border-color: var(--hdd-color-info-06);
+}
+
+/* PLAIN 按钮变体（幽灵按钮 - 带边框） */
+.hdd-btn-plain {
+  background: #ffffff;
+}
+
+/* PLAIN - PRIMARY */
+.hdd-btn-plain.hdd-btn-primary {
+  color: var(--hdd-color-primary-01);
+  border-color: var(--hdd-color-primary-01);
+}
+
+.hdd-btn-plain.hdd-btn-primary:hover {
+  background: var(--hdd-color-primary-05);
+}
+
+.hdd-btn-plain.hdd-btn-primary:active {
+  background: var(--hdd-color-primary-04);
+}
+
+/* PLAIN - SUCCESS */
+.hdd-btn-plain.hdd-btn-success {
+  color: var(--hdd-color-success-01);
+  border-color: var(--hdd-color-success-01);
+}
+
+.hdd-btn-plain.hdd-btn-success:hover {
+  background: var(--hdd-color-success-05);
+}
+
+.hdd-btn-plain.hdd-btn-success:active {
+  background: var(--hdd-color-success-04);
+}
+
+/* PLAIN - WARNING */
+.hdd-btn-plain.hdd-btn-warning {
+  color: var(--hdd-color-warning-01);
+  border-color: var(--hdd-color-warning-01);
+}
+
+.hdd-btn-plain.hdd-btn-warning:hover {
+  background: var(--hdd-color-warning-05);
+}
+
+.hdd-btn-plain.hdd-btn-warning:active {
+  background: var(--hdd-color-warning-04);
+}
+
+/* PLAIN - DANGER */
+.hdd-btn-plain.hdd-btn-danger {
+  color: var(--hdd-color-danger-01);
+  border-color: var(--hdd-color-danger-01);
+}
+
+.hdd-btn-plain.hdd-btn-danger:hover {
+  background: var(--hdd-color-danger-05);
+}
+
+.hdd-btn-plain.hdd-btn-danger:active {
+  background: var(--hdd-color-danger-04);
+}
+
+/* PLAIN - INFO */
+.hdd-btn-plain.hdd-btn-info {
+  color: var(--hdd-color-info-01);
+  border-color: var(--hdd-color-info-01);
+}
+
+.hdd-btn-plain.hdd-btn-info:hover {
+  background: var(--hdd-color-info-05);
+}
+
+.hdd-btn-plain.hdd-btn-info:active {
+  background: var(--hdd-color-info-04);
+}
+
+/* TEXT 按钮变体（文字按钮 - 无边框） */
+.hdd-btn-text {
+  background: transparent;
+}
+
+/* TEXT - PRIMARY */
+.hdd-btn-text.hdd-btn-primary {
+  color: var(--hdd-color-primary-01);
+  border-color: transparent;
+}
+
+.hdd-btn-text.hdd-btn-primary:hover {
+  background: var(--hdd-color-primary-05);
+}
+
+.hdd-btn-text.hdd-btn-primary:active {
+  background: var(--hdd-color-primary-04);
+}
+
+/* TEXT - SUCCESS */
+.hdd-btn-text.hdd-btn-success {
+  color: var(--hdd-color-success-01);
+  border-color: transparent;
+}
+
+.hdd-btn-text.hdd-btn-success:hover {
+  background: var(--hdd-color-success-05);
+}
+
+.hdd-btn-text.hdd-btn-success:active {
+  background: var(--hdd-color-success-04);
+}
+
+/* TEXT - WARNING */
+.hdd-btn-text.hdd-btn-warning {
+  color: var(--hdd-color-warning-01);
+  border-color: transparent;
+}
+
+.hdd-btn-text.hdd-btn-warning:hover {
+  background: var(--hdd-color-warning-05);
+}
+
+.hdd-btn-text.hdd-btn-warning:active {
+  background: var(--hdd-color-warning-04);
+}
+
+/* TEXT - DANGER */
+.hdd-btn-text.hdd-btn-danger {
+  color: var(--hdd-color-danger-01);
+  border-color: transparent;
+}
+
+.hdd-btn-text.hdd-btn-danger:hover {
+  background: var(--hdd-color-danger-05);
+}
+
+.hdd-btn-text.hdd-btn-danger:active {
+  background: var(--hdd-color-danger-04);
+}
+
+/* TEXT - INFO */
+.hdd-btn-text.hdd-btn-info {
+  color: var(--hdd-color-info-01);
+  border-color: transparent;
+}
+
+.hdd-btn-text.hdd-btn-info:hover {
+  background: var(--hdd-color-info-05);
+}
+
+.hdd-btn-text.hdd-btn-info:active {
+  background: var(--hdd-color-info-04);
+}
+
+/* 按钮尺寸 - SMALL (默认) */
+.hdd-btn-sm {
+  height: var(--hdd-btn-height-sm);
+  padding: var(--hdd-btn-padding-sm);
+  font-size: var(--hdd-btn-font-size-sm);
+  line-height: var(--hdd-line-height-normal);
+}
+
+/* 按钮尺寸 - MEDIUM */
+.hdd-btn-md {
+  height: var(--hdd-btn-height-md);
+  padding: var(--hdd-btn-padding-md);
+  font-size: var(--hdd-btn-font-size-md);
+  line-height: var(--hdd-line-height-normal);
+}
+
+/* 按钮尺寸 - LARGE */
+.hdd-btn-lg {
+  height: var(--hdd-btn-height-lg);
+  padding: var(--hdd-btn-padding-lg);
+  font-size: var(--hdd-btn-font-size-lg);
+  line-height: var(--hdd-line-height-normal);
+}
+
+/* 普通按钮禁用状态 - 浅灰色背景 + 白色字体 */
+.hdd-btn.is-disabled,
+.hdd-btn[disabled] {
+  background: var(--hdd-color-neutral-04) !important;
+  color: #ffffff !important;
+  border-color: var(--hdd-color-neutral-04) !important;
+  cursor: not-allowed;
+  opacity: 1;
+}
+
+.hdd-btn.is-disabled:hover,
+.hdd-btn[disabled]:hover {
+  background: var(--hdd-color-neutral-04) !important;
+}
+
+/* PLAIN 按钮禁用状态 - 白色背景 + 浅灰色边框和字体 */
+.hdd-btn-plain.is-disabled,
+.hdd-btn-plain[disabled] {
+  background: #ffffff !important;
+  color: var(--hdd-color-neutral-03) !important;
+  border-color: var(--hdd-color-neutral-04) !important;
+  cursor: not-allowed;
+  opacity: 1;
+}
+
+.hdd-btn-plain.is-disabled:hover,
+.hdd-btn-plain[disabled]:hover {
+  background: #ffffff !important;
+}
+
+/* TEXT 按钮禁用状态 - 无色背景 + 浅灰色字体 */
+.hdd-btn-text.is-disabled,
+.hdd-btn-text[disabled] {
+  background: transparent !important;
+  color: var(--hdd-color-neutral-03) !important;
+  border-color: transparent !important;
+  cursor: not-allowed;
+  opacity: 1;
+}
+
+.hdd-btn-text.is-disabled:hover,
+.hdd-btn-text[disabled]:hover {
+  background: transparent !important;
+}
+
+/* 图标包裹层 */
+.hdd-btn-icon-wrapper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--hdd-font-family-icon);
+  font-weight: var(--hdd-font-weight-normal);
+  font-style: normal;
+  letter-spacing: var(--hdd-letter-spacing-normal);
+  vertical-align: middle;
+  flex-shrink: 0;
+}
+
+.hdd-btn-sm .hdd-btn-icon-wrapper {
+  font-size: var(--hdd-font-size-base);
+}
+
+.hdd-btn-md .hdd-btn-icon-wrapper {
+  font-size: var(--hdd-font-size-lg);
+}
+
+.hdd-btn-lg .hdd-btn-icon-wrapper {
+  font-size: var(--hdd-font-size-xl);
+}
+
+/* 按钮文字 */
+.hdd-btn-text-inner {
+  display: inline-flex;
+  align-items: center;
+  vertical-align: middle;
+}
+
+/* 加载状态 */
+.hdd-btn.is-loading {
+  position: relative;
+  pointer-events: none;
+}
+
+.hdd-btn.is-loading .hdd-btn-text-inner {
+  opacity: 0.7;
+}
+
+/* 块级按钮 */
+.hdd-btn-block {
+  display: flex;
+  width: 100%;
+}
+
+/* 圆角按钮 */
+.hdd-btn-round {
+  border-radius: var(--hdd-radius-full);
+}
+
+/* 虚线边框按钮 */
+.hdd-btn-dashed {
+  border-style: dashed;
+}
