@@ -1,14 +1,17 @@
 <template>
-  <header class="hdd-layout-header">
+  <header class="hdd-layout-header" :style="{ height }">
     <slot />
   </header>
 </template>
 
 <script setup lang="ts">
 interface HeaderProps {
+  height?: string
 }
 
-defineProps<HeaderProps>()
+withDefaults(defineProps<HeaderProps>(), {
+  height: '60px'
+})
 </script>
 
 <script lang="ts">

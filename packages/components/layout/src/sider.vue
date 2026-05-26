@@ -1,5 +1,9 @@
 <template>
-  <aside class="hdd-layout-sider" :class="{ 'hdd-layout-sider-collapsed': collapsed }">
+  <aside 
+    class="hdd-layout-sider" 
+    :class="{ 'hdd-layout-sider-collapsed': collapsed }"
+    :style="{ width: collapsed ? '64px' : width, flexBasis: collapsed ? '64px' : width }"
+  >
     <slot />
   </aside>
 </template>
@@ -28,15 +32,12 @@ export default {
 
 <style scoped>
 .hdd-layout-sider {
-  flex: 0 0 200px;
-  width: 200px;
+  flex-shrink: 0;
   background: var(--hdd-color-white);
   border-right: var(--hdd-border-width-sm) solid var(--hdd-border-color-default);
   transition: width var(--hdd-transition-duration-normal);
 }
 
 .hdd-layout-sider-collapsed {
-  flex: 0 0 64px;
-  width: 64px;
 }
 </style>

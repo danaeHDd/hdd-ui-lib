@@ -3,9 +3,9 @@
     <h3>基础布局</h3>
     <div class="layout-preview">
       <Layout>
-        <Header class="demo-header">Header</Header>
+        <Header height="80px" class="demo-header">Header (height: 80px)</Header>
         <Content class="demo-content">Content</Content>
-        <Footer class="demo-footer">Footer</Footer>
+        <Footer height="50px" class="demo-footer">Footer (height: 50px)</Footer>
       </Layout>
     </div>
   </div>
@@ -14,7 +14,7 @@
     <h3>带侧边栏布局</h3>
     <div class="layout-preview">
       <Layout has-sider>
-        <Sider class="demo-sider">Sider</Sider>
+        <Sider width="300px" class="demo-sider">Sider (width: 300px)</Sider>
         <Layout>
           <Header class="demo-header">Header</Header>
           <Content class="demo-content">Content</Content>
@@ -28,8 +28,8 @@
     <h3>侧边栏折叠</h3>
     <div class="layout-preview">
       <Layout has-sider>
-        <Sider :collapsed="collapsed" class="demo-sider">
-          <div v-if="!collapsed">展开状态</div>
+        <Sider width="250px" :collapsed="collapsed" class="demo-sider">
+          <div v-if="!collapsed">Sider (width: 250px)</div>
           <div v-else>折叠</div>
         </Sider>
         <Layout>
@@ -82,7 +82,6 @@ const collapsed = ref(false)
 }
 
 .demo-header {
-  height: 60px;
   display: flex;
   align-items: center;
   padding: 0 var(--hdd-spacing-4);
@@ -100,7 +99,6 @@ const collapsed = ref(false)
 }
 
 .demo-footer {
-  height: 60px;
   display: flex;
   align-items: center;
   padding: 0 var(--hdd-spacing-4);
@@ -109,7 +107,6 @@ const collapsed = ref(false)
 }
 
 .demo-sider {
-  min-height: 320px;
   display: flex;
   align-items: center;
   justify-content: center;

@@ -1,5 +1,5 @@
 <template>
-  <footer class="hdd-layout-footer">
+  <footer class="hdd-layout-footer" :style="{ height }">
     <slot />
   </footer>
 </template>
