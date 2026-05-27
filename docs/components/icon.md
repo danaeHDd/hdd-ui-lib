@@ -52,6 +52,41 @@
   </template>
 </demo-block>
 
+## 继承文字颜色
+
+<demo-block>
+  <template #demo>
+    <div style="display: flex; gap: 24px; color: #9E8A57;">
+      <hdd-info-icon />
+      <span style="display: flex; align-items: center;">信息图标</span>
+    </div>
+    <div style="display: flex; gap: 24px; margin-top: 12px; color: #FFA826;">
+      <hdd-warning-icon />
+      <span style="display: flex; align-items: center;">警告图标</span>
+    </div>
+    <div style="display: flex; gap: 24px; margin-top: 12px; color: #4CAF50;">
+      <hdd-info-icon />
+      <span style="display: flex; align-items: center;">成功色</span>
+    </div>
+  </template>
+  <template #code>
+
+  ```vue
+  <template>
+    <div style="display: flex; gap: 24px; color: #9E8A57;">
+      <hdd-info-icon />
+      <span>信息图标</span>
+    </div>
+    <div style="display: flex; gap: 24px; color: #FFA826;">
+      <hdd-warning-icon />
+      <span>警告图标</span>
+    </div>
+  </template>
+  ```
+
+  </template>
+</demo-block>
+
 ## 自定义颜色
 
 <demo-block>
@@ -119,14 +154,14 @@
 | 属性名 | 说明 | 类型 | 可选值 | 默认值 |
 |--------|------|------|--------|--------|
 | size | 图标尺寸 | number / string | - | 24 |
-| color | 图标颜色 | string | - | #FF0000 |
+| color | 图标颜色 | string | - | currentColor |
 
 ### HddWarningIcon 警告图标
 
 | 属性名 | 说明 | 类型 | 可选值 | 默认值 |
 |--------|------|------|--------|--------|
 | size | 图标尺寸 | number / string | - | 24 |
-| color | 图标颜色 | string | - | #FFA826 |
+| color | 图标颜色 | string | - | currentColor |
 
 ### HddIcon 自定义图标容器
 

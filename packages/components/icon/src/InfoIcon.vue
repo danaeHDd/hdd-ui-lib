@@ -32,5 +32,11 @@ const iconClasses = computed(() => {
 })
 </script>
 
+<script lang="ts">
+export default {
+  name: 'HddInfoIcon'
+}
+</script>
+
 <style scoped>
 </style>

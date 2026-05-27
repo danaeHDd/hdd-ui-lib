@@ -3,11 +3,11 @@
     <h3>内置图标</h3>
     <div class="icon-demo">
       <div class="icon-item">
-        <HddInfoIcon :size="24" />
+        <HddInfoIcon :size="48" />
         <span>Info</span>
       </div>
       <div class="icon-item">
-        <HddWarningIcon :size="24" />
+        <HddWarningIcon :size="48" />
         <span>Warning</span>
       </div>
     </div>
@@ -44,7 +44,25 @@
   </div>
 
   <div class="demo-card">
-    <h3>不同颜色</h3>
+    <h3>继承文字颜色</h3>
+    <div class="icon-demo">
+      <div class="icon-row" style="color: #9E8A57;">
+        <HddInfoIcon />
+        <span>信息图标</span>
+      </div>
+      <div class="icon-row" style="color: #FFA826;">
+        <HddWarningIcon />
+        <span>警告图标</span>
+      </div>
+      <div class="icon-row" style="color: #4CAF50;">
+        <HddInfoIcon />
+        <span>成功色</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="demo-card">
+    <h3>自定义颜色</h3>
     <div class="icon-demo">
       <div class="icon-item">
         <HddInfoIcon :size="32" color="#9E8A57" />
@@ -93,6 +111,17 @@ import { HddInfoIcon, HddWarningIcon } from 'hdd-ui-lib'
 
 .icon-item span {
   font-size: var(--hdd-font-size-xs);
-  color: var(--hdd-color-neutral-01);
+  color: var(--hdd-color-neutral-04);
+}
+
+.icon-row {
+  display: flex;
+  align-items: center;
+  gap: var(--hdd-spacing-3);
+  padding: var(--hdd-spacing-2) 0;
+}
+
+.icon-row span {
+  font-size: var(--hdd-font-size-sm);
 }
 </style>
