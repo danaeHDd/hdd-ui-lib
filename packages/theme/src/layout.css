@@ -16,7 +16,7 @@
 .hdd-layout__sider {
   flex-shrink: 0;
   background: var(--hdd-color-white);
-  border-right: var(--hdd-border-width-sm) solid var(--hdd-border-color-default);
+  /* border-right: var(--hdd-border-width-sm) solid var(--hdd-border-color-default); */
   transition: width var(--hdd-transition-duration-normal);
 }
 
