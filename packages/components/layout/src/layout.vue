@@ -5,7 +5,7 @@
 </template>
 
 <script setup lang="ts">
-import { computed, useSlots } from 'vue'
+import { computed, provide, ref, onMounted, nextTick } from 'vue'
 
 interface LayoutProps {
   hasSider?: boolean
@@ -15,17 +15,10 @@ const props = withDefaults(defineProps<LayoutProps>(), {
   hasSider: false
 })
 
-const slots = useSlots()
+const hasSider = computed(() => props.hasSider)
 
-const hasSider = computed(() => {
-  if (props.hasSider) return true
-  if (slots.default) {
-    const children = slots.default()
-    return children.some((child: any) => {
-      return child?.type?.name === 'HddSider' || child?.componentOptions?.tag === 'hdd-sider'
-    })
-  }
-  return false
+provide('hdd-layout', {
+  setHasSider: () => {}
 })
 </script>
 

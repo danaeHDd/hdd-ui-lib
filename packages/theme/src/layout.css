@@ -9,6 +9,7 @@
   display: flex;
   flex-direction: column;
   min-height: 0;
+  height: 100%;
 }
 
 /* Element: hdd-layout__sider */
@@ -59,4 +60,10 @@
   flex: 1;
   flex-direction: column;
   min-height: 100%;
+}
+
+/* 嵌套布局时，确保子 Layout 能正确占据剩余空间 */
+.hdd-layout > .hdd-layout {
+  flex: 1;
+  min-height: 0;
 }
