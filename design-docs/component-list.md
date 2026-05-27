@@ -6,10 +6,11 @@
 
 ### 1. Button 按钮
 - **核心功能**：用于触发一个操作，如提交表单、确认删除等
-- **支持类型**：主按钮、次按钮、文字按钮、虚线按钮、链接按钮
-- **支持尺寸**：小、默认、大
-- **支持状态**：加载中、禁用
-- **附加功能**：图标按钮、按钮组
+- **支持类型**：primary（主色）、success（成功）、warning（警告）、danger（危险）、info（信息）
+- **支持变体**：plain（幽灵按钮）、text（文字按钮）、dashed（虚线按钮）
+- **支持尺寸**：sm（小）、md（中）、lg（大），默认sm
+- **支持状态**：loading（加载中）、disabled（禁用）
+- **附加功能**：icon（图标按钮）、block（块级按钮）、round（圆角按钮）
 
 ### 2. Icon 图标
 - **核心功能**：提供一套常用图标，支持自定义图标
@@ -310,8 +311,8 @@
 ## 开发优先级建议
 
 ### 第一阶段（基础）
-- **通用**：Button、Icon
-- **布局**：Layout、Grid、Flex、Divider
+- **通用**：✅ Button、✅ Icon
+- **布局**：✅ Layout、✅ Grid、✅ Flex、✅ Divider
 - **数据录入**：Input、InputNumber、Select、Radio、Checkbox、Switch
 - **数据展示**：Tag、Badge、Avatar、Tooltip
 - **反馈**：Alert、Message、Progress、Loading
