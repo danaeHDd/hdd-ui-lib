@@ -14,7 +14,7 @@
 
 ### 2. Icon 图标
 - **核心功能**：提供一套常用图标，支持自定义图标
-- **支持功能**：修改颜色、尺寸、旋转
+- **支持功能**：修改颜色、尺寸、旋转、翻转、旋转动画（spin）
 - **使用方式**：内置图标、自定义SVG图标、图标库集成
 
 ### 3. Link 链接
@@ -40,6 +40,11 @@
 - **核心功能**：页面整体布局，提供 Header、Sider、Content、Footer
 - **组件组成**：Layout（容器）、Header（页头）、Sider（侧边栏）、Content（内容区）、Footer（页脚）
 - **支持布局**：上中下三栏、左右两栏、嵌套布局
+- **API 属性**：
+  - HddLayout：`has-sider`（是否包含侧边栏，默认 false）
+  - HddHeader：`height`（高度，默认 60px）
+  - HddFooter：`height`（高度，默认 60px）
+  - HddSider：`width`（宽度，默认 200px）、`collapsed`（是否折叠，默认 false）
 
 ### 2. Container 容器
 - **核心功能**：页面容器组件，用于包裹页面内容
