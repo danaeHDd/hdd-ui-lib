@@ -49,7 +49,10 @@ const spaceStyle = computed(() => {
   
   const gapValue = props.customSize || sizeMap[props.size]
   
-  if (props.direction === 'horizontal') {
+  if (props.wrap) {
+    // 换行模式下，两个方向都需要间距
+    style.gap = gapValue
+  } else if (props.direction === 'horizontal') {
     style.columnGap = gapValue
   } else {
     style.rowGap = gapValue

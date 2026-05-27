@@ -67,22 +67,62 @@
 
       <div class="demo-card">
         <h3>对齐方式</h3>
-        <p class="demo-description">支持多种对齐方式</p>
-        <hdd-space align="start">
-          <hdd-button type="primary">顶部对齐</hdd-button>
-          <hdd-button type="success">按钮</hdd-button>
-          <hdd-button>小按钮</hdd-button>
-        </hdd-space>
-        <hdd-space align="center">
-          <hdd-button type="primary">居中对齐</hdd-button>
-          <hdd-button type="success">按钮</hdd-button>
-          <hdd-button>小按钮</hdd-button>
-        </hdd-space>
-        <hdd-space align="end">
-          <hdd-button type="primary">底部对齐</hdd-button>
-          <hdd-button type="success">按钮</hdd-button>
-          <hdd-button>小按钮</hdd-button>
-        </hdd-space>
+        <p class="demo-description">支持多种对齐方式（通过不同高度的按钮展示效果）</p>
+        
+        <div class="align-demo">
+          <p class="align-label">顶部对齐 (start):</p>
+          <div class="align-container">
+            <hdd-space align="start">
+              <hdd-button type="primary" style="height: 60px;">高按钮</hdd-button>
+              <hdd-button type="success">按钮</hdd-button>
+              <hdd-button style="height: 36px;">小按钮</hdd-button>
+            </hdd-space>
+          </div>
+        </div>
+        
+        <div class="align-demo">
+          <p class="align-label">居中对齐 (center):</p>
+          <div class="align-container">
+            <hdd-space align="center">
+              <hdd-button type="primary" style="height: 60px;">高按钮</hdd-button>
+              <hdd-button type="success">按钮</hdd-button>
+              <hdd-button style="height: 36px;">小按钮</hdd-button>
+            </hdd-space>
+          </div>
+        </div>
+        
+        <div class="align-demo">
+          <p class="align-label">底部对齐 (end):</p>
+          <div class="align-container">
+            <hdd-space align="end">
+              <hdd-button type="primary" style="height: 60px;">高按钮</hdd-button>
+              <hdd-button type="success">按钮</hdd-button>
+              <hdd-button style="height: 36px;">小按钮</hdd-button>
+            </hdd-space>
+          </div>
+        </div>
+        
+        <div class="align-demo">
+          <p class="align-label">基线对齐 (baseline):</p>
+          <div class="align-container">
+            <hdd-space align="baseline">
+              <hdd-button type="primary" style="height: 60px;">高按钮</hdd-button>
+              <hdd-button type="success">按钮</hdd-button>
+              <hdd-button style="height: 36px;">小按钮</hdd-button>
+            </hdd-space>
+          </div>
+        </div>
+        
+        <div class="align-demo">
+          <p class="align-label">拉伸对齐 (stretch):</p>
+          <div class="align-container">
+            <hdd-space align="stretch">
+              <hdd-button type="primary" style="height: 60px;">高按钮</hdd-button>
+              <hdd-button type="success">按钮</hdd-button>
+              <hdd-button style="height: 36px;">小按钮</hdd-button>
+            </hdd-space>
+          </div>
+        </div>
       </div>
 
       <div class="demo-card">
@@ -143,5 +183,33 @@ import { HddSpace, HddButton } from 'hdd-ui-lib'
   margin: 0 0 var(--hdd-spacing-4);
   font-size: var(--hdd-font-size-sm);
   color: var(--hdd-color-neutral-01);
+}
+
+/* 对齐方式 demo 的样式 */
+.align-demo {
+  margin-bottom: var(--hdd-spacing-4);
+  padding: var(--hdd-spacing-3);
+  background-color: var(--hdd-color-neutral-07);
+  border-radius: var(--hdd-radius-sm);
+}
+
+.align-demo:last-child {
+  margin-bottom: 0;
+}
+
+.align-label {
+  margin: 0 0 var(--hdd-spacing-2);
+  font-size: var(--hdd-font-size-sm);
+  color: var(--hdd-color-neutral-01);
+  font-weight: 500;
+}
+
+.align-container {
+  background-color: white;
+  padding: var(--hdd-spacing-3);
+  border-radius: var(--hdd-radius-sm);
+  border: 1px solid var(--hdd-color-neutral-04);
+  min-height: 80px;
+  display: flex;
 }
 </style>
