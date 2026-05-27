@@ -8,8 +8,7 @@
 .hdd-layout {
   display: flex;
   flex-direction: column;
-  flex: 1;
-  min-height: 100%;
+  min-height: 0;
 }
 
 /* Element: hdd-layout__sider */
@@ -44,11 +43,16 @@
   padding: var(--hdd-spacing-4);
   background: var(--hdd-color-neutral-05);
   overflow: auto;
+  min-height: 0;
 }
 
 /* Modifier: hdd-layout--has-sider */
 .hdd-layout--has-sider {
   flex-direction: row;
+}
+
+.hdd-layout--has-sider > .hdd-layout__sider {
+  flex-shrink: 0;
 }
 
 .hdd-layout--has-sider > .hdd-layout {
