@@ -5,6 +5,7 @@ export default defineConfig({
   title: 'HDD UI',
   description: 'Vue3 组件库',
   lang: 'zh-CN',
+  base: '/hdd-ui-lib/',
 
   themeConfig: {
     nav: [
