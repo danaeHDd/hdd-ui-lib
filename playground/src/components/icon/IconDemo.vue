@@ -44,24 +44,6 @@
   </div>
 
   <div class="demo-card">
-    <h3>继承文字颜色</h3>
-    <div class="icon-demo">
-      <div class="icon-row" style="color: #9E8A57;">
-        <HddInfoIcon />
-        <span>信息图标</span>
-      </div>
-      <div class="icon-row" style="color: #FFA826;">
-        <HddWarningIcon />
-        <span>警告图标</span>
-      </div>
-      <div class="icon-row" style="color: #4CAF50;">
-        <HddInfoIcon />
-        <span>成功色</span>
-      </div>
-    </div>
-  </div>
-
-  <div class="demo-card">
     <h3>自定义颜色</h3>
     <div class="icon-demo">
       <div class="icon-item">
@@ -83,6 +65,100 @@
       <div class="icon-item">
         <HddWarningIcon :size="32" color="#4CAF50" />
         <span>success</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="demo-card">
+    <h3>继承文字颜色</h3>
+    <div class="icon-demo">
+      <div class="icon-row" style="color: #9E8A57;">
+        <HddInfoIcon />
+        <span>信息图标</span>
+      </div>
+      <div class="icon-row" style="color: #FFA826;">
+        <HddWarningIcon />
+        <span>警告图标</span>
+      </div>
+      <div class="icon-row" style="color: #4CAF50;">
+        <HddInfoIcon />
+        <span>成功色</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="demo-card">
+    <h3>旋转图标</h3>
+    <div class="icon-demo">
+      <div class="icon-item">
+        <HddInfoIcon :size="40" />
+        <span>0°</span>
+      </div>
+      <div class="icon-item">
+        <HddInfoIcon :size="40" :rotate="45" />
+        <span>45°</span>
+      </div>
+      <div class="icon-item">
+        <HddInfoIcon :size="40" :rotate="90" />
+        <span>90°</span>
+      </div>
+      <div class="icon-item">
+        <HddInfoIcon :size="40" :rotate="180" />
+        <span>180°</span>
+      </div>
+      <div class="icon-item">
+        <HddInfoIcon :size="40" :rotate="270" />
+        <span>270°</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="demo-card">
+    <h3>翻转图标</h3>
+    <div class="icon-demo">
+      <div class="icon-item">
+        <HddInfoIcon :size="40" />
+        <span>normal</span>
+      </div>
+      <div class="icon-item">
+        <HddInfoIcon :size="40" flip="horizontal" />
+        <span>horizontal</span>
+      </div>
+      <div class="icon-item">
+        <HddInfoIcon :size="40" flip="vertical" />
+        <span>vertical</span>
+      </div>
+      <div class="icon-item">
+        <HddInfoIcon :size="40" flip="both" />
+        <span>both</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="demo-card">
+    <h3>旋转动画 (Loading)</h3>
+    <div class="icon-demo">
+      <div class="icon-item">
+        <HddInfoIcon :size="48" :spin="true" />
+        <span>info spin</span>
+      </div>
+      <div class="icon-item">
+        <HddWarningIcon :size="48" :spin="true" />
+        <span>warning spin</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="demo-card">
+    <h3>组合使用</h3>
+    <div class="icon-demo">
+      <div class="icon-item">
+        <HddInfoIcon :size="40" :rotate="45" flip="horizontal" color="#9E8A57" />
+        <span>rotate + flip</span>
+      </div>
+      <div class="icon-item">
+        <HddWarningIcon :size="40" :rotate="180" flip="vertical" color="#FFA826" />
+        <span>rotate + flip</span>
       </div>
     </div>
   </div>
