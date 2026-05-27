@@ -64,6 +64,13 @@
 - **核心功能**：区隔内容的分割线
 - **支持类型**：水平分割线、垂直分割线
 - **支持样式**：实线、虚线、带文字分割线
+- **API 属性**：
+  - `direction`（方向，默认 horizontal，可选 vertical）
+  - `content-position`（文字位置，默认 center，可选 left/center/right）
+  - `dashed`（是否虚线，默认 false）
+  - `border-color`（边框颜色，默认继承主题色）
+  - `text-color`（文字颜色，默认继承主题色）
+  - `margin`（外边距，默认 16px 0）
 
 ---
 
