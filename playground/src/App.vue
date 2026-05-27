@@ -36,6 +36,18 @@
         <div v-else-if="activeComponent === 'layout'" class="demo-container">
           <LayoutDemo />
         </div>
+        
+        <div v-else-if="activeComponent === 'link'" class="demo-container">
+          <LinkDemo />
+        </div>
+        
+        <div v-else-if="activeComponent === 'text'" class="demo-container">
+          <TextDemo />
+        </div>
+        
+        <div v-else-if="activeComponent === 'space'" class="demo-container">
+          <SpaceDemo />
+        </div>
       </main>
     </div>
   </div>
@@ -51,6 +63,9 @@ import GridDemo from './components/grid/GridDemo.vue'
 import FlexDemo from './components/flex/FlexDemo.vue'
 import DividerDemo from './components/divider/DividerDemo.vue'
 import LayoutDemo from './components/layout/LayoutDemo.vue'
+import LinkDemo from './components/link/LinkDemo.vue'
+import TextDemo from './components/text/TextDemo.vue'
+import SpaceDemo from './components/space/SpaceDemo.vue'
 
 const activeComponent = ref('color-system')
 

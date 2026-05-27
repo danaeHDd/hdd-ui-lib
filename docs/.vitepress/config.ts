@@ -37,8 +37,11 @@ export default defineConfig({
           text: '通用',
           items: [
             { text: 'Button 按钮', link: '/components/button' },
-            { text: 'Divider 分割线', link: '/components/divider' },
             { text: 'Icon 图标', link: '/components/icon' },
+            { text: 'Link 链接', link: '/components/link' },
+            { text: 'Text 文字', link: '/components/text' },
+            { text: 'Space 间距', link: '/components/space' },
+            { text: 'Divider 分割线', link: '/components/divider' },
           ],
         },
         {

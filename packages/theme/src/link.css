@@ -1,0 +1,127 @@
+/* ============================================
+   Link 组件样式
+   ============================================ */
+
+.hdd-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--hdd-spacing-1);
+  font-size: var(--hdd-font-size-sm);
+  font-weight: var(--hdd-font-weight-normal);
+  line-height: var(--hdd-line-height-normal);
+  text-decoration: none;
+  cursor: pointer;
+  transition: all var(--hdd-transition-duration-normal) var(--hdd-transition-ease-ease);
+  color: var(--hdd-color-dark-04);
+}
+
+.hdd-link:focus {
+  outline: none;
+}
+
+.hdd-link:focus-visible {
+  outline: var(--hdd-border-width-md) solid var(--hdd-color-primary);
+  outline-offset: 2px;
+  border-radius: var(--hdd-radius-sm);
+}
+
+/* 前缀/后缀插槽 */
+.hdd-link__prefix,
+.hdd-link__suffix {
+  display: inline-flex;
+  align-items: center;
+  font-size: inherit;
+}
+
+.hdd-link__text {
+  display: inline-flex;
+  align-items: center;
+  font-size: inherit;
+}
+
+/* 下划线样式 */
+.hdd-link--underline {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.hdd-link--no-underline {
+  text-decoration: none;
+}
+
+/* 链接颜色类型 */
+.hdd-link--default {
+  color: var(--hdd-color-dark-04);
+}
+
+.hdd-link--default:hover {
+  color: var(--hdd-color-primary);
+}
+
+.hdd-link--default:active {
+  color: var(--hdd-color-primary-06);
+}
+
+.hdd-link--primary {
+  color: var(--hdd-color-primary);
+}
+
+.hdd-link--primary:hover {
+  color: var(--hdd-color-primary-02);
+}
+
+.hdd-link--primary:active {
+  color: var(--hdd-color-primary-06);
+}
+
+.hdd-link--success {
+  color: var(--hdd-color-success);
+}
+
+.hdd-link--success:hover {
+  color: var(--hdd-color-success-02);
+}
+
+.hdd-link--success:active {
+  color: var(--hdd-color-success-06);
+}
+
+.hdd-link--warning {
+  color: var(--hdd-color-warning);
+}
+
+.hdd-link--warning:hover {
+  color: var(--hdd-color-warning-02);
+}
+
+.hdd-link--warning:active {
+  color: var(--hdd-color-warning-06);
+}
+
+.hdd-link--danger {
+  color: var(--hdd-color-danger);
+}
+
+.hdd-link--danger:hover {
+  color: var(--hdd-color-danger-02);
+}
+
+.hdd-link--danger:active {
+  color: var(--hdd-color-danger-06);
+}
+
+/* 禁用状态 */
+.hdd-link--disabled {
+  color: var(--hdd-color-dark-03);
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.hdd-link--disabled:hover {
+  color: var(--hdd-color-dark-03);
+}
+
+/* Hover 时的下划线动画 */
+.hdd-link--underline:hover {
+  text-decoration-thickness: from initial;
+}

@@ -45,6 +45,9 @@ const navGroups = [
     items: [
       { name: 'button', label: '按钮' },
       { name: 'icon', label: '图标' },
+      { name: 'link', label: '链接' },
+      { name: 'text', label: '文字' },
+      { name: 'space', label: '间距' },
       { name: 'grid', label: '网格' },
       { name: 'flex', label: '弹性布局' },
       { name: 'divider', label: '分割线' },

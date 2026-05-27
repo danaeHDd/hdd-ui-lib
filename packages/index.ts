@@ -5,6 +5,9 @@ import { HddIcon, HddInfoIcon, HddWarningIcon } from './components/icon'
 import { Grid, GridItem } from './components/grid'
 import { Flex, FlexItem } from './components/flex'
 import { Divider } from './components/divider'
+import { HddLink } from './components/link'
+import { HddText } from './components/text'
+import { HddSpace } from './components/space'
 import './theme/src/index.css'
 
 const components = [
@@ -21,7 +24,10 @@ const components = [
   GridItem,
   Flex,
   FlexItem,
-  Divider
+  Divider,
+  HddLink,
+  HddText,
+  HddSpace
 ]
 
 const install = (app: App): void => {
@@ -42,3 +48,6 @@ export { HddIcon, HddInfoIcon, HddWarningIcon } from './components/icon'
 export * from './components/grid'
 export * from './components/flex'
 export * from './components/divider'
+export * from './components/link'
+export * from './components/text'
+export * from './components/space'
