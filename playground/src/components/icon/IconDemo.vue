@@ -44,6 +44,42 @@
   </div>
 
   <div class="demo-card">
+    <h3>可聚焦图标（Tab 键访问）</h3>
+    <p class="demo-description">设置 tabindex="0" 使图标可通过键盘聚焦</p>
+    <div class="icon-demo">
+      <div class="icon-item">
+        <HddInfoIcon :size="32" tabindex="0" ariaLabel="信息" />
+        <span>可聚焦</span>
+      </div>
+      <div class="icon-item">
+        <HddWarningIcon :size="32" tabindex="0" ariaLabel="警告" />
+        <span>可聚焦</span>
+      </div>
+      <div class="icon-item">
+        <HddInfoIcon :size="32" />
+        <span>不可聚焦</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="demo-card">
+    <h3>无障碍标签</h3>
+    <p class="demo-description">使用 ariaLabel 为屏幕阅读器提供说明</p>
+    <div class="icon-demo">
+      <div class="icon-item">
+        <button aria-label="关闭">
+          <HddInfoIcon :size="24" tabindex="0" />
+        </button>
+        <span>带标签的按钮</span>
+      </div>
+      <div class="icon-item">
+        <HddInfoIcon :size="32" ariaLabel="信息提示" />
+        <span>仅标签</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="demo-card">
     <h3>自定义颜色</h3>
     <div class="icon-demo">
       <div class="icon-item">
@@ -190,6 +226,18 @@ import { HddInfoIcon, HddWarningIcon } from 'hdd-ui-lib'
   color: var(--hdd-color-neutral-04);
 }
 
+.icon-item button {
+  padding: var(--hdd-spacing-2);
+  border: none;
+  background: var(--hdd-color-primary-05);
+  border-radius: var(--hdd-radius-sm);
+  cursor: pointer;
+}
+
+.icon-item button:hover {
+  background: var(--hdd-color-primary-04);
+}
+
 .icon-row {
   display: flex;
   align-items: center;
@@ -199,5 +247,11 @@ import { HddInfoIcon, HddWarningIcon } from 'hdd-ui-lib'
 
 .icon-row span {
   font-size: var(--hdd-font-size-sm);
+}
+
+.demo-description {
+  margin-bottom: var(--hdd-spacing-4);
+  font-size: var(--hdd-font-size-sm);
+  color: var(--hdd-color-neutral-02);
 }
 </style>

@@ -52,6 +52,58 @@
   </template>
 </demo-block>
 
+## 可聚焦图标（无障碍）
+
+设置 tabindex="0" 使图标可通过键盘聚焦（Tab 键访问）。
+
+<demo-block>
+  <template #demo>
+    <div style="display: flex; gap: 24px;">
+      <hdd-info-icon :size="32" tabindex="0" aria-label="信息" />
+      <hdd-warning-icon :size="32" tabindex="0" aria-label="警告" />
+      <hdd-info-icon :size="32" />
+    </div>
+  </template>
+  <template #code>
+
+  ```vue
+  <template>
+    <hdd-info-icon :size="32" tabindex="0" aria-label="信息" />
+    <hdd-warning-icon :size="32" tabindex="0" aria-label="警告" />
+    <hdd-info-icon :size="32" />
+  </template>
+  ```
+
+  </template>
+</demo-block>
+
+## 无障碍标签
+
+使用 ariaLabel 为屏幕阅读器提供说明。
+
+<demo-block>
+  <template #demo>
+    <div style="display: flex; gap: 24px;">
+      <button aria-label="关闭">
+        <hdd-info-icon :size="24" tabindex="0" />
+      </button>
+      <hdd-info-icon :size="32" aria-label="信息提示" />
+    </div>
+  </template>
+  <template #code>
+
+  ```vue
+  <template>
+    <button aria-label="关闭">
+      <hdd-info-icon :size="24" tabindex="0" />
+    </button>
+    <hdd-info-icon :size="32" aria-label="信息提示" />
+  </template>
+  ```
+
+  </template>
+</demo-block>
+
 ## 自定义颜色
 
 <demo-block>
@@ -258,6 +310,8 @@
 | rotate | 旋转角度 | number | - | 0 |
 | flip | 翻转方向 | string | horizontal / vertical / both | - |
 | spin | 是否旋转动画 | boolean | - | false |
+| ariaLabel | 无障碍标签 | string | - | - |
+| tabindex | 可聚焦设置 | number / string | - | - |
 
 ### HddWarningIcon 警告图标
 
@@ -268,6 +322,8 @@
 | rotate | 旋转角度 | number | - | 0 |
 | flip | 翻转方向 | string | horizontal / vertical / both | - |
 | spin | 是否旋转动画 | boolean | - | false |
+| ariaLabel | 无障碍标签 | string | - | - |
+| tabindex | 可聚焦设置 | number / string | - | - |
 
 ### HddIcon 自定义图标容器
 
@@ -279,3 +335,5 @@
 | rotate | 旋转角度 | number | - | 0 |
 | flip | 翻转方向 | string | horizontal / vertical / both | - |
 | spin | 是否旋转动画 | boolean | - | false |
+| ariaLabel | 无障碍标签 | string | - | - |
+| tabindex | 可聚焦设置 | number / string | - | - |

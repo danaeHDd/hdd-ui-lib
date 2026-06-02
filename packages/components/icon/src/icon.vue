@@ -5,6 +5,9 @@
     :height="size"
     :viewBox="viewBox"
     :style="iconStyle"
+    :tabindex="tabindex"
+    :aria-label="ariaLabel"
+    :aria-hidden="ariaHidden"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >
@@ -22,6 +25,8 @@ interface IconProps {
   rotate?: number
   flip?: 'horizontal' | 'vertical' | 'both'
   spin?: boolean
+  ariaLabel?: string
+  tabindex?: number | string
 }
 
 const props = withDefaults(defineProps<IconProps>(), {
@@ -30,12 +35,29 @@ const props = withDefaults(defineProps<IconProps>(), {
   viewBox: '0 0 24 24',
   rotate: 0,
   flip: '',
-  spin: false
+  spin: false,
+  ariaLabel: '',
+  tabindex: undefined
 })
 
+const ariaHidden = computed(() => !props.ariaLabel)
+
+const getSizeClass = (size: number | string): string | undefined => {
+  const sizeMap: Record<number, string> = {
+    16: 'xs',
+    18: 'sm',
+    20: 'md',
+    24: 'lg',
+    32: 'xl'
+  }
+  return sizeMap[Number(size)]
+}
+
 const iconClasses = computed(() => {
+  const sizeClass = getSizeClass(props.size)
   return [
     'hdd-icon',
+    sizeClass ? `hdd-icon--${sizeClass}` : '',
     {
       'hdd-icon--spin': props.spin
     }
@@ -75,21 +97,4 @@ export default {
 </script>
 
 <style scoped>
-@keyframes hdd-icon-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.hdd-icon {
-  display: inline-block;
-  vertical-align: middle;
-}
-
-.hdd-icon--spin {
-  animation: hdd-icon-spin 1s linear infinite;
-}
 </style>
