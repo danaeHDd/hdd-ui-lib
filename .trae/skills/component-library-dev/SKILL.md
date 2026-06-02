@@ -1,11 +1,11 @@
 ---
 name: "component-library-dev"
-description: "组件库开发规范指南，涵盖设计令牌、CSS命名、组件结构等最佳实践。适用于创建新组件、扩展组件库或维护现有组件时确保风格一致性。"
+description: "组件库开发规范指南，涵盖设计令牌、CSS命名、组件结构、无障碍、响应式、可供性等最佳实践。适用于创建新组件、扩展组件库或维护现有组件时确保风格一致性。"
 ---
 
 # HDD UI 组件库开发规范
 
-本规范旨在确保组件库的统一性、可维护性和可扩展性。所有新组件开发应遵循本规范。
+本规范旨在确保组件库的统一性、可维护性、可扩展性、可访问性和优秀的用户体验。所有新组件开发应遵循本规范。
 
 ## 1. 项目结构规范
 
@@ -87,7 +87,7 @@ packages/
 
 ```css
 /* 字体大小 */
---hdd-font-size-xs: 0.75rem;    /* 12px - 辅助文本 */
+--hdd-font-size-xs: 0.75rem;    /* 12px - 辅助文本（最小字号） */
 --hdd-font-size-sm: 0.875rem;   /* 14px - 次要文本 */
 --hdd-font-size-base: 1rem;     /* 16px - 正文 */
 --hdd-font-size-lg: 1.125rem;   /* 18px - 强调 */
@@ -99,11 +99,17 @@ packages/
 --hdd-font-weight-medium: 500;    /* 强调文本 */
 --hdd-font-weight-semibold: 600; /* 标题 */
 
-/* 行高 */
+/* 行高（重要：影响可读性） */
 --hdd-line-height-tight: 1.25;   /* 紧凑 */
---hdd-line-height-normal: 1.5;    /* 正常 */
+--hdd-line-height-normal: 1.5;    /* 正常（推荐用于正文） */
 --hdd-line-height-relaxed: 1.75; /* 宽松 */
 ```
+
+**重要规范**：
+- ✅ 最小字号：12px（保证可读性）
+- ✅ 正文字号：14-16px
+- ✅ 行高：1.5x 字号（12px → 18px）
+- ✅ 段落间距：至少 1x 行高
 
 ### 2.4 间距系统
 
@@ -118,6 +124,10 @@ packages/
 --hdd-spacing-6: 1.5rem;         /* 24px */
 --hdd-spacing-8: 2rem;           /* 32px */
 ```
+
+**触摸区域间距**：
+- ✅ 交互组件之间最小间距：24px
+- ✅ 最小触摸目标：24x24px
 
 ### 2.5 边框系统
 
@@ -139,11 +149,17 @@ packages/
 ### 2.6 圆角系统
 
 ```css
---hdd-radius-sm: 0.25rem;        /* 4px - 小圆角 */
---hdd-radius-md: 0.5rem;        /* 8px - 默认圆角 */
---hdd-radius-lg: 0.75rem;        /* 12px - 大圆角 */
+--hdd-radius-sm: 0.25rem;        /* 4px - 小圆角（按钮、输入框） */
+--hdd-radius-md: 0.5rem;        /* 8px - 默认圆角（卡片） */
+--hdd-radius-lg: 0.75rem;        /* 12px - 大圆角（弹窗） */
 --hdd-radius-full: 9999px;       /* 圆形 */
 ```
+
+**圆角使用规范**：
+- ✅ 关键交互组件（按钮、输入框）：4px
+- ✅ 卡片：8px
+- ✅ 弹窗/模态框：12px
+- ✅ 圆形头像：9999px
 
 ### 2.7 阴影系统
 
@@ -355,6 +371,12 @@ export * from './components/button'
     color: var(--hdd-color-dark-03);
   }
   
+  /* Focus 状态（键盘焦点） */
+  &:focus-visible {
+    outline: 2px solid var(--hdd-color-primary-01);
+    outline-offset: 2px;
+  }
+  
   /* Active/Focus 状态 */
   &:active,
   &:focus {
@@ -392,9 +414,143 @@ const style = computed(() => {
 }
 ```
 
-## 5. Demo 开发规范
+## 5. 无障碍设计规范
 
-### 5.1 Demo 文件结构
+### 5.1 颜色对比度
+
+遵循 WCAG 2.0 AA 标准：
+- ✅ 普通文本对比度：≥ 4.5:1
+- ✅ 大文本（>24px）对比度：≥ 3:1
+- ✅ 重要：所有颜色组合必须通过对比度检测
+- 推荐工具：https://coolors.co/contrast-checker
+
+### 5.2 触摸目标
+
+- ✅ 最小触摸区域：24x24px
+- ✅ 关键交互组件高度：36px
+- ✅ 组件间最小间距：24px
+- ⚠️ 当组件 < 24px 时，触摸区域必须保持 24x24px（可通过 padding 实现）
+
+### 5.3 键盘导航
+
+- ✅ 所有交互组件必须支持 Tab 键聚焦
+- ✅ 焦点状态必须有明显的视觉提示（使用 outline）
+- ✅ 使用 `:focus-visible` 而不是 `:focus`（避免鼠标点击时显示焦点）
+- ✅ 焦点顺序必须符合逻辑
+
+### 5.4 ARIA 属性
+
+- ✅ 按钮：默认 `<button>` 元素，无需额外 ARIA
+- ✅ 链接：使用 `<a>` 元素，配合 `href`
+- ✅ 禁用状态：使用 `disabled` 属性或 `aria-disabled="true"`
+- ✅ 加载状态：使用 `aria-busy="true"`
+- ✅ 隐藏元素：使用 `aria-hidden="true"`
+
+### 5.5 语义化 HTML
+
+- ✅ 使用正确的 HTML 元素（button、a、input 等）
+- ✅ 不要用 div 模拟按钮
+- ✅ 表单元素必须有关联的 label
+
+## 6. 响应式设计规范
+
+### 6.1 断点系统
+
+| 断点 | 设备 | 视口宽度 | 布局 |
+|------|------|----------|------|
+| mobile | 手机 | 375-767px | 4 列 |
+| mobile-landscape | 手机横屏 | 480-767px | 4 列 |
+| tablet-portrait | 平板竖屏 | 768-1023px | 6 列 |
+| tablet-landscape | 平板横屏 | 1024-1279px | 8 列 |
+| desktop | 桌面 | 1280-1439px | 10 列 |
+| desktop-xl | 大屏 | 1440px+ | 12 列 |
+
+### 6.2 移动优先原则
+
+- ✅ 先为最小屏幕设计
+- ✅ 使用 `min-width` 媒体查询
+- ✅ 渐进增强，逐步适配大屏
+- ❌ 避免使用 `max-width`（桌面优先）
+
+### 6.3 布局网格
+
+#### Margin 和 Gutter
+- 移动端：Margin 16px, Gutter 12px
+- 平板及以上：Margin 24px, Gutter 20px
+
+#### 列数规范
+- Mobile: 4 列
+- Tablet Portrait: 6 列
+- Tablet Landscape: 8 列
+- Desktop: 10 列
+- Desktop XL: 12 列
+
+### 6.4 媒体查询使用
+
+```css
+/* 移动优先：默认样式为移动端 */
+.hdd-component {
+  padding: var(--hdd-spacing-3);
+}
+
+/* 平板及以上 */
+@media (min-width: 768px) {
+  .hdd-component {
+    padding: var(--hdd-spacing-4);
+  }
+}
+
+/* 桌面及以上 */
+@media (min-width: 1024px) {
+  .hdd-component {
+    padding: var(--hdd-spacing-5);
+  }
+}
+```
+
+## 7. 可供性设计规范
+
+### 7.1 Signifier（可识别性）
+
+Signifier 是告诉用户**在哪里**可以执行操作的视觉提示：
+- ✅ 按钮颜色必须能传达功能（主色=主要操作，红色=危险操作）
+- ✅ 禁用状态必须明显（降低不透明度和改变颜色）
+- ✅ 加载状态必须可见（旋转图标、文字提示）
+- ✅ 错误状态必须有明确反馈
+
+### 7.2 Affordance（可供性）
+
+Affordance 是告诉用户**如何**与界面交互的设计暗示：
+- ✅ 交互元素必须有明确的视觉提示（hover 效果）
+- ✅ 按钮可点击的事实必须明显（cursor: pointer）
+- ✅ 输入框可输入的事实必须明显（cursor: text）
+- ✅ 拖拽元素必须有拖拽提示
+
+### 7.3 状态完整性
+
+每个交互组件必须包含以下状态：
+
+| 状态 | 说明 | 必需 |
+|------|------|------|
+| default | 默认状态 | ✅ |
+| hover | 鼠标悬停 | ✅ |
+| focus | 键盘聚焦 | ✅ |
+| focus-visible | 键盘聚焦（推荐） | ✅ |
+| active | 鼠标按下 | ✅ |
+| disabled | 禁用 | ✅ |
+| loading | 加载中 | 推荐 |
+
+### 7.4 反馈机制
+
+- ✅ 悬停反馈：颜色、阴影变化
+- ✅ 点击反馈：颜色加深、轻微缩放
+- ✅ 加载反馈：loading 动画、文字提示
+- ✅ 成功反馈：成功提示、自动消失
+- ✅ 错误反馈：错误提示、保持可见
+
+## 8. Demo 开发规范
+
+### 8.1 Demo 文件结构
 
 ```
 playground/src/components/
@@ -405,7 +561,7 @@ playground/src/components/
 └── Sidebar.vue             # 侧边导航
 ```
 
-### 5.2 Demo 组件模板
+### 8.2 Demo 组件模板
 
 ```vue
 <template>
@@ -434,7 +590,7 @@ import { Button } from 'hdd-ui-lib'
 </style>
 ```
 
-### 5.3 侧边栏配置
+### 8.3 侧边栏配置
 
 ```typescript
 const navGroups = [
@@ -457,10 +613,11 @@ const navGroups = [
 ]
 ```
 
-## 6. 质量检查清单
+## 9. 质量检查清单
 
 新组件开发完成后，检查以下内容：
 
+### 9.1 基础检查
 - [ ] 组件命名遵循 BEM 规范
 - [ ] 所有颜色使用 CSS 变量
 - [ ] 所有间距使用设计令牌
@@ -468,10 +625,39 @@ const navGroups = [
 - [ ] 组件已正确导出
 - [ ] 已添加 Demo 演示
 - [ ] Demo 已在侧边栏注册
-- [ ] 组件支持 disabled/loading 等状态
 - [ ] 样式无硬编码值
 
-## 7. 常见问题
+### 9.2 无障碍检查
+- [ ] 颜色对比度符合 WCAG AA 标准（4.5:1）
+- [ ] 最小触摸区域 ≥ 24x24px
+- [ ] 关键交互组件高度 = 36px
+- [ ] 支持键盘导航（Tab、Enter、Space）
+- [ ] 焦点状态有明显的视觉提示
+- [ ] 使用语义化 HTML 元素
+- [ ] 添加必要的 ARIA 属性
+
+### 9.3 响应式检查
+- [ ] 移动端布局正常（375px）
+- [ ] 平板端布局正常（768px）
+- [ ] 桌面端布局正常（1280px）
+- [ ] 使用移动优先的媒体查询
+- [ ] 触摸目标在不同设备上都满足最小尺寸
+
+### 9.4 可供性检查
+- [ ] 包含 hover 状态
+- [ ] 包含 focus 状态
+- [ ] 包含 active 状态
+- [ ] 包含 disabled 状态
+- [ ] 包含 loading 状态（如适用）
+- [ ] 交互元素 cursor 正确
+- [ ] 有清晰的视觉反馈
+
+### 9.5 状态完整性
+- [ ] 组件支持 disabled/loading 等状态
+- [ ] 状态切换有平滑的过渡动画
+- [ ] 错误状态有明确的提示
+
+## 10. 常见问题
 
 ### Q: 如何处理自定义颜色？
 
@@ -495,3 +681,15 @@ if (component && component.name) {
   app.component(component.name, component)
 }
 ```
+
+### Q: 如何确保颜色对比度符合 WCAG AA？
+
+A: 使用对比度检测工具检查所有颜色组合，确保：
+- 普通文本：≥ 4.5:1
+- 大文本（>24px）：≥ 3:1
+
+### Q: 何时使用 focus vs focus-visible？
+
+A: 
+- `:focus`：所有元素聚焦时显示（鼠标点击也会显示）
+- `:focus-visible`：仅键盘聚焦时显示（推荐，避免鼠标点击时的焦点环）
