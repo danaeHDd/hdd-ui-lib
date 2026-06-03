@@ -1,0 +1,116 @@
+@import './design-tokens.css';
+
+.hdd-radio {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+  transition: color var(--hdd-transition-duration-fast);
+}
+
+.hdd-radio:hover:not(.hdd-radio--disabled) {
+  color: var(--hdd-color-dark-02);
+}
+
+.hdd-radio--disabled {
+  cursor: not-allowed;
+  color: var(--hdd-color-dark-03);
+}
+
+.hdd-radio__input {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: var(--hdd-spacing-2);
+}
+
+.hdd-radio--sm .hdd-radio__input {
+  width: var(--hdd-spacing-4);
+  height: var(--hdd-spacing-4);
+}
+
+.hdd-radio--md .hdd-radio__input {
+  width: var(--hdd-spacing-5);
+  height: var(--hdd-spacing-5);
+}
+
+.hdd-radio--lg .hdd-radio__input {
+  width: var(--hdd-spacing-6);
+  height: var(--hdd-spacing-6);
+}
+
+.hdd-radio__inner {
+  position: absolute;
+  border: var(--hdd-border-width-md) solid var(--hdd-border-color-default);
+  border-radius: 50%;
+  transition: all var(--hdd-transition-duration-normal);
+}
+
+.hdd-radio--sm .hdd-radio__inner {
+  width: var(--hdd-spacing-4);
+  height: var(--hdd-spacing-4);
+}
+
+.hdd-radio--md .hdd-radio__inner {
+  width: var(--hdd-spacing-5);
+  height: var(--hdd-spacing-5);
+}
+
+.hdd-radio--lg .hdd-radio__inner {
+  width: var(--hdd-spacing-6);
+  height: var(--hdd-spacing-6);
+}
+
+.hdd-radio--checked .hdd-radio__inner {
+  border-color: var(--hdd-color-primary-01);
+}
+
+.hdd-radio__inner::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  width: 50%;
+  height: 50%;
+  background: var(--hdd-color-primary-01);
+  border-radius: 50%;
+  transition: transform var(--hdd-transition-duration-normal);
+}
+
+.hdd-radio--checked .hdd-radio__inner::after {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.hdd-radio--disabled .hdd-radio__inner {
+  border-color: var(--hdd-color-neutral-04);
+  background: var(--hdd-color-neutral-05);
+}
+
+.hdd-radio--disabled.hdd-radio--checked .hdd-radio__inner::after {
+  background: var(--hdd-color-dark-03);
+}
+
+.hdd-radio input {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  opacity: 0;
+  cursor: pointer;
+  outline: none;
+}
+
+.hdd-radio__input input:focus-visible + .hdd-radio__inner{
+  outline: 2px solid var(--hdd-color-primary-01);
+  outline-offset: 2px;
+}
+
+.hdd-radio__label {
+  font-family: var(--hdd-font-family-sans);
+  font-size: var(--hdd-font-size-base);
+  line-height: var(--hdd-line-height-normal);
+  color: var(--hdd-color-dark-04);
+}

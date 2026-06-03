@@ -1,0 +1,101 @@
+@import './design-tokens.css';
+
+.hdd-input-number {
+  display: inline-flex;
+  align-items: center;
+  background: var(--hdd-color-white);
+  border: var(--hdd-border-width-sm) solid var(--hdd-border-color-default);
+  border-radius: var(--hdd-radius-sm);
+  overflow: hidden;
+  transition: all var(--hdd-transition-duration-normal);
+}
+
+.hdd-input-number:focus-within {
+  border-color: var(--hdd-border-color-active);
+}
+
+.hdd-input-number:focus-visible-within {
+  outline: 2px solid var(--hdd-color-primary-01);
+  outline-offset: 2px;
+}
+
+.hdd-input-number--disabled {
+  background: var(--hdd-color-neutral-05);
+  border-color: var(--hdd-border-color-disabled);
+  cursor: not-allowed;
+}
+
+.hdd-input-number--sm {
+  height: var(--hdd-input-height-sm);
+}
+
+.hdd-input-number--md {
+  height: var(--hdd-input-height-md);
+}
+
+.hdd-input-number--lg {
+  height: var(--hdd-input-height-lg);
+}
+
+.hdd-input-number__decrease,
+.hdd-input-number__increase {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--hdd-spacing-9);
+  color: var(--hdd-color-neutral-01);
+  cursor: pointer;
+  transition: all var(--hdd-transition-duration-fast);
+}
+
+.hdd-input-number--md .hdd-input-number__decrease,
+.hdd-input-number--md .hdd-input-number__increase {
+  width: var(--hdd-spacing-10);
+}
+
+.hdd-input-number--lg .hdd-input-number__decrease,
+.hdd-input-number--lg .hdd-input-number__increase {
+  width: var(--hdd-spacing-12);
+}
+
+.hdd-input-number__decrease:hover,
+.hdd-input-number__increase:hover {
+  background: var(--hdd-color-neutral-05);
+  color: var(--hdd-color-dark-02);
+}
+
+.hdd-input-number__decrease--disabled,
+.hdd-input-number__increase--disabled {
+  color: var(--hdd-color-dark-03);
+  cursor: not-allowed;
+}
+
+.hdd-input-number__decrease--disabled:hover,
+.hdd-input-number__increase--disabled:hover {
+  background: transparent;
+}
+
+.hdd-input-number__inner {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  text-align: center;
+  font-family: var(--hdd-font-family-sans);
+  font-size: var(--hdd-font-size-base);
+  line-height: var(--hdd-line-height-normal);
+  color: var(--hdd-color-dark-04);
+}
+
+.hdd-input-number__inner--sm {
+  width: var(--hdd-spacing-12);
+}
+
+.hdd-input-number__inner--md {
+  width: var(--hdd-spacing-16);
+}
+
+.hdd-input-number__inner--lg {
+  width: var(--hdd-spacing-20);
+}

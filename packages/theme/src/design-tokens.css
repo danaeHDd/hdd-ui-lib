@@ -6,6 +6,12 @@
    - px: 边框宽度、阴影值
    ============================================ */
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 :root {
   /* ============================================
      1. 颜色系统 (Color System) - 简化版
@@ -72,9 +78,9 @@
   --hdd-color-neutral-07: #EBEBEB;
   
   /* 深色系 (Dark) - 从浅到深 */
-  --hdd-color-dark-01: #EBEBEB;  /* Placeholder */
+  --hdd-color-dark-01: #EBEBEB;  
   --hdd-color-dark-02: #D4D4D4;
-  --hdd-color-dark-03: #C2C2C2;  /* Disable */
+  --hdd-color-dark-03: #C2C2C2;  /* Disable, Placeholder */
   --hdd-color-dark-04: #333333;  /* Content */
   
   /* ============================================

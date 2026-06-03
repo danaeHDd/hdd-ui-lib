@@ -11,3 +11,8 @@
 @import './text.css';
 @import './space.css';
 @import './icon.css';
+@import './input.css';
+@import './input-number.css';
+@import './radio.css';
+@import './checkbox.css';
+@import './switch.css';

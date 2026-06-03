@@ -52,6 +52,15 @@ export default defineConfig({
             { text: 'Flex 弹性布局', link: '/components/flex' },
           ],
         },
+        {
+          text: '数据录入',
+          items: [
+            { text: 'Input 输入框', link: '/components/input' },
+            { text: 'Radio 单选框', link: '/components/radio' },
+            { text: 'Checkbox 多选框', link: '/components/checkbox' },
+            { text: 'Switch 开关', link: '/components/switch' },
+          ],
+        },
       ],
     },
 

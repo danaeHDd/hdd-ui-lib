@@ -1,0 +1,99 @@
+@import './design-tokens.css';
+
+.hdd-input {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  background: var(--hdd-color-white);
+  border: var(--hdd-border-width-sm) solid var(--hdd-border-color-default);
+  border-radius: var(--hdd-radius-sm);
+  transition: all var(--hdd-transition-duration-normal);
+}
+
+.hdd-input:focus-within {
+  border-color: var(--hdd-border-color-active);
+}
+
+.hdd-input:focus-visible-within {
+  outline: 2px solid var(--hdd-color-primary-01);
+  outline-offset: 2px;
+}
+
+.hdd-input--disabled {
+  background: var(--hdd-color-neutral-05);
+  border-color: var(--hdd-border-color-disabled);
+  cursor: not-allowed;
+}
+
+.hdd-input--sm {
+  height: var(--hdd-input-height-sm);
+  padding: var(--hdd-input-padding-sm);
+}
+
+.hdd-input--md {
+  height: var(--hdd-input-height-md);
+  padding: var(--hdd-input-padding-md);
+}
+
+.hdd-input--lg {
+  height: var(--hdd-input-height-lg);
+  padding: var(--hdd-input-padding-lg);
+}
+
+.hdd-input__inner {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-family: var(--hdd-font-family-sans);
+  font-size: var(--hdd-font-size-base);
+  line-height: var(--hdd-line-height-normal);
+  color: var(--hdd-color-dark-04);
+}
+
+.hdd-input__inner::placeholder {
+  color: var(--hdd-color-dark-03);
+}
+
+.hdd-input__inner--disabled {
+  color: var(--hdd-color-dark-03);
+  cursor: not-allowed;
+}
+
+.hdd-input__prefix,
+.hdd-input__suffix {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--hdd-color-neutral-01);
+}
+
+.hdd-input__prefix {
+  margin-right: var(--hdd-spacing-2);
+}
+
+.hdd-input__suffix {
+  margin-left: var(--hdd-spacing-2);
+}
+
+.hdd-input__clear {
+  cursor: pointer;
+  transition: color var(--hdd-transition-duration-fast);
+}
+
+.hdd-input__clear:hover {
+  color: var(--hdd-color-dark-02);
+}
+
+.hdd-input__count {
+  position: absolute;
+  right: var(--hdd-spacing-4);
+  font-size: var(--hdd-font-size-xs);
+  line-height: var(--hdd-line-height-normal);
+  color: var(--hdd-color-neutral-01);
+}
+
+.hdd-input--has-count .hdd-input__inner {
+  padding-right: var(--hdd-spacing-12);
+}

@@ -53,6 +53,17 @@ const navGroups = [
       { name: 'divider', label: '分割线' },
       { name: 'layout', label: '布局' }
     ]
+  },
+  {
+    name: 'data-entry',
+    label: '数据录入',
+    items: [
+      { name: 'input', label: '输入框' },
+      { name: 'input-number', label: '数字输入框' },
+      { name: 'radio', label: '单选框' },
+      { name: 'checkbox', label: '多选框' },
+      { name: 'switch', label: '开关' }
+    ]
   }
 ]
 </script>
