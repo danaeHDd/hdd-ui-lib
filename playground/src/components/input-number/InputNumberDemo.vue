@@ -26,6 +26,13 @@
       <HddInputNumber :model-value="5" disabled />
     </div>
   </div>
+
+  <div class="demo-card">
+    <h3>错误状态</h3>
+    <div class="demo-row">
+      <HddInputNumber v-model="errorValue" error />
+    </div>
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -35,6 +42,7 @@ import { HddInputNumber } from 'hdd-ui-lib'
 const numberValue = ref(0)
 const rangeValue = ref(5)
 const stepValue = ref(0)
+const errorValue = ref(0)
 </script>
 
 <style scoped>

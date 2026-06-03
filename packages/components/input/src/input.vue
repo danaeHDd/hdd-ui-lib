@@ -1,38 +1,43 @@
 <template>
-  <div :class="inputWrapperClasses">
-    <span v-if="$slots.prefix" class="hdd-input__prefix">
-      <slot name="prefix" />
-    </span>
-    <input
-      :type="type"
-      :class="inputClasses"
-      :value="modelValue"
-      :placeholder="placeholder"
-      :disabled="disabled"
-      :readonly="readonly"
-      :maxlength="maxlength"
-      :minlength="minlength"
-      :autofocus="autofocus"
-      :name="name"
-      :spellcheck="spellcheck"
-      @input="handleInput"
-      @focus="handleFocus"
-      @blur="handleBlur"
-      @change="handleChange"
-    />
-    <span v-if="showClear && modelValue && !disabled && !readonly"
-          class="hdd-input__suffix hdd-input__clear"
-          @click="handleClear">
-      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
-        <line x1="18" y1="6" x2="6" y2="18" />
-        <line x1="6" y1="6" x2="18" y2="18" />
-      </svg>
-    </span>
-    <span v-else-if="$slots.suffix" class="hdd-input__suffix">
-      <slot name="suffix" />
-    </span>
-    <span v-if="showWordLimit && maxlength" class="hdd-input__count">
-      {{ modelValue?.length || 0 }}/{{ maxlength }}
+  <div class="hdd-input-wrapper">
+    <div :class="inputWrapperClasses">
+      <span v-if="$slots.prefix" class="hdd-input__prefix">
+        <slot name="prefix" />
+      </span>
+      <input
+        :type="type"
+        :class="inputClasses"
+        :value="modelValue"
+        :placeholder="placeholder"
+        :disabled="disabled"
+        :readonly="readonly"
+        :maxlength="maxlength"
+        :minlength="minlength"
+        :autofocus="autofocus"
+        :name="name"
+        :spellcheck="spellcheck"
+        @input="handleInput"
+        @focus="handleFocus"
+        @blur="handleBlur"
+        @change="handleChange"
+      />
+      <span v-if="showClear && modelValue && !disabled && !readonly"
+            class="hdd-input__suffix hdd-input__clear"
+            @click="handleClear">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18" />
+          <line x1="6" y1="6" x2="18" y2="18" />
+        </svg>
+      </span>
+      <span v-else-if="$slots.suffix" class="hdd-input__suffix">
+        <slot name="suffix" />
+      </span>
+      <span v-if="showWordLimit && maxlength" class="hdd-input__count">
+        {{ modelValue?.length || 0 }}/{{ maxlength }}
+      </span>
+    </div>
+    <span v-if="error && errorMessage" class="hdd-input__error-message">
+      {{ errorMessage }}
     </span>
   </div>
 </template>
@@ -53,6 +58,8 @@ interface InputProps {
   spellcheck?: boolean
   showClear?: boolean
   showWordLimit?: boolean
+  error?: boolean
+  errorMessage?: string
 }
 
 const props = withDefaults(defineProps<InputProps>(), {
@@ -62,7 +69,8 @@ const props = withDefaults(defineProps<InputProps>(), {
   autofocus: false,
   spellcheck: false,
   showClear: false,
-  showWordLimit: false
+  showWordLimit: false,
+  error: false
 })
 
 const emit = defineEmits<{
@@ -80,7 +88,8 @@ const inputWrapperClasses = computed(() => [
     'hdd-input--disabled': props.disabled,
     'hdd-input--has-prefix': !!slots.prefix,
     'hdd-input--has-suffix': !!slots.suffix || (props.showClear && props.modelValue),
-    'hdd-input--has-count': props.showWordLimit && props.maxlength
+    'hdd-input--has-count': props.showWordLimit && props.maxlength,
+    'hdd-input--error': props.error
   }
 ])
 

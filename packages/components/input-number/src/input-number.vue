@@ -42,6 +42,7 @@ interface InputNumberProps {
   precision?: number
   disabled?: boolean
   readonly?: boolean
+  error?: boolean
 }
 
 const props = withDefaults(defineProps<InputNumberProps>(), {
@@ -51,6 +52,7 @@ const props = withDefaults(defineProps<InputNumberProps>(), {
   step: 1,
   disabled: false,
   readonly: false,
+  error: false,
 })
 
 const emit = defineEmits<{
@@ -69,7 +71,8 @@ watch(() => props.modelValue, (newVal) => {
 const wrapperClasses = computed(() => [
   'hdd-input-number',
   {
-    'hdd-input-number--disabled': props.disabled
+    'hdd-input-number--disabled': props.disabled,
+    'hdd-input-number--error': props.error
   }
 ])
 

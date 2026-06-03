@@ -28,10 +28,12 @@ interface RadioProps {
   label?: string | number
   disabled?: boolean
   name?: string
+  error?: boolean
 }
 
 const props = withDefaults(defineProps<RadioProps>(), {
-  disabled: false
+  disabled: false,
+  error: false
 })
 
 const emit = defineEmits<{
@@ -43,7 +45,8 @@ const radioClasses = computed(() => [
   'hdd-radio',
   {
     'hdd-radio--checked': props.modelValue === props.label,
-    'hdd-radio--disabled': props.disabled
+    'hdd-radio--disabled': props.disabled,
+    'hdd-radio--error': props.error
   }
 ])
 

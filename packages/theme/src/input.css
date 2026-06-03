@@ -24,6 +24,22 @@
   cursor: not-allowed;
 }
 
+.hdd-input--error {
+  border-color: var(--hdd-color-danger-01);
+}
+
+.hdd-input--error:focus-within {
+  border-color: var(--hdd-color-danger-01);
+  outline: 1px solid var(--hdd-color-danger-01);
+}
+
+.hdd-input__error-message {
+  display: block;
+  margin-top: var(--hdd-spacing-1);
+  font-size: var(--hdd-font-size-xs);
+  color: var(--hdd-color-danger-01);
+}
+
 .hdd-input__inner {
   width: 100%;
   height: 100%;

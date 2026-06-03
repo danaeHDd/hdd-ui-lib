@@ -89,6 +89,20 @@
   border-color: var(--hdd-color-neutral-04);
 }
 
+.hdd-checkbox--error .hdd-checkbox__inner {
+  border-color: var(--hdd-color-danger-01);
+}
+
+.hdd-checkbox--error.hdd-checkbox--checked .hdd-checkbox__inner {
+  background: var(--hdd-color-danger-01);
+  border-color: var(--hdd-color-danger-01);
+}
+
+.hdd-checkbox--error.hdd-checkbox--indeterminate .hdd-checkbox__inner {
+  background: var(--hdd-color-danger-01);
+  border-color: var(--hdd-color-danger-01);
+}
+
 .hdd-checkbox input {
   position: absolute;
   width: 100%;

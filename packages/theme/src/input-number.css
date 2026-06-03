@@ -22,6 +22,15 @@
   cursor: not-allowed;
 }
 
+.hdd-input-number--error {
+  border-color: var(--hdd-color-danger-01);
+}
+
+.hdd-input-number--error:focus-within {
+  border-color: var(--hdd-color-danger-01);
+  outline: 1px solid var(--hdd-color-danger-01);
+}
+
 .hdd-input-number__decrease,
 .hdd-input-number__increase {
   display: flex;

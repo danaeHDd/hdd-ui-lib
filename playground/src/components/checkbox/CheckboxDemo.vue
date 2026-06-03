@@ -41,6 +41,15 @@
       <HddCheckbox v-model="indeterminateValue" indeterminate>全选</HddCheckbox>
     </div>
   </div>
+
+  <div class="demo-card">
+    <h3>错误状态</h3>
+    <div class="demo-row">
+      <HddCheckbox v-model="errorValue1" error>错误选项</HddCheckbox>
+      <HddCheckbox v-model="errorValue1" error>错误选项</HddCheckbox>
+      <HddCheckbox v-model="errorValue2" error>错误选项(选中)</HddCheckbox>
+    </div>
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -53,6 +62,8 @@ const disabledValue = ref(false)
 const disabledChecked = ref(true)
 const multipleValue = ref(['苹果', '橙子'])
 const indeterminateValue = ref(false)
+const errorValue1 = ref(false)
+const errorValue2 = ref(true)
 </script>
 
 <style scoped>

@@ -33,6 +33,15 @@
       <HddRadio v-model="labelValue" label="橙子" />
     </div>
   </div>
+
+  <div class="demo-card">
+    <h3>错误状态</h3>
+    <div class="demo-row">
+      <HddRadio v-model="errorValue" label="选项1" error>错误选项</HddRadio>
+      <HddRadio v-model="errorValue" label="选项2" error>错误选项</HddRadio>
+      <HddRadio v-model="errorValue" label="选项3" error>错误选项</HddRadio>
+    </div>
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -43,6 +52,7 @@ const radioValue = ref('选项1')
 const sizeValue = ref('md')
 const disabledValue = ref('')
 const labelValue = ref('苹果')
+const errorValue = ref('')
 </script>
 
 <style scoped>

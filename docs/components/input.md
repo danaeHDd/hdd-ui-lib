@@ -126,6 +126,23 @@
   </template>
 </demo-block>
 
+## 错误状态
+
+<demo-block>
+  <template #demo>
+    <hdd-input placeholder="错误状态" error error-message="请输入正确的内容" />
+  </template>
+  <template #code>
+
+  ```vue
+  <template>
+    <hdd-input placeholder="错误状态" error error-message="请输入正确的内容" />
+  </template>
+  ```
+
+  </template>
+</demo-block>
+
 ## API
 
 | 属性名 | 说明 | 类型 | 可选值 | 默认值 |
@@ -140,6 +157,8 @@
 | size | 尺寸 | string | sm/md/lg | md |
 | showClear | 是否显示清空按钮 | boolean | - | false |
 | showWordLimit | 是否显示字数统计 | boolean | - | false |
+| error | 是否错误状态 | boolean | - | false |
+| errorMessage | 错误消息 | string | - | - |
 
 ## 事件
 

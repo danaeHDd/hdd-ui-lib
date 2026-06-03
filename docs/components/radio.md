@@ -69,6 +69,27 @@
   </template>
 </demo-block>
 
+## 错误状态
+
+<demo-block>
+  <template #demo>
+    <div style="display: flex; gap: 24px;">
+      <hdd-radio v-model="errorValue" label="选项1" error>错误选项</hdd-radio>
+      <hdd-radio v-model="errorValue" label="选项2" error>错误选项</hdd-radio>
+    </div>
+  </template>
+  <template #code>
+
+  ```vue
+  <template>
+    <hdd-radio v-model="errorValue" label="选项1" error>错误选项</hdd-radio>
+    <hdd-radio v-model="errorValue" label="选项2" error>错误选项</hdd-radio>
+  </template>
+  ```
+
+  </template>
+</demo-block>
+
 ## API
 
 | 属性名 | 说明 | 类型 | 可选值 | 默认值 |
@@ -77,6 +98,7 @@
 | label | 选项值 | string/number | - | - |
 | disabled | 是否禁用 | boolean | - | false |
 | size | 尺寸 | string | sm/md/lg | md |
+| error | 是否错误状态 | boolean | - | false |
 
 ## 事件
 

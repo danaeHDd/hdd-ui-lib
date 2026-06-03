@@ -57,6 +57,13 @@
       <HddInput placeholder="禁用状态" disabled />
     </div>
   </div>
+
+  <div class="demo-card">
+    <h3>错误状态</h3>
+    <div class="demo-row">
+      <HddInput placeholder="错误状态" error errorMessage="请输入正确的内容" />
+    </div>
+  </div>
 </template>
 
 <script setup lang="ts">

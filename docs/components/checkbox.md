@@ -65,6 +65,27 @@
   </template>
 </demo-block>
 
+## 错误状态
+
+<demo-block>
+  <template #demo>
+    <div style="display: flex; gap: 24px;">
+      <hdd-checkbox v-model="errorValue1" error>错误选项</hdd-checkbox>
+      <hdd-checkbox v-model="errorValue1" error>错误选项</hdd-checkbox>
+    </div>
+  </template>
+  <template #code>
+
+  ```vue
+  <template>
+    <hdd-checkbox v-model="errorValue1" error>错误选项</hdd-checkbox>
+    <hdd-checkbox v-model="errorValue1" error>错误选项</hdd-checkbox>
+  </template>
+  ```
+
+  </template>
+</demo-block>
+
 ## API
 
 | 属性名 | 说明 | 类型 | 可选值 | 默认值 |
@@ -74,6 +95,7 @@
 | disabled | 是否禁用 | boolean | - | false |
 | indeterminate | 是否半选 | boolean | - | false |
 | size | 尺寸 | string | sm/md/lg | md |
+| error | 是否错误状态 | boolean | - | false |
 
 ## 事件
 
