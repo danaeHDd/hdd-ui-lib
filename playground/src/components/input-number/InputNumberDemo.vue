@@ -7,15 +7,6 @@
   </div>
 
   <div class="demo-card">
-    <h3>不同尺寸</h3>
-    <div class="demo-row">
-      <HddInputNumber size="sm" :model-value="0" />
-      <HddInputNumber size="md" :model-value="0" />
-      <HddInputNumber size="lg" :model-value="0" />
-    </div>
-  </div>
-
-  <div class="demo-card">
     <h3>设置范围</h3>
     <div class="demo-row">
       <HddInputNumber v-model="rangeValue" :min="0" :max="10" />

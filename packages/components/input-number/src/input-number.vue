@@ -1,5 +1,5 @@
 <template>
-  <div :class="inputWrapperClasses">
+  <div :class="wrapperClasses">
     <span class="hdd-input-number__decrease"
           :class="{ 'hdd-input-number__decrease--disabled': disabled || currentValue <= min }"
           @click="handleDecrease">
