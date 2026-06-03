@@ -9,11 +9,9 @@
   >
     <span class="hdd-switch__core">
       <span class="hdd-switch__thumb">
-        <span v-if="loading" class="hdd-switch__loading">
-          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
-            <circle cx="12" cy="12" r="10" />
-          </svg>
-        </span>
+        <svg v-if="loading" class="hdd-switch__loading" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round">
+          <circle cx="12" cy="12" r="9" stroke-dasharray="42 15" />
+        </svg>
       </span>
     </span>
     <span v-if="showText" class="hdd-switch__text">

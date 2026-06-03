@@ -34,6 +34,7 @@
     <h3>带文字</h3>
     <div class="demo-row">
       <HddSwitch v-model="textValue" showText activeText="开" inactiveText="关" />
+      <HddSwitch v-model="textValue2" showText activeText="完整展示多个内容" inactiveText="多个内容" />
     </div>
   </div>
 </template>
@@ -48,6 +49,7 @@ const disabledValue1 = ref(false)
 const disabledValue2 = ref(true)
 const loadingValue = ref(true)
 const textValue = ref(true)
+const textValue2 = ref(true)
 </script>
 
 <style scoped>

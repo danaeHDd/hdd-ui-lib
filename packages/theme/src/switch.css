@@ -87,6 +87,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 }
 
 .hdd-switch--sm .hdd-switch__thumb {
@@ -114,25 +115,22 @@
 
 /* ============================================
    Loading 加载状态
-   加载图标位于 thumb 内部
+   SVG直接作为thumb的flex子元素，居中+旋转
    ============================================ */
 .hdd-switch__loading {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  width: 14px;
+  height: 14px;
   color: var(--hdd-color-primary-01);
   animation: hdd-switch-loading 1s linear infinite;
-  width: 12px;
-  height: 12px;
+  flex-shrink: 0;
 }
 
 @keyframes hdd-switch-loading {
   from {
-    transform: translate(-50%, -50%) rotate(0deg);
+    transform: rotate(0deg);
   }
   to {
-    transform: translate(-50%, -50%) rotate(360deg);
+    transform: rotate(360deg);
   }
 }
 
@@ -147,26 +145,24 @@
 
 /* ============================================
    Show-text 带文字状态
-   文字在轨道内部，thumb 在文字对面
+   文字在文档流中撑开宽度，thumb绝对定位相对于button
    ============================================ */
+
+/* core在show-text模式下不占空间，让text撑开宽度 */
+.hdd-switch--show-text .hdd-switch__core {
+  width: 0;
+  height: 100%;
+  position: static;
+}
+
+/* 未选中：文字在左，thumb在右 */
 .hdd-switch--show-text {
-  width: 72px;
+  width: auto;
+  min-width: 48px;
+  padding: 0 30px 0 8px;
 }
 
-.hdd-switch--show-text.hdd-switch--sm {
-  width: 64px;
-}
-
-.hdd-switch--show-text.hdd-switch--lg {
-  width: 80px;
-}
-
-/* 文字：绝对定位在轨道内 */
 .hdd-switch--show-text .hdd-switch__text {
-  position: absolute;
-  left: 8px;
-  top: 50%;
-  transform: translateY(-50%);
   font-family: var(--hdd-font-family-sans);
   font-size: var(--hdd-font-size-xs);
   line-height: 1;
@@ -174,50 +170,45 @@
   white-space: nowrap;
 }
 
-.hdd-switch--show-text.hdd-switch--checked .hdd-switch__text {
+/* thumb相对于button定位 */
+.hdd-switch--show-text .hdd-switch__thumb {
   left: auto;
-  right: 8px;
+  right: 2px;
+}
+
+/* 选中：thumb在左，文字在右 */
+.hdd-switch--show-text.hdd-switch--checked {
+  padding: 0 8px 0 30px;
+  background-color: var(--hdd-color-primary-01);
+}
+
+.hdd-switch--show-text.hdd-switch--checked .hdd-switch__text {
   color: var(--hdd-color-white);
 }
 
-/* 带文字时 thumb 位置反转：未选中在右，选中在左 */
-.hdd-switch--show-text .hdd-switch__thumb {
-  left: calc(100% - 24px - 2px);
-}
-
 .hdd-switch--show-text.hdd-switch--checked .hdd-switch__thumb {
+  right: auto;
   left: 2px;
 }
 
-.hdd-switch--show-text.hdd-switch--sm .hdd-switch__thumb {
-  left: calc(100% - 20px - 2px);
+/* sm尺寸 */
+.hdd-switch--show-text.hdd-switch--sm {
+  min-width: 40px;
+  padding: 0 26px 0 8px;
 }
 
-.hdd-switch--show-text.hdd-switch--sm.hdd-switch--checked .hdd-switch__thumb {
-  left: 2px;
+.hdd-switch--show-text.hdd-switch--sm.hdd-switch--checked {
+  padding: 0 8px 0 26px;
 }
 
-.hdd-switch--show-text.hdd-switch--lg .hdd-switch__thumb {
-  left: calc(100% - 28px - 2px);
+/* lg尺寸 */
+.hdd-switch--show-text.hdd-switch--lg {
+  min-width: 56px;
+  padding: 0 34px 0 8px;
 }
 
-.hdd-switch--show-text.hdd-switch--lg.hdd-switch--checked .hdd-switch__thumb {
-  left: 2px;
-}
-
-/* ============================================
-   Inline-prompt 内联标签（外部文字）
-   ============================================ */
-.hdd-switch--inline-prompt {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.hdd-switch--inline-prompt .hdd-switch__label {
-  font-family: var(--hdd-font-family-sans);
-  font-size: var(--hdd-font-size-sm);
-  color: var(--hdd-color-dark-04);
+.hdd-switch--show-text.hdd-switch--lg.hdd-switch--checked {
+  padding: 0 8px 0 34px;
 }
 
 /* ============================================
