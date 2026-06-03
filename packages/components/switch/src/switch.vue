@@ -7,13 +7,14 @@
     :aria-label="modelValue ? activeText : inactiveText"
     @click="handleClick"
   >
-    <span v-if="loading" class="hdd-switch__loading">
-      <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
-        <circle cx="12" cy="12" r="10" />
-      </svg>
-    </span>
     <span class="hdd-switch__core">
-      <span class="hdd-switch__thumb"></span>
+      <span class="hdd-switch__thumb">
+        <span v-if="loading" class="hdd-switch__loading">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10" />
+          </svg>
+        </span>
+      </span>
     </span>
     <span v-if="showText" class="hdd-switch__text">
       {{ modelValue ? activeText : inactiveText }}
