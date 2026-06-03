@@ -68,9 +68,9 @@ packages/
 
 #### 深色系（文本/边框）
 ```css
---hdd-color-dark-01: #EBEBEB;  /* Placeholder */
+--hdd-color-dark-01: #EBEBEB;  
 --hdd-color-dark-02: #D4D4D4;
---hdd-color-dark-03: #C2C2C2;  /* 禁用状态、分割线 */
+--hdd-color-dark-03: #C2C2C2;  /* 禁用状态、分割线、Placeholder */
 --hdd-color-dark-04: #333333;  /* 正文文本 */
 ```
 
@@ -81,7 +81,7 @@ packages/
 | 主要文本 | `--hdd-color-dark-04` | 正文、标题 |
 | 次要文本 | `--hdd-color-neutral-01` | 辅助说明 |
 | 禁用文本 | `--hdd-color-dark-03` | 禁用状态 |
-| 占位文本 | `--hdd-color-dark-01` | placeholder |
+| 占位文本 | `--hdd-color-dark-03` | placeholder |
 
 ### 2.3 字体系统
 

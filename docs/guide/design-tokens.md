@@ -29,9 +29,9 @@
 
 | 变量 | 值 | 用途 |
 |------|----|------|
-| `--hdd-color-dark-01` | `#EBEBEB` | placeholder |
+| `--hdd-color-dark-01` | `#EBEBEB` |  |
 | `--hdd-color-dark-02` | `#D4D4D4` | 边框 |
-| `--hdd-color-dark-03` | `#C2C2C2` | 禁用状态 |
+| `--hdd-color-dark-03` | `#C2C2C2` | 禁用状态、placeholder |
 | `--hdd-color-dark-04` | `#333333` | 正文文本 |
 
 ## 字体系统
