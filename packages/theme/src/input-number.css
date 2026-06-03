@@ -12,11 +12,8 @@
 
 .hdd-input-number:focus-within {
   border-color: var(--hdd-border-color-active);
-}
-
-.hdd-input-number__inner:focus-visible {
-  outline: 2px solid var(--hdd-color-primary-01);
-  outline-offset: 2px;
+  outline: 1px solid var(--hdd-color-primary-01);
+  outline-offset: 0px;
 }
 
 .hdd-input-number--disabled {
