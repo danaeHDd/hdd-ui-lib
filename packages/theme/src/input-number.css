@@ -3,6 +3,7 @@
 .hdd-input-number {
   display: inline-flex;
   align-items: center;
+  height: var(--hdd-input-height-sm);
   background: var(--hdd-color-white);
   border: var(--hdd-border-width-sm) solid var(--hdd-border-color-default);
   border-radius: var(--hdd-radius-sm);
@@ -25,18 +26,6 @@
   cursor: not-allowed;
 }
 
-.hdd-input-number--sm {
-  height: var(--hdd-input-height-sm);
-}
-
-.hdd-input-number--md {
-  height: var(--hdd-input-height-md);
-}
-
-.hdd-input-number--lg {
-  height: var(--hdd-input-height-lg);
-}
-
 .hdd-input-number__decrease,
 .hdd-input-number__increase {
   display: flex;
@@ -46,16 +35,6 @@
   color: var(--hdd-color-neutral-01);
   cursor: pointer;
   transition: all var(--hdd-transition-duration-fast);
-}
-
-.hdd-input-number--md .hdd-input-number__decrease,
-.hdd-input-number--md .hdd-input-number__increase {
-  width: var(--hdd-spacing-10);
-}
-
-.hdd-input-number--lg .hdd-input-number__decrease,
-.hdd-input-number--lg .hdd-input-number__increase {
-  width: var(--hdd-spacing-12);
 }
 
 .hdd-input-number__decrease:hover,
@@ -76,7 +55,7 @@
 }
 
 .hdd-input-number__inner {
-  width: 100%;
+  width: var(--hdd-spacing-12);
   height: 100%;
   background: transparent;
   border: none;
@@ -86,16 +65,4 @@
   font-size: var(--hdd-font-size-base);
   line-height: var(--hdd-line-height-normal);
   color: var(--hdd-color-dark-04);
-}
-
-.hdd-input-number__inner--sm {
-  width: var(--hdd-spacing-12);
-}
-
-.hdd-input-number__inner--md {
-  width: var(--hdd-spacing-16);
-}
-
-.hdd-input-number__inner--lg {
-  width: var(--hdd-spacing-20);
 }

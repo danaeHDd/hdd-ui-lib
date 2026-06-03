@@ -9,7 +9,7 @@
     </span>
     <input
       type="number"
-      :class="['hdd-input-number__inner', `hdd-input-number__inner--${size}`]"
+      :class="['hdd-input-number__inner']"
       :value="currentValue"
       :disabled="disabled"
       :readonly="readonly"
@@ -42,7 +42,6 @@ interface InputNumberProps {
   precision?: number
   disabled?: boolean
   readonly?: boolean
-  size?: 'sm' | 'md' | 'lg'
 }
 
 const props = withDefaults(defineProps<InputNumberProps>(), {
@@ -52,7 +51,6 @@ const props = withDefaults(defineProps<InputNumberProps>(), {
   step: 1,
   disabled: false,
   readonly: false,
-  size: 'sm'
 })
 
 const emit = defineEmits<{
@@ -68,9 +66,8 @@ watch(() => props.modelValue, (newVal) => {
   currentValue.value = newVal
 })
 
-const inputWrapperClasses = computed(() => [
+const wrapperClasses = computed(() => [
   'hdd-input-number',
-  `hdd-input-number--${props.size}`,
   {
     'hdd-input-number--disabled': props.disabled
   }

@@ -51,7 +51,6 @@ interface InputProps {
   autofocus?: boolean
   name?: string
   spellcheck?: boolean
-  size?: 'sm' | 'md' | 'lg'
   showClear?: boolean
   showWordLimit?: boolean
 }
@@ -62,7 +61,6 @@ const props = withDefaults(defineProps<InputProps>(), {
   readonly: false,
   autofocus: false,
   spellcheck: false,
-  size: 'sm',
   showClear: false,
   showWordLimit: false
 })
@@ -78,7 +76,6 @@ const slots = useSlots()
 
 const inputWrapperClasses = computed(() => [
   'hdd-input',
-  `hdd-input--${props.size}`,
   {
     'hdd-input--disabled': props.disabled,
     'hdd-input--has-prefix': !!slots.prefix,

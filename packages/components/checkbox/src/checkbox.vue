@@ -28,13 +28,11 @@ interface CheckboxProps {
   label?: string
   disabled?: boolean
   indeterminate?: boolean
-  size?: 'sm' | 'md' | 'lg'
 }
 
 const props = withDefaults(defineProps<CheckboxProps>(), {
   disabled: false,
-  indeterminate: false,
-  size: 'md'
+  indeterminate: false
 })
 
 const emit = defineEmits<{
@@ -58,7 +56,6 @@ watch(() => props.indeterminate, (val) => {
 
 const checkboxClasses = computed(() => [
   'hdd-checkbox',
-  `hdd-checkbox--${props.size}`,
   {
     'hdd-checkbox--checked': checked.value && !props.indeterminate,
     'hdd-checkbox--indeterminate': props.indeterminate,

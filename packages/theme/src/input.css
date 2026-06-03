@@ -4,6 +4,8 @@
   position: relative;
   display: inline-flex;
   align-items: center;
+  height: var(--hdd-input-height-sm);
+  padding: var(--hdd-input-padding-sm);
   background: var(--hdd-color-white);
   border: var(--hdd-border-width-sm) solid var(--hdd-border-color-default);
   border-radius: var(--hdd-radius-sm);
@@ -23,21 +25,6 @@
   background: var(--hdd-color-neutral-05);
   border-color: var(--hdd-border-color-disabled);
   cursor: not-allowed;
-}
-
-.hdd-input--sm {
-  height: var(--hdd-input-height-sm);
-  padding: var(--hdd-input-padding-sm);
-}
-
-.hdd-input--md {
-  height: var(--hdd-input-height-md);
-  padding: var(--hdd-input-padding-md);
-}
-
-.hdd-input--lg {
-  height: var(--hdd-input-height-lg);
-  padding: var(--hdd-input-padding-lg);
 }
 
 .hdd-input__inner {
