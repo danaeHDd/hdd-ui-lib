@@ -31,7 +31,7 @@
 
 <demo-block>
   <template #demo>
-    <hdd-layout style="height: 200px; border: 1px solid #eee;">
+    <hdd-layout :has-sider="true" style="height: 200px; border: 1px solid #eee;">
       <hdd-sider style="width: 200px; background: #f5f5f5; display: flex; align-items: center; justify-content: center;">Sider</hdd-sider>
       <hdd-layout>
         <hdd-header style="background: #9E8A57; color: white; padding: 16px;">Header</hdd-header>
@@ -44,7 +44,7 @@
 
   ```vue
   <template>
-    <hdd-layout>
+    <hdd-layout :has-sider="true">
       <hdd-sider>Sider</hdd-sider>
       <hdd-layout>
         <hdd-header>Header</hdd-header>
@@ -89,7 +89,7 @@
   <template #demo>
     <hdd-layout style="height: 300px; border: 1px solid #eee;">
       <hdd-header style="background: #9E8A57; color: white; padding: 16px; display: flex; align-items: center; justify-content: center;">Header</hdd-header>
-      <hdd-layout>
+      <hdd-layout :has-sider="true">
         <hdd-sider style="width: 200px; background: #f5f5f5; display: flex; align-items: center; justify-content: center;">Sider</hdd-sider>
         <hdd-content style="background: #fff; display: flex; align-items: center; justify-content: center;">Content</hdd-content>
       </hdd-layout>
@@ -102,7 +102,7 @@
   <template>
     <hdd-layout>
       <hdd-header>Header</hdd-header>
-      <hdd-layout>
+      <hdd-layout :has-sider="true">
         <hdd-sider>Sider</hdd-sider>
         <hdd-content>Content</hdd-content>
       </hdd-layout>

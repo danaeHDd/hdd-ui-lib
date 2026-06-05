@@ -45,10 +45,24 @@ const navGroups = [
     items: [
       { name: 'button', label: '按钮' },
       { name: 'icon', label: '图标' },
+      { name: 'link', label: '链接' },
+      { name: 'text', label: '文字' },
+      { name: 'space', label: '间距' },
       { name: 'grid', label: '网格' },
       { name: 'flex', label: '弹性布局' },
       { name: 'divider', label: '分割线' },
       { name: 'layout', label: '布局' }
+    ]
+  },
+  {
+    name: 'data-entry',
+    label: '数据录入',
+    items: [
+      { name: 'input', label: '输入框' },
+      { name: 'input-number', label: '数字输入框' },
+      { name: 'radio', label: '单选框' },
+      { name: 'checkbox', label: '多选框' },
+      { name: 'switch', label: '开关' }
     ]
   }
 ]

@@ -36,6 +36,38 @@
         <div v-else-if="activeComponent === 'layout'" class="demo-container">
           <LayoutDemo />
         </div>
+        
+        <div v-else-if="activeComponent === 'link'" class="demo-container">
+          <LinkDemo />
+        </div>
+        
+        <div v-else-if="activeComponent === 'text'" class="demo-container">
+          <TextDemo />
+        </div>
+        
+        <div v-else-if="activeComponent === 'space'" class="demo-container">
+          <SpaceDemo />
+        </div>
+        
+        <div v-else-if="activeComponent === 'input'" class="demo-container">
+          <InputDemo />
+        </div>
+        
+        <div v-else-if="activeComponent === 'input-number'" class="demo-container">
+          <InputNumberDemo />
+        </div>
+        
+        <div v-else-if="activeComponent === 'radio'" class="demo-container">
+          <RadioDemo />
+        </div>
+        
+        <div v-else-if="activeComponent === 'checkbox'" class="demo-container">
+          <CheckboxDemo />
+        </div>
+        
+        <div v-else-if="activeComponent === 'switch'" class="demo-container">
+          <SwitchDemo />
+        </div>
       </main>
     </div>
   </div>
@@ -51,6 +83,14 @@ import GridDemo from './components/grid/GridDemo.vue'
 import FlexDemo from './components/flex/FlexDemo.vue'
 import DividerDemo from './components/divider/DividerDemo.vue'
 import LayoutDemo from './components/layout/LayoutDemo.vue'
+import LinkDemo from './components/link/LinkDemo.vue'
+import TextDemo from './components/text/TextDemo.vue'
+import SpaceDemo from './components/space/SpaceDemo.vue'
+import InputDemo from './components/input/InputDemo.vue'
+import InputNumberDemo from './components/input-number/InputNumberDemo.vue'
+import RadioDemo from './components/radio/RadioDemo.vue'
+import CheckboxDemo from './components/checkbox/CheckboxDemo.vue'
+import SwitchDemo from './components/switch/SwitchDemo.vue'
 
 const activeComponent = ref('color-system')
 

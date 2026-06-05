@@ -4,6 +4,7 @@
     :width="size"
     :height="size"
     viewBox="0 0 67 67"
+    :style="iconStyle"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >
@@ -20,15 +21,48 @@ import { computed } from 'vue'
 interface InfoIconProps {
   size?: number | string
   color?: string
+  rotate?: number
+  flip?: 'horizontal' | 'vertical' | 'both'
+  spin?: boolean
 }
 
 const props = withDefaults(defineProps<InfoIconProps>(), {
   size: 24,
-  color: 'currentColor'
+  color: 'currentColor',
+  rotate: 0,
+  flip: '',
+  spin: false
 })
 
 const iconClasses = computed(() => {
-  return ['hdd-icon', 'hdd-icon--info']
+  return [
+    'hdd-icon',
+    'hdd-icon--info',
+    {
+      'hdd-icon--spin': props.spin
+    }
+  ]
+})
+
+const iconStyle = computed(() => {
+  const style: Record<string, string> = {}
+  
+  if (props.rotate !== 0) {
+    style.transform = `rotate(${props.rotate}deg)`
+  }
+  
+  if (props.flip) {
+    let flipTransform = ''
+    if (props.flip === 'horizontal' || props.flip === 'both') {
+      flipTransform += ' scaleX(-1)'
+    }
+    if (props.flip === 'vertical' || props.flip === 'both') {
+      flipTransform += ' scaleY(-1)'
+    }
+    style.transform = (style.transform || '') + flipTransform
+  }
+  
+  return style
 })
 </script>
 
@@ -39,4 +73,21 @@ export default {
 </script>
 
 <style scoped>
+@keyframes hdd-icon-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.hdd-icon {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.hdd-icon--spin {
+  animation: hdd-icon-spin 1s linear infinite;
+}
 </style>

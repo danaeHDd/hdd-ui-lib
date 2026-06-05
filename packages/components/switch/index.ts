@@ -1,0 +1,1 @@
+export { default as HddSwitch } from './src/switch.vue'

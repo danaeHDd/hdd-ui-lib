@@ -1,0 +1,54 @@
+/* ============================================
+   Icon 组件样式
+   ============================================ */
+
+@import './design-tokens.css';
+
+/* 基础样式 */
+.hdd-icon {
+  display: inline-block;
+  vertical-align: middle;
+  user-select: none;
+}
+
+/* 旋转动画 */
+@keyframes hdd-icon-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.hdd-icon--spin {
+  animation: hdd-icon-spin 1s linear infinite;
+}
+
+/* 键盘焦点状态 (无障碍) */
+.hdd-icon:focus-visible {
+  outline: 2px solid var(--hdd-color-primary-01);
+  outline-offset: 2px;
+  border-radius: var(--hdd-radius-sm);
+}
+
+/* 不同尺寸的图标 */
+.hdd-icon--xs {
+  font-size: var(--hdd-icon-size-xs);
+}
+
+.hdd-icon--sm {
+  font-size: var(--hdd-icon-size-sm);
+}
+
+.hdd-icon--md {
+  font-size: var(--hdd-icon-size-md);
+}
+
+.hdd-icon--lg {
+  font-size: var(--hdd-icon-size-lg);
+}
+
+.hdd-icon--xl {
+  font-size: var(--hdd-icon-size-xl);
+}

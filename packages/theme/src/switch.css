@@ -1,0 +1,220 @@
+@import './design-tokens.css';
+
+/* ============================================
+   Switch 基础样式
+   ============================================ */
+.hdd-switch {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  width: 48px;
+  height: 28px;
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-radius: 14px;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  outline: none;
+  background-color: var(--hdd-border-color-default);
+  transition: background-color var(--hdd-transition-duration-normal);
+  line-height: 1;
+}
+
+.hdd-switch:hover:not(.hdd-switch--disabled) {
+  background-color: var(--hdd-color-neutral-03);
+}
+
+.hdd-switch--checked {
+  background-color: var(--hdd-color-primary-01);
+}
+
+.hdd-switch--checked:hover:not(.hdd-switch--disabled) {
+  background-color: var(--hdd-color-primary-02);
+}
+
+.hdd-switch--disabled {
+  background-color: var(--hdd-color-neutral-04);
+  cursor: not-allowed;
+}
+
+.hdd-switch--disabled.hdd-switch--checked {
+  background-color: var(--hdd-color-primary-04);
+}
+
+/* ============================================
+   Size variants
+   ============================================ */
+.hdd-switch--sm {
+  width: 40px;
+  height: 24px;
+  border-radius: 12px;
+}
+
+.hdd-switch--md {
+  width: 48px;
+  height: 28px;
+  border-radius: 14px;
+}
+
+.hdd-switch--lg {
+  width: 56px;
+  height: 32px;
+  border-radius: 16px;
+}
+
+/* ============================================
+   Core & Thumb
+   ============================================ */
+.hdd-switch__core {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.hdd-switch__thumb {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 24px;
+  height: 24px;
+  background-color: var(--hdd-color-white);
+  border-radius: 50%;
+  box-shadow: var(--hdd-shadow-sm);
+  transition: left var(--hdd-transition-duration-normal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.hdd-switch--sm .hdd-switch__thumb {
+  width: 20px;
+  height: 20px;
+}
+
+.hdd-switch--lg .hdd-switch__thumb {
+  width: 28px;
+  height: 28px;
+}
+
+/* 选中时 thumb 移到右侧 */
+.hdd-switch--checked .hdd-switch__thumb {
+  left: calc(100% - 24px - 2px);
+}
+
+.hdd-switch--sm.hdd-switch--checked .hdd-switch__thumb {
+  left: calc(100% - 20px - 2px);
+}
+
+.hdd-switch--lg.hdd-switch--checked .hdd-switch__thumb {
+  left: calc(100% - 28px - 2px);
+}
+
+/* ============================================
+   Loading 加载状态
+   SVG直接作为thumb的flex子元素，居中+旋转
+   ============================================ */
+.hdd-switch__loading {
+  width: 14px;
+  height: 14px;
+  color: var(--hdd-color-primary-01);
+  animation: hdd-switch-loading 1s linear infinite;
+  flex-shrink: 0;
+}
+
+@keyframes hdd-switch-loading {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.hdd-switch--loading {
+  background-color: var(--hdd-color-neutral-04) !important;
+  cursor: not-allowed;
+}
+
+.hdd-switch--loading .hdd-switch__thumb {
+  background-color: var(--hdd-color-white);
+}
+
+/* ============================================
+   Show-text 带文字状态
+   文字在文档流中撑开宽度，thumb绝对定位相对于button
+   ============================================ */
+
+/* core在show-text模式下不占空间，让text撑开宽度 */
+.hdd-switch--show-text .hdd-switch__core {
+  width: 0;
+  height: 100%;
+  position: static;
+}
+
+/* 未选中：文字在左，thumb在右 */
+.hdd-switch--show-text {
+  width: auto;
+  min-width: 48px;
+  padding: 0 30px 0 8px;
+}
+
+.hdd-switch--show-text .hdd-switch__text {
+  font-family: var(--hdd-font-family-sans);
+  font-size: var(--hdd-font-size-xs);
+  line-height: 1;
+  color: var(--hdd-color-dark-04);
+  white-space: nowrap;
+}
+
+/* thumb相对于button定位 */
+.hdd-switch--show-text .hdd-switch__thumb {
+  left: auto;
+  right: 2px;
+}
+
+/* 选中：thumb在左，文字在右 */
+.hdd-switch--show-text.hdd-switch--checked {
+  padding: 0 8px 0 30px;
+  background-color: var(--hdd-color-primary-01);
+}
+
+.hdd-switch--show-text.hdd-switch--checked .hdd-switch__text {
+  color: var(--hdd-color-white);
+}
+
+.hdd-switch--show-text.hdd-switch--checked .hdd-switch__thumb {
+  right: auto;
+  left: 2px;
+}
+
+/* sm尺寸 */
+.hdd-switch--show-text.hdd-switch--sm {
+  min-width: 40px;
+  padding: 0 26px 0 8px;
+}
+
+.hdd-switch--show-text.hdd-switch--sm.hdd-switch--checked {
+  padding: 0 8px 0 26px;
+}
+
+/* lg尺寸 */
+.hdd-switch--show-text.hdd-switch--lg {
+  min-width: 56px;
+  padding: 0 34px 0 8px;
+}
+
+.hdd-switch--show-text.hdd-switch--lg.hdd-switch--checked {
+  padding: 0 8px 0 34px;
+}
+
+/* ============================================
+   Focus 键盘焦点
+   ============================================ */
+.hdd-switch:focus-visible {
+  outline: 2px solid var(--hdd-color-primary-01);
+  outline-offset: 2px;
+}

@@ -37,8 +37,11 @@ export default defineConfig({
           text: '通用',
           items: [
             { text: 'Button 按钮', link: '/components/button' },
-            { text: 'Divider 分割线', link: '/components/divider' },
             { text: 'Icon 图标', link: '/components/icon' },
+            { text: 'Link 链接', link: '/components/link' },
+            { text: 'Text 文字', link: '/components/text' },
+            { text: 'Space 间距', link: '/components/space' },
+            { text: 'Divider 分割线', link: '/components/divider' },
           ],
         },
         {
@@ -47,6 +50,16 @@ export default defineConfig({
             { text: 'Layout 布局', link: '/components/layout' },
             { text: 'Grid 网格', link: '/components/grid' },
             { text: 'Flex 弹性布局', link: '/components/flex' },
+          ],
+        },
+        {
+          text: '数据录入',
+          items: [
+            { text: 'Input 输入框', link: '/components/input' },
+            { text: 'InputNumber 数字输入框', link: '/components/input-number' },
+            { text: 'Radio 单选框', link: '/components/radio' },
+            { text: 'Checkbox 多选框', link: '/components/checkbox' },
+            { text: 'Switch 开关', link: '/components/switch' },
           ],
         },
       ],

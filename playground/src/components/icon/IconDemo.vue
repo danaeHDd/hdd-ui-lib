@@ -44,19 +44,37 @@
   </div>
 
   <div class="demo-card">
-    <h3>继承文字颜色</h3>
+    <h3>可聚焦图标（Tab 键访问）</h3>
+    <p class="demo-description">设置 tabindex="0" 使图标可通过键盘聚焦</p>
     <div class="icon-demo">
-      <div class="icon-row" style="color: #9E8A57;">
-        <HddInfoIcon />
-        <span>信息图标</span>
+      <div class="icon-item">
+        <HddInfoIcon :size="32" tabindex="0" ariaLabel="信息" />
+        <span>可聚焦</span>
       </div>
-      <div class="icon-row" style="color: #FFA826;">
-        <HddWarningIcon />
-        <span>警告图标</span>
+      <div class="icon-item">
+        <HddWarningIcon :size="32" tabindex="0" ariaLabel="警告" />
+        <span>可聚焦</span>
       </div>
-      <div class="icon-row" style="color: #4CAF50;">
-        <HddInfoIcon />
-        <span>成功色</span>
+      <div class="icon-item">
+        <HddInfoIcon :size="32" />
+        <span>不可聚焦</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="demo-card">
+    <h3>无障碍标签</h3>
+    <p class="demo-description">使用 ariaLabel 为屏幕阅读器提供说明</p>
+    <div class="icon-demo">
+      <div class="icon-item">
+        <button aria-label="关闭">
+          <HddInfoIcon :size="24" tabindex="0" />
+        </button>
+        <span>带标签的按钮</span>
+      </div>
+      <div class="icon-item">
+        <HddInfoIcon :size="32" ariaLabel="信息提示" />
+        <span>仅标签</span>
       </div>
     </div>
   </div>
@@ -83,6 +101,100 @@
       <div class="icon-item">
         <HddWarningIcon :size="32" color="#4CAF50" />
         <span>success</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="demo-card">
+    <h3>继承文字颜色</h3>
+    <div class="icon-demo">
+      <div class="icon-row" style="color: #9E8A57;">
+        <HddInfoIcon />
+        <span>信息图标</span>
+      </div>
+      <div class="icon-row" style="color: #FFA826;">
+        <HddWarningIcon />
+        <span>警告图标</span>
+      </div>
+      <div class="icon-row" style="color: #4CAF50;">
+        <HddInfoIcon />
+        <span>成功色</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="demo-card">
+    <h3>旋转图标</h3>
+    <div class="icon-demo">
+      <div class="icon-item">
+        <HddInfoIcon :size="40" />
+        <span>0°</span>
+      </div>
+      <div class="icon-item">
+        <HddInfoIcon :size="40" :rotate="45" />
+        <span>45°</span>
+      </div>
+      <div class="icon-item">
+        <HddInfoIcon :size="40" :rotate="90" />
+        <span>90°</span>
+      </div>
+      <div class="icon-item">
+        <HddInfoIcon :size="40" :rotate="180" />
+        <span>180°</span>
+      </div>
+      <div class="icon-item">
+        <HddInfoIcon :size="40" :rotate="270" />
+        <span>270°</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="demo-card">
+    <h3>翻转图标</h3>
+    <div class="icon-demo">
+      <div class="icon-item">
+        <HddInfoIcon :size="40" />
+        <span>normal</span>
+      </div>
+      <div class="icon-item">
+        <HddInfoIcon :size="40" flip="horizontal" />
+        <span>horizontal</span>
+      </div>
+      <div class="icon-item">
+        <HddInfoIcon :size="40" flip="vertical" />
+        <span>vertical</span>
+      </div>
+      <div class="icon-item">
+        <HddInfoIcon :size="40" flip="both" />
+        <span>both</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="demo-card">
+    <h3>旋转动画 (Loading)</h3>
+    <div class="icon-demo">
+      <div class="icon-item">
+        <HddInfoIcon :size="48" :spin="true" />
+        <span>info spin</span>
+      </div>
+      <div class="icon-item">
+        <HddWarningIcon :size="48" :spin="true" />
+        <span>warning spin</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="demo-card">
+    <h3>组合使用</h3>
+    <div class="icon-demo">
+      <div class="icon-item">
+        <HddInfoIcon :size="40" :rotate="45" flip="horizontal" color="#9E8A57" />
+        <span>rotate + flip</span>
+      </div>
+      <div class="icon-item">
+        <HddWarningIcon :size="40" :rotate="180" flip="vertical" color="#FFA826" />
+        <span>rotate + flip</span>
       </div>
     </div>
   </div>
@@ -114,6 +226,18 @@ import { HddInfoIcon, HddWarningIcon } from 'hdd-ui-lib'
   color: var(--hdd-color-neutral-04);
 }
 
+.icon-item button {
+  padding: var(--hdd-spacing-2);
+  border: none;
+  background: var(--hdd-color-primary-05);
+  border-radius: var(--hdd-radius-sm);
+  cursor: pointer;
+}
+
+.icon-item button:hover {
+  background: var(--hdd-color-primary-04);
+}
+
 .icon-row {
   display: flex;
   align-items: center;
@@ -123,5 +247,11 @@ import { HddInfoIcon, HddWarningIcon } from 'hdd-ui-lib'
 
 .icon-row span {
   font-size: var(--hdd-font-size-sm);
+}
+
+.demo-description {
+  margin-bottom: var(--hdd-spacing-4);
+  font-size: var(--hdd-font-size-sm);
+  color: var(--hdd-color-neutral-02);
 }
 </style>

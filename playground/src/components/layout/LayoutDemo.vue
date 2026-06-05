@@ -44,6 +44,32 @@
       </Layout>
     </div>
   </div>
+
+  
+  <div class="demo-card">
+    <h3>上中下三栏布局（中间含侧边栏）</h3>
+    <div class="layout-preview">
+      <Layout >
+        <Header class="demo-header">Header</Header>
+        <Layout has-sider>
+          <Sider class="demo-sider">Sider </Sider>
+          <Content class="demo-content">Content</Content>
+        </Layout>
+        <Footer class="demo-footer">Footer</Footer>
+      </Layout>
+    </div>
+  </div>
+  
+  <div class="demo-card">
+    <h3>纯侧边栏布局</h3>
+    <div class="layout-preview">
+      <Layout has-sider>
+        <Sider class="demo-sider" style="border-right: 1px solid #dddddd">Sider </Sider>
+        <Content class="demo-content">Content</Content>
+        <Sider class="demo-sider" width="300px" style="border-left: 1px solid #dddddd">Sider </Sider>
+      </Layout>
+    </div>
+  </div>
 </template>
 
 <script setup lang="ts">

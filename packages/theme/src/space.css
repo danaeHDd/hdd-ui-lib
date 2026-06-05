@@ -1,0 +1,51 @@
+/* ============================================
+   Space 组件样式
+   ============================================ */
+
+.hdd-space {
+  display: inline-flex;
+}
+
+/* 方向样式 */
+.hdd-space--horizontal {
+  flex-direction: row;
+}
+
+.hdd-space--vertical {
+  flex-direction: column;
+}
+
+/* 对齐样式 */
+.hdd-space--start {
+  align-items: flex-start;
+}
+
+.hdd-space--end {
+  align-items: flex-end;
+}
+
+.hdd-space--center {
+  align-items: center;
+}
+
+.hdd-space--baseline {
+  align-items: baseline;
+}
+
+.hdd-space--stretch {
+  align-items: stretch;
+}
+
+/* 换行样式 */
+.hdd-space--wrap {
+  flex-wrap: wrap;
+}
+
+/* 填充样式 */
+.hdd-space--fill {
+  width: 100%;
+}
+
+.hdd-space--fill.hdd-space--horizontal {
+  justify-content: flex-start;
+}
