@@ -1,3 +1,10 @@
+<script setup lang="ts">
+import { ref } from 'vue'
+
+const inputValue = ref('示例文本')
+const countValue = ref('')
+</script>
+
 # Input 输入框
 
 文本输入框组件，用于单行文本输入。
@@ -13,29 +20,6 @@
   ```vue
   <template>
     <hdd-input placeholder="请输入内容" />
-  </template>
-  ```
-
-  </template>
-</demo-block>
-
-## 不同尺寸
-
-<demo-block>
-  <template #demo>
-    <div style="display: flex; gap: 12px;">
-      <hdd-input size="sm" placeholder="小尺寸" />
-      <hdd-input size="md" placeholder="中尺寸" />
-      <hdd-input size="lg" placeholder="大尺寸" />
-    </div>
-  </template>
-  <template #code>
-
-  ```vue
-  <template>
-    <hdd-input size="sm" placeholder="小尺寸" />
-    <hdd-input size="md" placeholder="中尺寸" />
-    <hdd-input size="lg" placeholder="大尺寸" />
   </template>
   ```
 
@@ -154,7 +138,6 @@
 | readonly | 是否只读 | boolean | - | false |
 | maxlength | 最大长度 | number | - | - |
 | minlength | 最小长度 | number | - | - |
-| size | 尺寸 | string | sm/md/lg | md |
 | showClear | 是否显示清空按钮 | boolean | - | false |
 | showWordLimit | 是否显示字数统计 | boolean | - | false |
 | error | 是否错误状态 | boolean | - | false |

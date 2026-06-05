@@ -1,3 +1,15 @@
+<script setup lang="ts">
+import { ref } from 'vue'
+
+const checkboxValue1 = ref(false)
+const multipleValue = ref(['苹果', '橙子'])
+const indeterminateValue = ref(false)
+const disabledValue = ref(false)
+const disabledChecked = ref(true)
+const errorValue1 = ref(false)
+const errorValue2 = ref(true)
+</script>
+
 # Checkbox 多选框
 
 多选框组件，用于从多个选项中选择多个。
@@ -65,13 +77,34 @@
   </template>
 </demo-block>
 
+## 禁用状态
+
+<demo-block>
+  <template #demo>
+    <div style="display: flex; gap: 24px;">
+      <hdd-checkbox v-model="disabledValue" disabled>禁用未选中</hdd-checkbox>
+      <hdd-checkbox v-model="disabledChecked" disabled>禁用已选中</hdd-checkbox>
+    </div>
+  </template>
+  <template #code>
+
+  ```vue
+  <template>
+    <hdd-checkbox v-model="disabledValue" disabled>禁用未选中</hdd-checkbox>
+    <hdd-checkbox v-model="disabledChecked" disabled>禁用已选中</hdd-checkbox>
+  </template>
+  ```
+
+  </template>
+</demo-block>
+
 ## 错误状态
 
 <demo-block>
   <template #demo>
     <div style="display: flex; gap: 24px;">
       <hdd-checkbox v-model="errorValue1" error>错误选项</hdd-checkbox>
-      <hdd-checkbox v-model="errorValue1" error>错误选项</hdd-checkbox>
+      <hdd-checkbox v-model="errorValue2" error>错误选项(选中)</hdd-checkbox>
     </div>
   </template>
   <template #code>
@@ -79,7 +112,7 @@
   ```vue
   <template>
     <hdd-checkbox v-model="errorValue1" error>错误选项</hdd-checkbox>
-    <hdd-checkbox v-model="errorValue1" error>错误选项</hdd-checkbox>
+    <hdd-checkbox v-model="errorValue2" error>错误选项(选中)</hdd-checkbox>
   </template>
   ```
 
@@ -94,7 +127,6 @@
 | label | 选项值 | string | - | - |
 | disabled | 是否禁用 | boolean | - | false |
 | indeterminate | 是否半选 | boolean | - | false |
-| size | 尺寸 | string | sm/md/lg | md |
 | error | 是否错误状态 | boolean | - | false |
 
 ## 事件
