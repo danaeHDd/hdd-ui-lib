@@ -1,3 +1,11 @@
+<script setup lang="ts">
+import { ref } from 'vue'
+
+const numValue = ref(0)
+const rangeNum = ref(5)
+const stepNum = ref(0)
+</script>
+
 # InputNumber 数字输入框
 
 带输入框和增减按钮的数字输入组件。
@@ -85,6 +93,23 @@
   </template>
 </demo-block>
 
+## 错误状态
+
+<demo-block>
+  <template #demo>
+    <hdd-input-number v-model="errorValue" error />
+  </template>
+  <template #code>
+
+  ```vue
+  <template>
+    <hdd-input-number v-model="errorValue" error />
+  </template>
+  ```
+
+  </template>
+</demo-block>
+
 ## API
 
 | 属性名 | 说明 | 类型 | 可选值 | 默认值 |
@@ -96,6 +121,7 @@
 | precision | 数值精度 | number | - | - |
 | disabled | 是否禁用 | boolean | - | false |
 | readonly | 是否只读 | boolean | - | false |
+| error | 是否错误状态 | boolean | - | false |
 
 ## 事件
 
