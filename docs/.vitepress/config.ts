@@ -60,6 +60,7 @@ export default defineConfig({
             { text: 'Radio 单选框', link: '/components/radio' },
             { text: 'Checkbox 多选框', link: '/components/checkbox' },
             { text: 'Switch 开关', link: '/components/switch' },
+            { text: 'Tag 标签', link: '/components/tag' },
           ],
         },
       ],

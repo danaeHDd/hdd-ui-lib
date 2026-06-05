@@ -1,0 +1,220 @@
+/* ============================================
+   Tag 标签组件样式
+   ============================================ */
+
+@import './design-tokens.css';
+
+/* 基础样式 */
+.hdd-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--hdd-spacing-1) var(--hdd-spacing-3);
+  font-size: var(--hdd-font-size-sm);
+  font-weight: var(--hdd-font-weight-medium);
+  line-height: 1.4;
+  white-space: nowrap;
+  border-radius: var(--hdd-radius-sm);
+  cursor: default;
+  transition: all var(--hdd-transition-duration-normal);
+  user-select: none;
+}
+
+/* ============================================
+   Default 默认样式（未选中状态）
+   ============================================ */
+
+.hdd-tag--default.hdd-tag--light {
+  background: var(--hdd-color-neutral-05);
+  color: var(--hdd-color-neutral-02);
+  border: var(--hdd-border-width-sm) solid var(--hdd-color-neutral-04);
+}
+
+.hdd-tag--default.hdd-tag--dark {
+  background: var(--hdd-color-neutral-03);
+  color: var(--hdd-color-white);
+  border: var(--hdd-border-width-sm) solid var(--hdd-color-neutral-03);
+}
+
+.hdd-tag--default.hdd-tag--plain {
+  background: transparent;
+  color: var(--hdd-color-neutral-02);
+  border: var(--hdd-border-width-sm) solid var(--hdd-color-neutral-04);
+}
+
+/* ============================================
+   Light 效果（默认）
+   ============================================ */
+
+.hdd-tag--light.hdd-tag--primary {
+  background: var(--hdd-color-primary-05);
+  color: var(--hdd-color-primary-01);
+  border: var(--hdd-border-width-sm) solid var(--hdd-color-primary-04);
+}
+
+.hdd-tag--light.hdd-tag--success {
+  background: var(--hdd-color-success-05);
+  color: var(--hdd-color-success-01);
+  border: var(--hdd-border-width-sm) solid var(--hdd-color-success-04);
+}
+
+.hdd-tag--light.hdd-tag--warning {
+  background: var(--hdd-color-warning-05);
+  color: var(--hdd-color-warning-01);
+  border: var(--hdd-border-width-sm) solid var(--hdd-color-warning-04);
+}
+
+.hdd-tag--light.hdd-tag--danger {
+  background: var(--hdd-color-danger-05);
+  color: var(--hdd-color-danger-01);
+  border: var(--hdd-border-width-sm) solid var(--hdd-color-danger-04);
+}
+
+.hdd-tag--light.hdd-tag--info {
+  background: var(--hdd-color-info-05);
+  color: var(--hdd-color-info-01);
+  border: var(--hdd-border-width-sm) solid var(--hdd-color-info-04);
+}
+
+/* ============================================
+   Dark 效果
+   ============================================ */
+
+.hdd-tag--dark.hdd-tag--primary {
+  background: var(--hdd-color-primary-01);
+  color: var(--hdd-color-white);
+  border: var(--hdd-border-width-sm) solid var(--hdd-color-primary-01);
+}
+
+.hdd-tag--dark.hdd-tag--success {
+  background: var(--hdd-color-success-01);
+  color: var(--hdd-color-white);
+  border: var(--hdd-border-width-sm) solid var(--hdd-color-success-01);
+}
+
+.hdd-tag--dark.hdd-tag--warning {
+  background: var(--hdd-color-warning-01);
+  color: var(--hdd-color-white);
+  border: var(--hdd-border-width-sm) solid var(--hdd-color-warning-01);
+}
+
+.hdd-tag--dark.hdd-tag--danger {
+  background: var(--hdd-color-danger-01);
+  color: var(--hdd-color-white);
+  border: var(--hdd-border-width-sm) solid var(--hdd-color-danger-01);
+}
+
+.hdd-tag--dark.hdd-tag--info {
+  background: var(--hdd-color-info-01);
+  color: var(--hdd-color-white);
+  border: var(--hdd-border-width-sm) solid var(--hdd-color-info-01);
+}
+
+/* ============================================
+   Plain 效果
+   ============================================ */
+
+.hdd-tag--plain.hdd-tag--primary {
+  background: transparent;
+  color: var(--hdd-color-primary-01);
+  border: var(--hdd-border-width-sm) solid var(--hdd-color-primary-01);
+}
+
+.hdd-tag--plain.hdd-tag--success {
+  background: transparent;
+  color: var(--hdd-color-success-01);
+  border: var(--hdd-border-width-sm) solid var(--hdd-color-success-01);
+}
+
+.hdd-tag--plain.hdd-tag--warning {
+  background: transparent;
+  color: var(--hdd-color-warning-01);
+  border: var(--hdd-border-width-sm) solid var(--hdd-color-warning-01);
+}
+
+.hdd-tag--plain.hdd-tag--danger {
+  background: transparent;
+  color: var(--hdd-color-danger-01);
+  border: var(--hdd-border-width-sm) solid var(--hdd-color-danger-01);
+}
+
+.hdd-tag--plain.hdd-tag--info {
+  background: transparent;
+  color: var(--hdd-color-info-01);
+  border: var(--hdd-border-width-sm) solid var(--hdd-color-info-01);
+}
+
+/* 可点击 */
+.hdd-tag--clickable {
+  cursor: pointer;
+}
+
+.hdd-tag--clickable:hover {
+  opacity: 0.8;
+}
+
+.hdd-tag--clickable:active {
+  transform: scale(0.95);
+}
+
+/* 图标 */
+.hdd-tag__icon {
+  display: inline-flex;
+  align-items: center;
+  margin-right: var(--hdd-spacing-1);
+  font-size: inherit;
+}
+
+/* 内容 */
+.hdd-tag__content {
+  display: inline-block;
+}
+
+/* 可关闭 */
+.hdd-tag--closable {
+  padding-right: var(--hdd-spacing-2);
+}
+
+.hdd-tag__close {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: var(--hdd-spacing-1);
+  padding: 2px;
+  width: 18px;
+  height: 18px;
+  background: transparent;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  opacity: 0.5;
+  transition: all var(--hdd-transition-duration-fast);
+  color: inherit;
+  outline: none;
+}
+
+.hdd-tag__close:hover {
+  opacity: 1;
+  background: var(--hdd-color-danger-01);
+  color: var(--hdd-color-white);
+}
+
+.hdd-tag__close:focus-visible {
+  outline: 2px solid var(--hdd-color-primary-01);
+  outline-offset: 2px;
+}
+
+/* 点击效果 */
+.hdd-tag--hit {
+  box-shadow: 0 0 0 2px var(--hdd-color-primary-03);
+}
+
+/* 禁用过渡 */
+.hdd-tag--no-transition {
+  transition: none;
+}
+
+/* 键盘焦点状态 */
+.hdd-tag:focus-visible {
+  outline: 2px solid var(--hdd-color-primary-01);
+  outline-offset: 2px;
+}

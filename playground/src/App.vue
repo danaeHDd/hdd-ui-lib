@@ -68,6 +68,10 @@
         <div v-else-if="activeComponent === 'switch'" class="demo-container">
           <SwitchDemo />
         </div>
+        
+        <div v-else-if="activeComponent === 'tag'" class="demo-container">
+          <TagDemo />
+        </div>
       </main>
     </div>
   </div>
@@ -91,6 +95,7 @@ import InputNumberDemo from './components/input-number/InputNumberDemo.vue'
 import RadioDemo from './components/radio/RadioDemo.vue'
 import CheckboxDemo from './components/checkbox/CheckboxDemo.vue'
 import SwitchDemo from './components/switch/SwitchDemo.vue'
+import TagDemo from './components/tag/TagDemo.vue'
 
 const activeComponent = ref('color-system')
 

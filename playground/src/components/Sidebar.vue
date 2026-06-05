@@ -62,7 +62,8 @@ const navGroups = [
       { name: 'input-number', label: '数字输入框' },
       { name: 'radio', label: '单选框' },
       { name: 'checkbox', label: '多选框' },
-      { name: 'switch', label: '开关' }
+      { name: 'switch', label: '开关' },
+      { name: 'tag', label: '标签' }
     ]
   }
 ]

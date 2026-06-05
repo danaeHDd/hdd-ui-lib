@@ -13,6 +13,7 @@ import { HddInputNumber } from './components/input-number'
 import { HddRadio } from './components/radio'
 import { HddCheckbox } from './components/checkbox'
 import { HddSwitch } from './components/switch'
+import { HddTag } from './components/tag'
 import './theme/src/index.css'
 
 const components = [
@@ -37,7 +38,8 @@ const components = [
   HddInputNumber,
   HddRadio,
   HddCheckbox,
-  HddSwitch
+  HddSwitch,
+  HddTag
 ]
 
 const install = (app: App): void => {
@@ -66,3 +68,4 @@ export * from './components/input-number'
 export * from './components/radio'
 export * from './components/checkbox'
 export * from './components/switch'
+export * from './components/tag'
