@@ -72,3 +72,9 @@ hdd-ui-lib/
 ## 许可证
 
 MIT
+
+## 仓库地址
+`https://github.com/danaeHDd/hdd-ui-lib`
+
+## 文档地址
+`https://danaehdd.github.io/hdd-ui-lib/`
