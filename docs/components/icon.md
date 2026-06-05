@@ -1,22 +1,80 @@
+<script setup lang="ts">
+import { ref } from 'vue'
+
+const iconValue = ref('home')
+</script>
+
 # Icon 图标
 
-图标组件，支持自定义 SVG 图标和内置图标。
+图标组件，支持 Material Icons Font 和自定义 SVG 图标。
 
-## 内置图标
+## 基础用法 - Material Icons
+
+组件库已集成 Material Icons Font，支持通过 `name` 属性直接使用。
 
 <demo-block>
   <template #demo>
-    <div style="display: flex; gap: 24px;">
-      <hdd-info-icon />
-      <hdd-warning-icon />
+    <div style="display: flex; gap: 24px; align-items: center;">
+      <hdd-icon name="home" />
+      <hdd-icon name="search" />
+      <hdd-icon name="settings" />
+      <hdd-icon name="favorite" />
+      <hdd-icon name="menu" />
     </div>
   </template>
   <template #code>
 
   ```vue
   <template>
-    <hdd-info-icon />
-    <hdd-warning-icon />
+    <hdd-icon name="home" />
+    <hdd-icon name="search" />
+    <hdd-icon name="settings" />
+    <hdd-icon name="favorite" />
+    <hdd-icon name="menu" />
+  </template>
+  ```
+
+  </template>
+</demo-block>
+
+## 图标变体
+
+Material Icons 提供多种视觉变体：filled（默认）、outlined、round、sharp、two-tone。
+
+<demo-block>
+  <template #demo>
+    <div style="display: flex; gap: 24px; align-items: center;">
+      <div style="text-align: center;">
+        <hdd-icon name="home" variant="filled" :size="32" />
+        <div style="font-size: 12px; margin-top: 4px;">filled</div>
+      </div>
+      <div style="text-align: center;">
+        <hdd-icon name="home" variant="outlined" :size="32" />
+        <div style="font-size: 12px; margin-top: 4px;">outlined</div>
+      </div>
+      <div style="text-align: center;">
+        <hdd-icon name="home" variant="round" :size="32" />
+        <div style="font-size: 12px; margin-top: 4px;">round</div>
+      </div>
+      <div style="text-align: center;">
+        <hdd-icon name="home" variant="sharp" :size="32" />
+        <div style="font-size: 12px; margin-top: 4px;">sharp</div>
+      </div>
+      <div style="text-align: center;">
+        <hdd-icon name="home" variant="two-tone" :size="32" />
+        <div style="font-size: 12px; margin-top: 4px;">two-tone</div>
+      </div>
+    </div>
+  </template>
+  <template #code>
+
+  ```vue
+  <template>
+    <hdd-icon name="home" variant="filled" />
+    <hdd-icon name="home" variant="outlined" />
+    <hdd-icon name="home" variant="round" />
+    <hdd-icon name="home" variant="sharp" />
+    <hdd-icon name="home" variant="two-tone" />
   </template>
   ```
 
@@ -28,24 +86,70 @@
 <demo-block>
   <template #demo>
     <div style="display: flex; gap: 16px; align-items: center;">
-      <hdd-info-icon :size="24" />
-      <hdd-info-icon :size="32" />
-      <hdd-info-icon :size="48" />
-      <hdd-warning-icon :size="24" />
-      <hdd-warning-icon :size="32" />
-      <hdd-warning-icon :size="48" />
+      <hdd-icon name="home" :size="16" />
+      <hdd-icon name="home" :size="20" />
+      <hdd-icon name="home" :size="24" />
+      <hdd-icon name="home" :size="32" />
+      <hdd-icon name="home" :size="48" />
     </div>
   </template>
   <template #code>
 
   ```vue
   <template>
-    <hdd-info-icon :size="24" />
-    <hdd-info-icon :size="32" />
-    <hdd-info-icon :size="48" />
-    <hdd-warning-icon :size="24" />
-    <hdd-warning-icon :size="32" />
-    <hdd-warning-icon :size="48" />
+    <hdd-icon name="home" :size="16" />
+    <hdd-icon name="home" :size="20" />
+    <hdd-icon name="home" :size="24" />
+    <hdd-icon name="home" :size="32" />
+    <hdd-icon name="home" :size="48" />
+  </template>
+  ```
+
+  </template>
+</demo-block>
+
+## 自定义颜色
+
+<demo-block>
+  <template #demo>
+    <div style="display: flex; gap: 16px;">
+      <hdd-icon name="favorite" :size="32" color="#9E8A57" />
+      <hdd-icon name="favorite" :size="32" color="#4CAF50" />
+      <hdd-icon name="favorite" :size="32" color="#FF5252" />
+      <hdd-icon name="favorite" :size="32" color="#FFA826" />
+      <hdd-icon name="favorite" :size="32" color="#2196F3" />
+    </div>
+  </template>
+  <template #code>
+
+  ```vue
+  <template>
+    <hdd-icon name="favorite" :size="32" color="#9E8A57" />
+    <hdd-icon name="favorite" :size="32" color="#4CAF50" />
+    <hdd-icon name="favorite" :size="32" color="#FF5252" />
+    <hdd-icon name="favorite" :size="32" color="#FFA826" />
+    <hdd-icon name="favorite" :size="32" color="#2196F3" />
+  </template>
+  ```
+
+  </template>
+</demo-block>
+
+## 旋转动画
+
+<demo-block>
+  <template #demo>
+    <div style="display: flex; gap: 24px;">
+      <hdd-icon name="refresh" :size="40" :spin="true" />
+      <hdd-icon name="settings" :size="40" :spin="true" />
+    </div>
+  </template>
+  <template #code>
+
+  ```vue
+  <template>
+    <hdd-icon name="refresh" :size="40" :spin="true" />
+    <hdd-icon name="settings" :size="40" :spin="true" />
   </template>
   ```
 
@@ -59,201 +163,18 @@
 <demo-block>
   <template #demo>
     <div style="display: flex; gap: 24px;">
-      <hdd-info-icon :size="32" tabindex="0" aria-label="信息" />
-      <hdd-warning-icon :size="32" tabindex="0" aria-label="警告" />
-      <hdd-info-icon :size="32" />
+      <hdd-icon name="home" :size="32" tabindex="0" aria-label="首页" />
+      <hdd-icon name="settings" :size="32" tabindex="0" aria-label="设置" />
+      <hdd-icon name="search" :size="32" />
     </div>
   </template>
   <template #code>
 
   ```vue
   <template>
-    <hdd-info-icon :size="32" tabindex="0" aria-label="信息" />
-    <hdd-warning-icon :size="32" tabindex="0" aria-label="警告" />
-    <hdd-info-icon :size="32" />
-  </template>
-  ```
-
-  </template>
-</demo-block>
-
-## 无障碍标签
-
-使用 ariaLabel 为屏幕阅读器提供说明。
-
-<demo-block>
-  <template #demo>
-    <div style="display: flex; gap: 24px;">
-      <button aria-label="关闭">
-        <hdd-info-icon :size="24" tabindex="0" />
-      </button>
-      <hdd-info-icon :size="32" aria-label="信息提示" />
-    </div>
-  </template>
-  <template #code>
-
-  ```vue
-  <template>
-    <button aria-label="关闭">
-      <hdd-info-icon :size="24" tabindex="0" />
-    </button>
-    <hdd-info-icon :size="32" aria-label="信息提示" />
-  </template>
-  ```
-
-  </template>
-</demo-block>
-
-## 自定义颜色
-
-<demo-block>
-  <template #demo>
-    <div style="display: flex; gap: 16px;">
-      <hdd-info-icon :size="32" color="#9E8A57" />
-      <hdd-info-icon :size="32" color="#4CAF50" />
-      <hdd-info-icon :size="32" color="#FF5252" />
-      <hdd-warning-icon :size="32" color="#FFA826" />
-      <hdd-warning-icon :size="32" color="#4CAF50" />
-    </div>
-  </template>
-  <template #code>
-
-  ```vue
-  <template>
-    <hdd-info-icon :size="32" color="#9E8A57" />
-    <hdd-info-icon :size="32" color="#4CAF50" />
-    <hdd-info-icon :size="32" color="#FF5252" />
-    <hdd-warning-icon :size="32" color="#FFA826" />
-    <hdd-warning-icon :size="32" color="#4CAF50" />
-  </template>
-  ```
-
-  </template>
-</demo-block>
-
-## 继承文字颜色
-
-<demo-block>
-  <template #demo>
-    <div style="display: flex; gap: 24px; color: #9E8A57;">
-      <hdd-info-icon />
-      <span style="display: flex; align-items: center;">信息图标</span>
-    </div>
-    <div style="display: flex; gap: 24px; margin-top: 12px; color: #FFA826;">
-      <hdd-warning-icon />
-      <span style="display: flex; align-items: center;">警告图标</span>
-    </div>
-    <div style="display: flex; gap: 24px; margin-top: 12px; color: #4CAF50;">
-      <hdd-info-icon />
-      <span style="display: flex; align-items: center;">成功色</span>
-    </div>
-  </template>
-  <template #code>
-
-  ```vue
-  <template>
-    <div style="display: flex; gap: 24px; color: #9E8A57;">
-      <hdd-info-icon />
-      <span>信息图标</span>
-    </div>
-    <div style="display: flex; gap: 24px; color: #FFA826;">
-      <hdd-warning-icon />
-      <span>警告图标</span>
-    </div>
-  </template>
-  ```
-
-  </template>
-</demo-block>
-
-## 旋转图标
-
-<demo-block>
-  <template #demo>
-    <div style="display: flex; gap: 24px;">
-      <hdd-info-icon :size="40" />
-      <hdd-info-icon :size="40" :rotate="45" />
-      <hdd-info-icon :size="40" :rotate="90" />
-      <hdd-info-icon :size="40" :rotate="180" />
-      <hdd-info-icon :size="40" :rotate="270" />
-    </div>
-  </template>
-  <template #code>
-
-  ```vue
-  <template>
-    <hdd-info-icon :size="40" />
-    <hdd-info-icon :size="40" :rotate="45" />
-    <hdd-info-icon :size="40" :rotate="90" />
-    <hdd-info-icon :size="40" :rotate="180" />
-    <hdd-info-icon :size="40" :rotate="270" />
-  </template>
-  ```
-
-  </template>
-</demo-block>
-
-## 翻转图标
-
-<demo-block>
-  <template #demo>
-    <div style="display: flex; gap: 24px;">
-      <hdd-info-icon :size="40" />
-      <hdd-info-icon :size="40" flip="horizontal" />
-      <hdd-info-icon :size="40" flip="vertical" />
-      <hdd-info-icon :size="40" flip="both" />
-    </div>
-  </template>
-  <template #code>
-
-  ```vue
-  <template>
-    <hdd-info-icon :size="40" />
-    <hdd-info-icon :size="40" flip="horizontal" />
-    <hdd-info-icon :size="40" flip="vertical" />
-    <hdd-info-icon :size="40" flip="both" />
-  </template>
-  ```
-
-  </template>
-</demo-block>
-
-## 旋转动画
-
-<demo-block>
-  <template #demo>
-    <div style="display: flex; gap: 24px;">
-      <hdd-info-icon :size="40" :spin="true" />
-      <hdd-warning-icon :size="40" :spin="true" />
-    </div>
-  </template>
-  <template #code>
-
-  ```vue
-  <template>
-    <hdd-info-icon :size="40" :spin="true" />
-    <hdd-warning-icon :size="40" :spin="true" />
-  </template>
-  ```
-
-  </template>
-</demo-block>
-
-## 组合使用
-
-<demo-block>
-  <template #demo>
-    <div style="display: flex; gap: 24px;">
-      <hdd-info-icon :size="40" :rotate="45" flip="horizontal" color="#9E8A57" />
-      <hdd-warning-icon :size="40" :rotate="180" flip="vertical" color="#FFA826" />
-    </div>
-  </template>
-  <template #code>
-
-  ```vue
-  <template>
-    <hdd-info-icon :size="40" :rotate="45" flip="horizontal" color="#9E8A57" />
-    <hdd-warning-icon :size="40" :rotate="180" flip="vertical" color="#FFA826" />
+    <hdd-icon name="home" :size="32" tabindex="0" aria-label="首页" />
+    <hdd-icon name="settings" :size="32" tabindex="0" aria-label="设置" />
+    <hdd-icon name="search" :size="32" />
   </template>
   ```
 
@@ -262,20 +183,21 @@
 
 ## 自定义 SVG 图标
 
+如果需要使用自定义图标，可以通过插槽传入 SVG 内容。
+
 <demo-block>
   <template #demo>
-    <hdd-icon :size="24">
-      <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" fill="none" />
-    </hdd-icon>
-    <hdd-icon :size="32">
-      <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" fill="none" />
-    </hdd-icon>
-    <hdd-icon :size="40">
-      <rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2" fill="none" />
-    </hdd-icon>
-    <hdd-icon :size="48" :spin="true">
-      <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" stroke-width="2" fill="none" />
-    </hdd-icon>
+    <div style="display: flex; gap: 24px;">
+      <hdd-icon :size="24">
+        <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" fill="none" />
+      </hdd-icon>
+      <hdd-icon :size="32">
+        <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" fill="none" />
+      </hdd-icon>
+      <hdd-icon :size="40">
+        <rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2" fill="none" />
+      </hdd-icon>
+    </div>
   </template>
   <template #code>
 
@@ -290,9 +212,102 @@
     <hdd-icon :size="40">
       <rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2" fill="none" />
     </hdd-icon>
-    <hdd-icon :size="48" :spin="true">
-      <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" stroke-width="2" fill="none" />
-    </hdd-icon>
+  </template>
+  ```
+
+  </template>
+</demo-block>
+
+## 常用 Material Icons 示例
+
+<demo-block>
+  <template #demo>
+    <div style="display: grid; grid-template-columns: repeat(6, 1fr); gap: 24px;">
+      <div style="text-align: center;">
+        <hdd-icon name="home" :size="32" />
+        <div style="font-size: 12px; margin-top: 4px;">home</div>
+      </div>
+      <div style="text-align: center;">
+        <hdd-icon name="search" :size="32" />
+        <div style="font-size: 12px; margin-top: 4px;">search</div>
+      </div>
+      <div style="text-align: center;">
+        <hdd-icon name="settings" :size="32" />
+        <div style="font-size: 12px; margin-top: 4px;">settings</div>
+      </div>
+      <div style="text-align: center;">
+        <hdd-icon name="person" :size="32" />
+        <div style="font-size: 12px; margin-top: 4px;">person</div>
+      </div>
+      <div style="text-align: center;">
+        <hdd-icon name="mail" :size="32" />
+        <div style="font-size: 12px; margin-top: 4px;">mail</div>
+      </div>
+      <div style="text-align: center;">
+        <hdd-icon name="phone" :size="32" />
+        <div style="font-size: 12px; margin-top: 4px;">phone</div>
+      </div>
+      <div style="text-align: center;">
+        <hdd-icon name="edit" :size="32" />
+        <div style="font-size: 12px; margin-top: 4px;">edit</div>
+      </div>
+      <div style="text-align: center;">
+        <hdd-icon name="delete" :size="32" />
+        <div style="font-size: 12px; margin-top: 4px;">delete</div>
+      </div>
+      <div style="text-align: center;">
+        <hdd-icon name="add" :size="32" />
+        <div style="font-size: 12px; margin-top: 4px;">add</div>
+      </div>
+      <div style="text-align: center;">
+        <hdd-icon name="close" :size="32" />
+        <div style="font-size: 12px; margin-top: 4px;">close</div>
+      </div>
+      <div style="text-align: center;">
+        <hdd-icon name="check" :size="32" />
+        <div style="font-size: 12px; margin-top: 4px;">check</div>
+      </div>
+      <div style="text-align: center;">
+        <hdd-icon name="arrow_back" :size="32" />
+        <div style="font-size: 12px; margin-top: 4px;">arrow_back</div>
+      </div>
+      <div style="text-align: center;">
+        <hdd-icon name="star" :size="32" />
+        <div style="font-size: 12px; margin-top: 4px;">star</div>
+      </div>
+      <div style="text-align: center;">
+        <hdd-icon name="bookmark" :size="32" />
+        <div style="font-size: 12px; margin-top: 4px;">bookmark</div>
+      </div>
+      <div style="text-align: center;">
+        <hdd-icon name="share" :size="32" />
+        <div style="font-size: 12px; margin-top: 4px;">share</div>
+      </div>
+      <div style="text-align: center;">
+        <hdd-icon name="download" :size="32" />
+        <div style="font-size: 12px; margin-top: 4px;">download</div>
+      </div>
+      <div style="text-align: center;">
+        <hdd-icon name="upload" :size="32" />
+        <div style="font-size: 12px; margin-top: 4px;">upload</div>
+      </div>
+      <div style="text-align: center;">
+        <hdd-icon name="save" :size="32" />
+        <div style="font-size: 12px; margin-top: 4px;">save</div>
+      </div>
+    </div>
+  </template>
+  <template #code>
+
+  ```vue
+  <template>
+    <hdd-icon name="home" />
+    <hdd-icon name="search" />
+    <hdd-icon name="settings" />
+    <hdd-icon name="person" />
+    <hdd-icon name="mail" />
+    <hdd-icon name="phone" />
+    <!-- 更多图标请参考 Material Icons 官网 -->
   </template>
   ```
 
@@ -301,39 +316,22 @@
 
 ## API
 
-### HddInfoIcon 信息图标
+### HddIcon 图标组件
 
 | 属性名 | 说明 | 类型 | 可选值 | 默认值 |
 |--------|------|------|--------|--------|
+| name | Material Icons 图标名称 | string | - | - |
+| variant | 图标变体 | string | filled / outlined / round / sharp / two-tone | filled |
 | size | 图标尺寸 | number / string | - | 24 |
 | color | 图标颜色 | string | - | currentColor |
-| rotate | 旋转角度 | number | - | 0 |
-| flip | 翻转方向 | string | horizontal / vertical / both | - |
+| viewBox | SVG 视口（仅自定义 SVG 有效）| string | - | 0 0 24 24 |
+| rotate | 旋转角度（仅自定义 SVG 有效）| number | - | 0 |
+| flip | 翻转方向（仅自定义 SVG 有效）| string | horizontal / vertical / both | - |
 | spin | 是否旋转动画 | boolean | - | false |
 | ariaLabel | 无障碍标签 | string | - | - |
 | tabindex | 可聚焦设置 | number / string | - | - |
 
-### HddWarningIcon 警告图标
+## 图标查询
 
-| 属性名 | 说明 | 类型 | 可选值 | 默认值 |
-|--------|------|------|--------|--------|
-| size | 图标尺寸 | number / string | - | 24 |
-| color | 图标颜色 | string | - | currentColor |
-| rotate | 旋转角度 | number | - | 0 |
-| flip | 翻转方向 | string | horizontal / vertical / both | - |
-| spin | 是否旋转动画 | boolean | - | false |
-| ariaLabel | 无障碍标签 | string | - | - |
-| tabindex | 可聚焦设置 | number / string | - | - |
-
-### HddIcon 自定义图标容器
-
-| 属性名 | 说明 | 类型 | 可选值 | 默认值 |
-|--------|------|------|--------|--------|
-| size | 图标尺寸 | number / string | - | 24 |
-| color | 图标颜色 | string | - | currentColor |
-| viewBox | SVG 视口 | string | - | 0 0 24 24 |
-| rotate | 旋转角度 | number | - | 0 |
-| flip | 翻转方向 | string | horizontal / vertical / both | - |
-| spin | 是否旋转动画 | boolean | - | false |
-| ariaLabel | 无障碍标签 | string | - | - |
-| tabindex | 可聚焦设置 | number / string | - | - |
+完整的 Material Icons 列表请参考官方文档：
+[Material Icons 官网](https://fonts.google.com/icons)
