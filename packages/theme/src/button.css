@@ -285,6 +285,12 @@
   line-height: var(--hdd-line-height-normal);
 }
 
+/* 键盘焦点状态 (无障碍) */
+.hdd-btn:focus-visible {
+  outline: 2px solid var(--hdd-color-primary-01);
+  outline-offset: 2px;
+}
+
 /* Modifier: hdd-btn--disabled (禁用状态) */
 .hdd-btn--disabled,
 .hdd-btn[disabled] {

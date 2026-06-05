@@ -1,0 +1,66 @@
+/* ============================================
+   VitePress 样式覆盖 - 用于文档站点的组件展示
+   ============================================ */
+
+/* 覆盖 VitePress 的默认 a 标签样式，确保 Link 组件正常显示 */
+.vp-doc a.hdd-link {
+  color: var(--hdd-color-dark-04);
+  text-decoration: none;
+  transition: all var(--hdd-transition-duration-normal) var(--hdd-transition-ease-ease);
+}
+
+.vp-doc a.hdd-link--default {
+  color: var(--hdd-color-dark-04);
+}
+
+.vp-doc a.hdd-link--primary {
+  color: var(--hdd-color-primary);
+}
+
+.vp-doc a.hdd-link--success {
+  color: var(--hdd-color-success);
+}
+
+.vp-doc a.hdd-link--warning {
+  color: var(--hdd-color-warning);
+}
+
+.vp-doc a.hdd-link--danger {
+  color: var(--hdd-color-danger);
+}
+
+.vp-doc a.hdd-link--disabled {
+  color: var(--hdd-color-dark-03);
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.vp-doc a.hdd-link--underline {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.vp-doc a.hdd-link--no-underline {
+  text-decoration: none;
+}
+
+/* Hover 状态 */
+.vp-doc a.hdd-link--default:hover {
+  color: var(--hdd-color-primary);
+}
+
+.vp-doc a.hdd-link--primary:hover {
+  color: var(--hdd-color-primary-02);
+}
+
+.vp-doc a.hdd-link--success:hover {
+  color: var(--hdd-color-success-02);
+}
+
+.vp-doc a.hdd-link--warning:hover {
+  color: var(--hdd-color-warning-02);
+}
+
+.vp-doc a.hdd-link--danger:hover {
+  color: var(--hdd-color-danger-02);
+}

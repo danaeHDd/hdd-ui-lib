@@ -1,0 +1,61 @@
+/* ============================================
+   Text 组件样式
+   ============================================ */
+
+.hdd-text {
+  display: inline;
+  font-family: var(--hdd-font-family-sans);
+  line-height: var(--hdd-line-height-normal);
+  margin: 0;
+  padding: 0;
+}
+
+/* 类型样式 */
+.hdd-text--title {
+  font-weight: var(--hdd-font-weight-semibold);
+  color: var(--hdd-color-dark-04);
+}
+
+.hdd-text--body {
+  font-weight: var(--hdd-font-weight-normal);
+  color: var(--hdd-color-dark-04);
+}
+
+.hdd-text--secondary {
+  font-weight: var(--hdd-font-weight-normal);
+  color: var(--hdd-color-neutral-01);
+}
+
+/* 尺寸样式 */
+.hdd-text--xs {
+  font-size: var(--hdd-font-size-xs);
+}
+
+.hdd-text--sm {
+  font-size: var(--hdd-font-size-sm);
+}
+
+.hdd-text--base {
+  font-size: var(--hdd-font-size-base);
+}
+
+.hdd-text--lg {
+  font-size: var(--hdd-font-size-lg);
+}
+
+.hdd-text--xl {
+  font-size: var(--hdd-font-size-xl);
+}
+
+/* 样式修饰 */
+.hdd-text--bold {
+  font-weight: var(--hdd-font-weight-bold);
+}
+
+.hdd-text--italic {
+  font-style: italic;
+}
+
+.hdd-text--delete {
+  text-decoration: line-through;
+}

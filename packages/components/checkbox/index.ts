@@ -1,0 +1,1 @@
+export { default as HddCheckbox } from './src/checkbox.vue'

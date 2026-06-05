@@ -6,6 +6,12 @@
    - px: 边框宽度、阴影值
    ============================================ */
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 :root {
   /* ============================================
      1. 颜色系统 (Color System) - 简化版
@@ -72,9 +78,9 @@
   --hdd-color-neutral-07: #EBEBEB;
   
   /* 深色系 (Dark) - 从浅到深 */
-  --hdd-color-dark-01: #EBEBEB;  /* Placeholder */
+  --hdd-color-dark-01: #EBEBEB;  
   --hdd-color-dark-02: #D4D4D4;
-  --hdd-color-dark-03: #C2C2C2;  /* Disable */
+  --hdd-color-dark-03: #C2C2C2;  /* Disable, Placeholder */
   --hdd-color-dark-04: #333333;  /* Content */
   
   /* ============================================
@@ -252,4 +258,34 @@
   --hdd-z-index-popover: 1060;
   --hdd-z-index-tooltip: 1070;
   --hdd-z-index-toast: 1080;
+
+  /* ============================================
+     9. 触摸目标 (Touch Target) - 单位: rem
+     ============================================ */
+
+  --hdd-touch-target-min: 1.5rem;         /* 24px - 最小触摸目标 */
+  --hdd-touch-target-recommend: 2.25rem;  /* 36px - 推荐触摸目标（关键交互组件） */
+  --hdd-touch-target-large: 3rem;          /* 48px - 大型触摸目标（移动端） */
+
+  /* ============================================
+     10. 断点系统 (Breakpoints) - 单位: px
+     ============================================ */
+
+  --hdd-breakpoint-mobile: 375px;
+  --hdd-breakpoint-mobile-landscape: 480px;
+  --hdd-breakpoint-tablet: 768px;
+  --hdd-breakpoint-desktop: 1024px;
+  --hdd-breakpoint-desktop-lg: 1280px;
+  --hdd-breakpoint-desktop-xl: 1440px;
+
+  /* ============================================
+     11. 图标尺寸 (Icon Size) - 单位: rem
+     ============================================ */
+
+  --hdd-icon-size-xs: 1rem;      /* 16px */
+  --hdd-icon-size-sm: 1.125rem;  /* 18px */
+  --hdd-icon-size-md: 1.25rem;   /* 20px - 推荐标准尺寸 */
+  --hdd-icon-size-lg: 1.5rem;    /* 24px - 默认 */
+  --hdd-icon-size-xl: 2rem;      /* 32px */
+  --hdd-icon-size-2xl: 3rem;     /* 48px */
 }
