@@ -9,7 +9,7 @@
   background: var(--hdd-color-white);
   border: var(--hdd-border-width-sm) solid var(--hdd-border-color-default);
   border-radius: var(--hdd-radius-sm);
-  transition: all var(--hdd-transition-duration-normal);
+  transition: border-color var(--hdd-transition-duration-normal);
 }
 
 .hdd-input:focus-within {
